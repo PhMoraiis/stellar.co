@@ -82,4 +82,5 @@
 .hover:hover {
     border-bottom: 1px solid #EA6033;
     color: #EA6033;
+    transition: .5s ease-in-out;
 }
