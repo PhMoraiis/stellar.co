@@ -11,7 +11,7 @@ const Header = () => {
   ];
 
   return (
-    <nav className="bg-transparent w-full md:static md:text-sm">
+    <nav className="bg-transparent w-full md:static md:text-sm font-coolveticaLt">
       <div className="items-center px-6 max-w-screen-[1240px] mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-2 md:py-2 md:block">
           <a href="javascript:void(0)">

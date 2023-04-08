@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Gacor';
+    src: url('./../../src/fonts/Gacor.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('./../../src/fonts/coolveticarg.otf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Bold';
+    src: url('./../../src/fonts/CoolveticaRg-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Heavy';
+    src: url('./../../src/fonts/CoolveticaHv-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Light';
+    src: url('./../../src/fonts/CoolveticaLt-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Extra Light';
+    src: url('./../../src/fonts/CoolveticaEl-Regular.ttf');
+}
+
 .button {
     background-image: url('./../../public/images/GradientGray.png');
     background-repeat: no-repeat;

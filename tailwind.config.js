@@ -12,6 +12,14 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        'gacor': ['Gacor'],
+        'coolveticaLt': ['Coolvetica Light'],
+        'coolveticaEl': ['Coolvetica Extra Light'],
+        'coolveticaRg': ['Coolvetica'],
+        'coolveticaBd': ['Coolvetica Bold'],
+        'coolveticaHv': ['Coolvetica Heavy'],
+      },
     },
   },
   plugins: [],
