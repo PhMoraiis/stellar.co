@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.button {
+    background-image: url('./../../public/images/GradientGray.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+
+.button:hover {
+    background-image: url('./../../public/images/Gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    transition: 1s all ease-in-out;
+}
+
+.paragraph {
+    background-image: url('./../../public/images/Gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    color: transparent;
+}
+
+.gradient {
+    background-image: url('./../../public/images/Gradient.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.gradient:hover {
+    background-image: url('./../../public/images/GradientGray.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 1s all ease-in-out;
+}
+
+
+.back {
+    background-image: url('./../../public/images/Fundo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.hover:hover {
+    border-bottom: 1px solid #EA6033;
+    color: #EA6033;
+}

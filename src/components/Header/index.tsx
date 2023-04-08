@@ -6,12 +6,12 @@ const Header = () => {
   const [state, setState] = useState(false);
 
   const navigation = [
-    { title: "Login", path: "javascript:void(0)" },
-    { title: "Apply to Join", path: "javascript:void(0)" },
+    { title: "Sobre Nós", path: "javascript:void(0)" },
+    { title: "Serviços", path: "javascript:void(0)" },
   ];
 
   return (
-    <nav className="bg-[#000000] w-full md:static md:text-sm">
+    <nav className="bg-transparent w-full md:static md:text-sm">
       <div className="items-center px-6 max-w-screen-[1240px] mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-2 md:py-2 md:block">
           <a href="javascript:void(0)">
@@ -24,7 +24,7 @@ const Header = () => {
           </a>
           <div className="md:hidden">
             <button
-              className="text-white hover:text-[#2C2C2E]"
+              className="text-white hover:text-[#848D95]"
               onClick={() => setState(!state)}
             >
               {state ? (
@@ -64,11 +64,11 @@ const Header = () => {
             state ? "block" : "hidden"
           }`}
         >
-          <ul className="justify-end items-center mr-8 space-y-4 gap-x-4 md:flex md:space-x-6 md:space-y-0">
-            {navigation.map((item, idx) => {
+          <ul className="text-[15px] leading-[1.2] tracking-wide font-normal justify-end items-center mr-6 space-y-4 gap-x-4 md:flex md:space-x-6 md:space-y-0">
+            {navigation.map((item, id) => {
               return (
-                <li key={idx} className="text-white hover:text-[#2C2C2E]">
-                    <a className="block">{item.title}</a>
+                <li key={id} className="text-white hover">
+                    <a href={item.path} className="block">{item.title}</a>
                 </li>
               );
             })}
@@ -76,9 +76,9 @@ const Header = () => {
               <li>
                   <a
                     href="javascript:void(0)"
-                    className="block py-2 px-4 font-medium text-center text-white bg-[#2C2C2E] hover:bg-[#2C2C2E] active:bg-[#2C2C2E] active:shadow-none rounded-[3rem] shadow md:inline"
+                    className="block py-2 px-4 font-medium text-center text-white rounded-[3rem] md:inline button"
                   >
-                    Browse Creatives
+                    Fale Conosco
                   </a>
               </li>
             </div>
