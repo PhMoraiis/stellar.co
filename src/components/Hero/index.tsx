@@ -1,7 +1,7 @@
 const Hero = () => {
   return (
     <section>
-      <div className="max-w-screen-xl mx-auto px-4 py-[5rem] gap-12 text-gray-600 md:px-8">
+      <div className="max-w-screen-xl mx-auto px-4 py-[5rem] gap-12 text-gray-600 md:px-8 lg:py-32">
         <div className="space-y-10 max-w-4xl mx-auto text-center">
           <p className="text-[24px] font-coolveticaRg paragraph">
             Tecnologia e Inovação
