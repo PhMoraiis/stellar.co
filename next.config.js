@@ -3,6 +3,11 @@
  */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['images.unsplash.com',
+      'api.uifaces.co',
+    ],
+  },
 }
 
 module.exports = nextConfig

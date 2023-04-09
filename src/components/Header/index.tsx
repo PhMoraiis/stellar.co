@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 const Header = () => {
@@ -24,7 +23,7 @@ const Header = () => {
           </a>
           <div className="md:hidden">
             <button
-              className="text-white hover:text-[#848D95]"
+              className="text-white hover"
               onClick={() => setState(!state)}
             >
               {state ? (
@@ -75,8 +74,8 @@ const Header = () => {
             <div className="space-y-4 items-center gap-x-8 md:flex md:spacx'e-y-0">
               <li>
                   <a
-                    href="javascript:void(0)"
-                    className="block py-2 px-4 font-medium text-center text-white rounded-[3rem] md:inline button"
+                    href=""
+                    className="block py-2 px-4 text-center text-white rounded-[3rem] md:inline gradient"
                   >
                     Fale Conosco
                   </a>
