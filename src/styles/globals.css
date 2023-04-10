@@ -68,3 +68,12 @@
     color: #EA6033;
     transition: .5s ease-in-out;
 }
+
+.gradientGray {
+    background-image: url('./../../public/images/GradientGray.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    color: transparent;
+}

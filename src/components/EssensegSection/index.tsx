@@ -3,7 +3,7 @@ import EssensegSite from "./../../../public/images/Essenseg.png";
 
 const EssensegSection = () => {
   return (
-    <section className="py-32 mt-[4rem]">
+    <section className="py-32 mt-[4rem] mx-auto">
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <figure>
@@ -26,7 +26,7 @@ const EssensegSection = () => {
                 <span className="block paragraph font-coolveticaRg">
                   Cristiano Morais
                 </span>
-                <span className="block text-white font-coolveticaLt text-sm mt-0.5">
+                <span className="block text-gray-300 font-coolveticaLt text-sm mt-0.5">
                     CEO, Essenseg
                 </span>
               </div>
