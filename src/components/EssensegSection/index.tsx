@@ -1,5 +1,6 @@
 import Image from "next/image";
 import EssensegSite from "./../../../public/images/Essenseg.png";
+import Cristiano from "./../../../public/images/Cristiano.png";
 
 const EssensegSection = () => {
   return (
@@ -16,7 +17,7 @@ const EssensegSection = () => {
             </blockquote>
             <div className="mt-6">
               <Image
-                src="https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg"
+                src={Cristiano}
                 className="w-16 h-16 mx-auto rounded-full"
                 width={64}
                 height={64}
@@ -27,7 +28,7 @@ const EssensegSection = () => {
                   Cristiano Morais
                 </span>
                 <span className="block text-gray-300 font-coolveticaLt text-sm mt-0.5">
-                    CEO, Essenseg
+                    COO, Essenseg
                 </span>
               </div>
             </div>
