@@ -35,9 +35,9 @@ const Essenseg = () => {
           <div className="mt-14">
             <Image
               src={EssensegSite}
-              width={1000}
-              height={1000}
-              className="w-full shadow-lg rounded-lg border"
+              width={500}
+              height={500}
+              className="w-full shadow-lg rounded-lg"
               alt=""
             />
           </div>

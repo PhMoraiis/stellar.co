@@ -48,6 +48,13 @@
     background-position: center;
 }
 
+.grayGradient {
+    background-image: url('./../../public/images/GradientGray.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .gradient:hover {
     background-image: url('./../../public/images/GradientGray.png');
     background-repeat: no-repeat;

@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import { Essenseg } from "../Essenseg";
 import { EssensegSection } from "../EssensegSection";
-
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Slider = () => {
   const [slides, setSlides] = useState([<Essenseg />, <EssensegSection />]);
@@ -22,19 +19,27 @@ const Slider = () => {
     setCurrentIndex(newIndex);
   };
 
-  const goToSlide = (slideIndex: number) => {
+  const goToSlide = (slideIndex: any) => {
     setCurrentIndex(slideIndex);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(nextSlide, 7000); // Slide irá mudar automaticamente após 7 segundos
+
+    return () => {
+      clearTimeout(timeout); // Limpa o timeout quando o componente é desmontado
+    };
+  }, [currentIndex]);
 
   return (
     <div className="max-w-screen-xl w-full m-auto py-16 px-4 relative">
       {slides[currentIndex]}
       {/* Left Arrow */}
-      <div className="group-hover:block duration-1000 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 gradient text-white cursor-pointer">
+      <div className="group-hover:block duration-1000 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 grayGradient text-white cursor-pointer">
         <IoIosArrowBack onClick={prevSlide} size={30} />
       </div>
       {/* Right Arrow */}
-      <div className="group-hover:block duration-1000 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 gradient text-white cursor-pointer">
+      <div className="group-hover:block duration-1000 absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 grayGradient text-white cursor-pointer">
         <IoIosArrowForward onClick={nextSlide} size={30} />
       </div>
     </div>
