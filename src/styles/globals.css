@@ -65,10 +65,17 @@
 
 
 .back {
-    background-image: url('./../../public/images/Fundo.svg');
+    background-image: url('./../../public/images/Background.svg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.backPreFooter {
+    background-image: url('./../../public/images/PreFooter.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
 }
 
 .hover:hover {

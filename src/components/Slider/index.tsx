@@ -32,7 +32,7 @@ const Slider = () => {
   }, [currentIndex]);
 
   return (
-    <div className="max-w-screen-xl w-full m-auto py-16 px-4 relative">
+    <div className="max-w-screen-xl w-full m-auto py-6 px-4 relative">
       {slides[currentIndex]}
       {/* Left Arrow */}
       <div className="group-hover:block duration-1000 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 grayGradient text-white cursor-pointer">
