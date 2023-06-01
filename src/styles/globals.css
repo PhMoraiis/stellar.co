@@ -71,6 +71,52 @@
     background-position: center;
 }
 
+@media (max-width: 1385px) {
+    .back {
+        background-image: url('./../../public/images/Background.svg');
+        background-repeat: no-repeat;
+        background-size: 200%;
+        background-position: center;
+    }
+}
+
+@media (max-width: 525px) {
+    .back {
+        background-image: url('./../../public/images/Background.svg');
+        background-repeat: no-repeat;
+        background-size: 250%;
+        background-position: center;
+    }
+}
+
+@media (max-width: 426px) {
+    .back {
+        background-image: url('./../../public/images/Background.svg');
+        background-repeat: no-repeat;
+        background-size: 300%;
+        background-position: center;
+    }
+}
+
+@media (max-width: 386px) {
+    .back {
+        background-image: url('./../../public/images/Background.svg');
+        background-repeat: no-repeat;
+        background-size: 340%;
+        background-position: center;
+    }
+}
+
+@media (max-width: 386px) {
+    .back {
+        background-image: url('./../../public/images/Background.svg');
+        background-repeat: no-repeat;
+        background-size: 340%;
+        background-position: center;
+    }
+}
+
+
 .backPreFooter {
     background-image: url('./../../public/images/PreFooter.svg');
     background-repeat: no-repeat;
