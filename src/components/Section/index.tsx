@@ -1,46 +1,37 @@
-import Image from "next/image";
-import { AiOutlineArrowRight } from "react-icons/ai";
-
-const Section = () => {
-  return (
-    <section className="py-32 gradientBack">
-      <div className="max-w-screen-xl mx-auto md:px-8">
-        <div className="items-center gap-x-12 sm:px-4 md:px-0 lg:flex">
-          <div className="flex-1 sm:hidden lg:block px-8">
-            <Image
-              src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-              className="md:max-w-xl rounded-lg "
-              alt=""
-              width={600}
-              height={600}
+const Section = () => (
+  <section className="py-32">
+    <div className="max-w-screen-xl mx-auto md:px-8">
+      <div className="grid grid-cols-1 gap-x-12 sm:px-4 md:px-0 lg:flex">
+        <div className="flex sm:mb-10 lg:block px-8">
+          <video
+            className="max-w-lg h-auto"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source
+              src="./movies/635b44258f935158cd960e72_stellar-filter2(1)-transcode.mp4"
+              type="video/mp4"
             />
-          </div>
-          <div className="max-w-xl px-4 space-y-3 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
-            <h3 className="paragraph font-coolveticaBd">
-              Professional services
-            </h3>
-            <p className="text-white text-3xl font-coolveticaRg sm:text-4xl">
-              Build your SaaS solution with help from our experts
-            </p>
-            <p className="mt-3 text-gray-300 font-coolveticaLt">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum, sed ut perspiciatis unde omnis iste natus
-              error sit voluptatem accusantium doloremque laudantium
-            </p>
-            <a
-              href=""
-              className="inline-flex gap-x-1 items-center paragraph font-coolveticaRg"
-            >
-              Learn more
-              <AiOutlineArrowRight className="text-white hover" />
-            </a>
-          </div>
+          </video>
+        </div>
+        <div className="max-w-xl px-4 space-y-6 mt-6 sm:px-0 md:mt-0 lg:max-w-4xl">
+          <h3 className="paragraph font-coolveticaRg text-[1.6rem]">
+            Advanced Filtering
+          </h3>
+          <p className="text-white text-4xl font-coolveticaRg sm:text-7xl">
+            Find the perfect person for the job.
+          </p>
+          <p className="mt-4 text-gray-400 text-[1.5rem] font-coolveticaLt">
+            Most platforms force you to wade through thousands of profiles to
+            find diamonds in the rough. We make it easy to discover and hire
+            the best within just minutes.
+          </p>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
-export { Section };
+export default Section;

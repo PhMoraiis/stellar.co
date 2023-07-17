@@ -32,108 +32,49 @@
     src: url('./../../src/fonts/CoolveticaEl-Regular.ttf');
 }
 
+.hover:hover {
+    color: #1aa8d7;
+    transition: .5s all ease-in-out;
+}
+
 .paragraph {
-    background-image: url('./../../public/images/Gradient.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: rgb(199, 208, 215);
+    background: linear-gradient(260deg, rgba(199, 208, 215, 1) 46%, rgba(26, 168, 215, 1) 100%);
+    background-clip: text;
+    color: transparent;
+}
+
+.textsGradient {
+    background: rgb(199, 208, 215);
+    background: linear-gradient(260deg, rgba(199, 208, 215, 1) 46%, rgba(26, 168, 215, 1) 100%);
     background-clip: text;
     color: transparent;
 }
 
 .gradient {
-    background-image: url('./../../public/images/Gradient.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-.grayGradient {
-    background-image: url('./../../public/images/GradientGray.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: rgb(129, 138, 146);
+    background: linear-gradient(90deg, rgba(129, 138, 146, 1) 0%, rgba(108, 117, 120, 1) 73%, rgba(98, 107, 110, 1) 100%);
 }
 
 .gradient:hover {
-    background-image: url('./../../public/images/GradientGray.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: rgb(129, 138, 146);
+    background: linear-gradient(90deg, rgba(129, 138, 146, 1) 0%, rgba(108, 117, 120, 1) 73%, rgba(98, 107, 110, 1) 100%);
     transition: 1s all ease-in-out;
 }
 
-
-.back {
-    background-image: url('./../../public/images/Background.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.grayGradient {
+    background: rgb(129, 138, 146);
+    background: linear-gradient(90deg, rgba(129, 138, 146, 1) 0%, rgba(108, 117, 120, 1) 73%, rgba(98, 107, 110, 1) 100%);
 }
 
-@media (max-width: 1385px) {
-    .back {
-        background-image: url('./../../public/images/Background.svg');
-        background-repeat: no-repeat;
-        background-size: 200%;
-        background-position: center;
-    }
+.grayGradient:hover {
+    background: #1aa8d7;
+    transition: 1s all ease-in-out;
 }
-
-@media (max-width: 525px) {
-    .back {
-        background-image: url('./../../public/images/Background.svg');
-        background-repeat: no-repeat;
-        background-size: 250%;
-        background-position: center;
-    }
-}
-
-@media (max-width: 426px) {
-    .back {
-        background-image: url('./../../public/images/Background.svg');
-        background-repeat: no-repeat;
-        background-size: 300%;
-        background-position: center;
-    }
-}
-
-@media (max-width: 386px) {
-    .back {
-        background-image: url('./../../public/images/Background.svg');
-        background-repeat: no-repeat;
-        background-size: 340%;
-        background-position: center;
-    }
-}
-
-@media (max-width: 386px) {
-    .back {
-        background-image: url('./../../public/images/Background.svg');
-        background-repeat: no-repeat;
-        background-size: 340%;
-        background-position: center;
-    }
-}
-
 
 .backPreFooter {
-    background-image: url('./../../public/images/PreFooter.svg');
+    background-image: url('./../../public/images/644958768fa6738f092b41bb_COMP_gradient\ large.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-}
-
-.hover:hover {
-    color: #EA6033;
-    transition: .5s ease-in-out;
-}
-
-.gradientGray {
-    background-image: url('./../../public/images/GradientGray.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-clip: text;
-    color: transparent;
 }

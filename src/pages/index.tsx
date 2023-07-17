@@ -1,18 +1,26 @@
-import { Hero } from "@/components/Hero";
-import { Header } from "../components/Header";
-import { Section } from "@/components/Section";
-import { Slider } from "@/components/Slider";
-import { PreFooter } from "@/components/PreFooter";
+import React from 'react';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import SectionClone from '../components/SectionClone';
+import PreFooter from '../components/PreFooter';
+import Footer from '../components/Footer';
 
-export default function Home() {
+const Home = () => {
+  const sections = [
+    <Header />,
+    <Hero />,
+    <Section />,
+    <SectionClone />,
+    <PreFooter />,
+    <Footer />,
+  ];
+
   return (
-    <div className="bg-[#000000]">
-      <div className="back">
-        <Header />
-        <Hero />
-      </div>
-      <Section />
-      <PreFooter />
+    <div className="bg-black">
+      {sections}
     </div>
   );
-}
+};
+
+export default Home;
