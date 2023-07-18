@@ -1,22 +1,22 @@
 const Section = () => (
-  <section className="py-32">
-    <div className="max-w-screen-xl mx-auto md:px-8">
-      <div className="grid grid-cols-1 gap-x-12 sm:px-4 md:px-0 lg:flex">
-        <div className="flex sm:mb-10 lg:block px-8">
+  <section className="py-[12rem]">
+    <div className="max-w-screen-[1640px] mx-auto md:px-8">
+      <div className="grid grid-cols-2 gap-x-16 sm:px-4 md:px-0 lg:flex">
+        <div className="flex items-center justify-center sm:mb-10 lg:block">
           <video
-            className="max-w-lg h-auto"
+            className="max-w-xl h-auto mx-auto"
             autoPlay
             loop
             muted
             playsInline
           >
             <source
-              src="./movies/635b44258f935158cd960e72_stellar-filter2(1)-transcode.mp4"
+              src="./movies/231981044_226614866009546_642779584055189382_n.mp4"
               type="video/mp4"
             />
           </video>
         </div>
-        <div className="max-w-xl px-4 space-y-6 mt-6 sm:px-0 md:mt-0 lg:max-w-4xl">
+        <div className="flex flex-col justify-center max-w-xl px-4 space-y-8 sm:px-0 md:mt-0 lg:max-w-2xl">
           <h3 className="paragraph font-coolveticaRg text-[1.6rem]">
             Advanced Filtering
           </h3>

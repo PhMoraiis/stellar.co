@@ -46,7 +46,7 @@
 
 .textsGradient {
     background: rgb(199, 208, 215);
-    background: linear-gradient(260deg, rgba(199, 208, 215, 1) 46%, rgba(26, 168, 215, 1) 100%);
+    background: linear-gradient(260deg, rgb(198, 208, 215) 46%, rgb(26, 167, 213) 100%);
     background-clip: text;
     color: transparent;
 }
@@ -73,8 +73,26 @@
 }
 
 .backPreFooter {
-    background-image: url('./../../public/images/644958768fa6738f092b41bb_COMP_gradient\ large.jpg');
+    background-image: url('./../../public/images/f50c53106417257.5f8f6bcc02fe3.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: bottom;
 }
+
+.glass {
+    background: rgba(255,255,255,0.25);
+-webkit-backdrop-filter: blur(6px);
+backdrop-filter: blur(6px);
+border: 1px solid rgba(255,255,255,0.125);
+
+}
+
+.circle {
+    background: rgb(106, 11, 1);
+    background: linear-gradient(160deg, rgba(106, 11, 1, 1) 0%, rgba(175, 8, 1, 1) 25%, rgba(226, 41, 1, 1) 50%, rgba(242, 104, 23, 1) 75%, rgba(235, 162, 98, 1) 100%);
+}
+
+/* Glassmorphismo */
+
+
+/* Fim da Circle Section */

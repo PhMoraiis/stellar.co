@@ -5,8 +5,8 @@ const Header = () => {
   const [state, setState] = useState(false);
 
   const navigation = [
-    { title: "Sobre Nós", path: "javascript:void(0)" },
-    { title: "Serviços", path: "javascript:void(0)" },
+    { title: "Sobre Nós", path: "" },
+    { title: "Serviços", path: "" },
   ];
 
   const toggleState = () => {
@@ -50,10 +50,10 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-transparent max-w-screen-xl mx-auto md:text-sm font-coolveticaLt">
+    <nav className="bg-transparent max-w-screen-[1640px] mx-auto md:text-sm font-coolveticaLt">
       <div className="items-center mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-2 md:py-2 md:block">
-          <a href="javascript:void(0)">
+          <a href="">
             <Image
               src="/images/Logo.svg"
               width={150}
