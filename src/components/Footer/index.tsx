@@ -9,19 +9,15 @@ const Footer = () => {
       label: "About",
       items: [
         {
-          href: "javascript:void()",
           name: "Termos",
         },
         {
-          href: "javascript:void()",
           name: "Licenças",
         },
         {
-          href: "javascript:void()",
           name: "Privacidade",
         },
         {
-          href: "javascript:void()",
           name: "Sobre Nós",
         },
       ],
@@ -33,11 +29,10 @@ const Footer = () => {
       <ul className="flex flex-col gap-y-3">
         {footerNavs.map((nav) => (
           <li key={nav.label}>
-            <ul className="flex gap-x-4">
+            <ul className="flex gap-x-4 py-2">
               {nav.items.map((item) => (
                 <li key={item.name}>
                   <a
-                    href={item.href}
                     className="text-gray-400 text-sm hover:text-gray-200"
                   >
                     {item.name}
@@ -76,17 +71,17 @@ const Footer = () => {
           <p className="text-gray-300">
             © 2023 Stellar Inovações. Todos os direitos reservados.
           </p>
-          <div className="flex items-center gap-x-6 text-gray-400">
-            <a href="javascript:void()">
+          <div className="flex items-center gap-x-6 py-2 text-gray-400">
+            <a>
               <BsFacebook  className="w-8 h-8 hover:text-gray-200 duration-150"/>
             </a>
-            <a href="javascript:void()">
+            <a>
               <IoLogoTwitter  className="w-8 h-8 hover:text-gray-200 duration-150"/>
             </a>
-            <a href="javascript:void()">
+            <a>
                 <IoLogoGithub className="w-8 h-8 hover:text-gray-200 duration-150" />
             </a>
-            <a href="javascript:void()">
+            <a>
              <IoLogoInstagram className="w-8 h-8 hover:text-gray-200 duration-150" />
             </a>
           </div>

@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <nav className="bg-transparent max-w-screen-[1640px] mx-auto md:text-sm font-coolveticaLt">
       <div className="items-center mx-auto md:flex md:px-8">
-        <div className="flex items-center justify-between py-2 md:py-2 md:block">
+        <div className="flex items-center justify-between py-2 px-2 md:py-2 md:block">
           <a href="">
             <Image
               src="/images/Logo.svg"
