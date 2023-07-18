@@ -1,10 +1,10 @@
 const Section = () => (
   <section className="py-[12rem]">
     <div className="max-w-screen-[1640px] mx-auto md:px-8">
-      <div className="grid grid-cols-2 gap-x-16 sm:px-4 md:px-0 lg:flex">
+      <div className="grid grid-cols-4 max-w-full sm:px-4 md:px-0 lg:flex lg:justify-center">
         <div className="flex items-center justify-center sm:mb-10 lg:block">
           <video
-            className="max-w-xl h-auto mx-auto"
+            className="max-w-2xl h-auto mx-auto"
             autoPlay
             loop
             muted
@@ -16,7 +16,7 @@ const Section = () => (
             />
           </video>
         </div>
-        <div className="flex flex-col justify-center max-w-xl px-4 space-y-8 sm:px-0 md:mt-0 lg:max-w-2xl">
+        <div className="flex flex-col justify-center px-4 space-y-8 sm:px-0 md:mt-0 lg:max-w-2xl">
           <h3 className="paragraph font-coolveticaRg text-[1.6rem]">
             Advanced Filtering
           </h3>
