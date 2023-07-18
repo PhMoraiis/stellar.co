@@ -2,7 +2,7 @@ const Section = () => (
   <section className="py-[12rem]">
     <div className="max-w-screen-[1640px] mx-auto md:px-8">
       <div className="grid grid-cols-4 max-w-full sm:px-4 md:px-0 lg:flex lg:justify-center">
-        <div className="flex items-center justify-center sm:mb-10 lg:block">
+        <div className="flex items-center justify-center sm:mb-10 lg:block px-6">
           <video
             className="max-w-2xl h-auto mx-auto"
             autoPlay
