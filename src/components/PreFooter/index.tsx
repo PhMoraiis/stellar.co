@@ -1,6 +1,6 @@
 const PreFooter = () => {
   const containerClasses =
-    "max-w-screen-[1640px] mx-auto md:px-8 py-10 lg:py-[12rem] backPreFooter";
+    "max-w-screen-[1640px] mx-auto md:px-8 py-10 lg:py-[12rem] lg:pt-[24rem] backPreFooter";
   const titleClasses =
     "text-5xl lg:text-[7rem] text-white text-center flex justify-center items-center pt-72 font-coolveticaRg mx-auto md:text-[6.5rem]";
   const buttonClasses =
