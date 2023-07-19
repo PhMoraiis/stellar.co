@@ -79,9 +79,6 @@ const Footer = () => {
               <IoLogoTwitter  className="w-8 h-8 hover:text-gray-200 duration-150"/>
             </a>
             <a>
-                <IoLogoGithub className="w-8 h-8 hover:text-gray-200 duration-150" />
-            </a>
-            <a>
              <IoLogoInstagram className="w-8 h-8 hover:text-gray-200 duration-150" />
             </a>
           </div>
