@@ -2,7 +2,13 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  icons: "./favicon.ico",
+  icons: {
+    icon: {
+      url: "/favicon.ico",
+      type: "icon/ico",
+    },
+    shortcut: { url: "/favicon.ico", type: "icon/ico" },
+  },
   title: "Stellar — Desenvolvimento de Software Personalizado",
   description: "A Stellar é uma empresa especializada em desenvolvimento de software personalizado para atender às necessidades exclusivas de cada cliente. Entre em contato conosco para saber mais.",
   keywords: "desenvolvimento de software, software personalizado, soluções tecnológicas, inovação, tecnologia",
