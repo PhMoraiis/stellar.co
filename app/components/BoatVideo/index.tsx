@@ -6,7 +6,7 @@ function BoatVideo() {
         muted
         loop
       >
-        <source src="./movies/pexels-best-stock-7094565 (2160p).mp4" type="video/mp4" />
+        <source src="./movies/pexels-best-stock-7094565 (2160p) (1).mp4" type="video/mp4" />
       </video>
     );
   }
