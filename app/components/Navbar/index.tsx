@@ -26,25 +26,25 @@ function Navbar() {
         <motion.div variants={reveal}>
           <Logo />
         </motion.div>
-        <div className="flex gap-[20px] items-center md:hidden">
+        <div className="md:flex gap-[20px] items-center hidden">
           <motion.span variants={reveal} className="cursor-pointer">
-            solutions.
+            soluções.
           </motion.span>
           <motion.span variants={reveal} className="cursor-pointer">
-            courses.
+            serviços.
           </motion.span>
           <motion.span variants={reveal} className="cursor-pointer">
-            resources.
+            recursos.
           </motion.span>
           <motion.span variants={reveal} className="cursor-pointer">
-            about.
+            sobre.
           </motion.span>
         </div>
         <motion.div
           variants={reveal}
           className="flex gap-[5px] items-center cursor-pointer"
         >
-          <span className="mb-[3px]">sign in</span>
+          <span className="mb-[3px] font-coolveticaLt">Descubra Mais</span>
           <ArrowRight />
         </motion.div>
       </motion.div>

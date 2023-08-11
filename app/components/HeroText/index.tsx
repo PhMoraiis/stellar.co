@@ -18,22 +18,23 @@ function HeroText() {
         initial="hiddenVariant"
         animate="revealedVariant"
         transition={{ delay: animationStart + 1, duration: 0.5 }}
-        className="flex flex-col text-[3vw] md:text-[24px] font-coolveticaBd mb-[30px] pt-[100px]"
+        className="flex flex-col text-[6vw] md:text-[4rem] font-geometosRg mb-[30px] pt-[100px]"
       >
         <span className="flex items-center gap-[10px]">
-          delivering <Compass /> industrys
+          uma nova <Compass /> para voce
         </span>
-        <span>top tallents work</span>
+        <span>era</span>
       </motion.div>
       <motion.span
         variants={reveal}
         initial="hiddenVariant"
         animate="revealedVariant"
         transition={{ delay: animationStart + 1.2, duration: 0.5 }}
-        className="mb-[30px] w-1/4 lg:w-1/3 md:w-1/2 text-[-14px] leading-tight font-coolveticaRg"
+        className="mb-[30px] w-3/4 lg:w-1/3 md:w-1/2 text-[-14px] leading-tight font-coolveticaLt"
       >
-        
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure quis accusamus vitae, officia natus eos? Repudiandae asperiores labore nesciunt officiis animi alias impedit libero quia praesentium, excepturi itaque doloremque dolorum. lorem
+        Apaixonados por tecnologia, inovação e resultados. Nossa missão é transformar ideias ousadas em soluções práticas que impulsionam o sucesso dos nossos clientes.
+
+        Combinamos expertise técnica com criatividade, criando produtos e serviços que redefinem a forma como o mundo funciona.
       </motion.span>
     </motion.div>
   );

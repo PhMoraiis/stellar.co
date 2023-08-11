@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react';
-import Header from './components/Header';
 import Hero from './components/Hero';
 import Section from './components/Section';
 import SectionClone from './components/SectionClone';
@@ -15,9 +14,7 @@ export default function Home() {
       <div className="bg-white">
         <HomeTest />
       </div>
-      <div className='bg-black'>
-        <Header />
-        <Hero />
+      <div className='bg-[#000100]'>
         <Section />
         <SectionClone />
         <PreFooter />
