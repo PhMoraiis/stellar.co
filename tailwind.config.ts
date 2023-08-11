@@ -8,10 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        'gacor': ['Gacor'],
+        'coolveticaLt': ['Coolvetica Light'],
+        'coolveticaEl': ['Coolvetica Extra Light'],
+        'coolveticaRg': ['Coolvetica'],
+        'coolveticaBd': ['Coolvetica Bold'],
+        'coolveticaHv': ['Coolvetica Heavy'],
+        'geometosEl': ['Geometos Neue Extra Light'],
+        'geometosLt': ['Geometos Neue Light'],
+        'geometosRg': ['Geometos Neue Regular'],
+        'geometosBd': ['Geometos Neue Bold'],
+        'geometosBl': ['Geometos Neue Black'],
+        'geometosEb': ['Geometos Neue Extra Bold'],
+        'geometosUl': ['Geometos Neue Ultra'],
       },
     },
   },
