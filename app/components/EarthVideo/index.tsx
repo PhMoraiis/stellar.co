@@ -6,6 +6,7 @@ function EarthVideo() {
         muted
         loop
       >
+        <source src="./movies/earth-video2.webm" type="video/webm" />
         <source src="./movies/earth-video.mp4" type="video/mp4" />
       </video>
     );
