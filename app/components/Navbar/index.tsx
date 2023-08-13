@@ -2,6 +2,7 @@ import Logo from "../Logo";
 import ArrowRight from "../Arrow";
 import { motion } from "framer-motion";
 import { animationStart, reveal } from "../../utils/animation";
+import Link from "next/link";
 
 function Navbar() {
   return (
@@ -24,7 +25,9 @@ function Navbar() {
         className="w-full flex items-center justify-around h-[80px] absolute top-0 bg-white z-50"
       >
         <motion.div variants={reveal}>
-          <Logo />
+          <Link href="/">
+            <Logo />
+          </Link>
         </motion.div>
         <div className="md:flex gap-[20px] items-center hidden">
           <motion.span variants={reveal} className="cursor-pointer">

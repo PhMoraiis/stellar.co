@@ -1,6 +1,6 @@
 'use client'
 
-import BoatVideo from "../BoatVideo";
+import EarthVideo from "../EarthVideo";
 import HeroText from "../HeroText";
 import MapImages from "../MapImages";
 import Navbar from "../Navbar";
@@ -11,7 +11,7 @@ function Home() {
       <Navbar />
       <HeroText />
       <MapImages />
-      <BoatVideo />
+      <EarthVideo />
     </>
   );
 }
