@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 export default function Home() {
   return (
     <div>
-      <div className="bg-white">
+      <div className="bg-[#f8f8ff]">
         <Hero />
       </div>
       <div className='bg-[#000100]'>

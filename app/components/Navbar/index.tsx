@@ -22,14 +22,14 @@ function Navbar() {
           duration: 0.5,
           delayChildren: animationStart + 0.5,
         }}
-        className="w-full flex items-center justify-around h-[80px] absolute top-0 bg-white z-50"
+        className="w-full flex items-center justify-around h-[80px] absolute top-0 bg-[#f8f8ff] z-50"
       >
         <motion.div variants={reveal}>
           <Link href="/">
             <Logo />
           </Link>
         </motion.div>
-        <div className="md:flex gap-[20px] items-center hidden">
+        <div className="gap-[20px] items-center hidden">
           <motion.span variants={reveal} className="cursor-pointer">
             soluções.
           </motion.span>
@@ -43,13 +43,15 @@ function Navbar() {
             sobre.
           </motion.span>
         </div>
-        <motion.div
-          variants={reveal}
-          className="flex gap-[5px] items-center cursor-pointer"
-        >
-          <span className="mb-[3px] font-coolveticaLt">Descubra Mais</span>
-          <ArrowRight />
-        </motion.div>
+        <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
+          <motion.div
+            variants={reveal}
+            className="flex gap-[5px] items-center cursor-pointer"
+          >
+            <span className="mb-[3px] font-coolveticaLt">Descubra Mais</span>
+            <ArrowRight />
+          </motion.div>
+        </Link>
       </motion.div>
     </motion.div>
   );

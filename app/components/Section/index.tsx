@@ -4,15 +4,13 @@ const Section = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse lg:justify-between">
         <div className="flex flex-col justify-center px-4 space-y-8 sm:px-0 md:mt-0 lg:max-w-2xl lg:justify-start text-center lg:text-left">
           <h3 className="paragraph font-coolveticaRg lg:text-3xl text-2xl">
-            Advanced Filtering
+            Bem vindo à Stellar
           </h3>
           <p className="text-white text-[2rem] leading-9 font-coolveticaRg sm:text-7xl">
-            Find the perfect person for the job.
+            A especialista no que você imaginar.
           </p>
           <p className="mt-4 text-gray-400 text-lg sm:text-lg font-coolveticaLt">
-            Most platforms force you to wade through thousands of profiles to
-            find diamonds in the rough. We make it easy to discover and hire the
-            best within just minutes.
+            Dedicada a iluminar o caminho do futuro. A Stellar é uma empresa que não só desenvolve soluções tecnológicas, mas também promove ideias e impulsiona o potencial humano. Na Stellar, acreditamos que juntos, podemos criar um impacto brilhante no mundo.
           </p>
         </div>
 
