@@ -1,4 +1,4 @@
-import { IoLogoGithub, IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
+import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
 import { BsFacebook } from "react-icons/bs";
 import Logo from "../Logo";
 import Link from "next/link";
@@ -52,13 +52,15 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto px-4 md:px-8">
         <div className="justify-between items-center gap-12 md:flex">
           <div className="flex-1 max-w-lg">
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
           </div>
           <div className="flex flex-col mt-6 md:mt-0">
             <h3 className="text-black text-[1rem] pb-4">Brilhe Conosco</h3>
             <p className="text-gray-700 text-[0.9rem] pb-2">Venha fazer parte conosco da Stellar</p>
             <Link href="https://www.instagram.com/stellar.ti/" className="inline-block py-2 px-2 text-black hover:bg-[#1aa8d7] font-coolveticaLt grayGradient rounded-md">
-                Saiba Mais
+              Saiba Mais
             </Link>
           </div>
         </div>
