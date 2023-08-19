@@ -13,7 +13,7 @@ export default function Home() {
       <div className="bg-[#f8f8ff]">
         <Hero />
       </div>
-      <div className='bg-[#000100]'>
+      <div className='bg-black'>
         <Section />
         <SectionClone />
         <PreFooter />

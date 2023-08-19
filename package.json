@@ -15,7 +15,6 @@
     "autoprefixer": "10.4.14",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.13",
-    "framer-motion": "^10.15.1",
     "next": "13.4.13",
     "postcss": "8.4.27",
     "react": "18.2.0",
@@ -25,6 +24,8 @@
   },
   "devDependencies": {
     "animejs": "^3.2.1",
+    "framer-motion": "^10.16.0",
+    "gsap": "^3.12.2",
     "lottie-react": "^2.4.0",
     "react-icons": "^4.10.1"
   }

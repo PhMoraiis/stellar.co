@@ -67,34 +67,11 @@
     src: url('./fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
 }
 
-.hover:hover {
-    color: #1aa8d7;
-    transition: .5s all ease-in-out;
-}
-
 .paragraph {
-    background: rgb(199, 208, 215);
-    background: linear-gradient(260deg, rgba(199, 208, 215, 1) 46%, rgba(26, 168, 215, 1) 100%);
+    background-color: rgb(38, 38, 38);
+    background: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
     background-clip: text;
     color: transparent;
-}
-
-.textsGradient {
-    background: rgb(199, 208, 215);
-    background: linear-gradient(260deg, rgb(198, 208, 215) 46%, rgb(26, 167, 213) 100%);
-    background-clip: text;
-    color: transparent;
-}
-
-.gradient {
-    background: rgb(129, 138, 146);
-    background: linear-gradient(90deg, rgba(129, 138, 146, 1) 0%, rgba(108, 117, 120, 1) 73%, rgba(98, 107, 110, 1) 100%);
-}
-
-.gradient:hover {
-    background: rgb(129, 138, 146);
-    background: linear-gradient(90deg, rgba(129, 138, 146, 1) 0%, rgba(108, 117, 120, 1) 73%, rgba(98, 107, 110, 1) 100%);
-    transition: 1s all ease-in-out;
 }
 
 .grayGradient {
@@ -113,3 +90,8 @@
     background-size: cover;
     background-position: top;
 }
+
+.bg-gradient {
+    background-color: rgb(38, 38, 38);
+    background-image: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+  }
