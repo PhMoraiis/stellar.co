@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "extends": [
     "next/babel",
     "next/core-web-vitals",
     "next"
   ]
 }
+=======
+  "extends": "next/core-web-vitals"
+}
+>>>>>>> mainUpdate

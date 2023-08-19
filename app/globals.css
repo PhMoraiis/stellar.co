@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Gacor';
+    src: url('./fonts/Gacor.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('./fonts/coolveticarg.otf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Bold';
+    src: url('./fonts/CoolveticaRg-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Heavy';
+    src: url('./fonts/CoolveticaHv-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Light';
+    src: url('./fonts/CoolveticaLt-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Coolvetica Extra Light';
+    src: url('./fonts/CoolveticaEl-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Extra Light';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue_extralight.otf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Light';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue_light.otf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Regular';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue.otf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Bold';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue_bold.otf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Black';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue_black.otf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Extra Bold';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue_extrabold.otf');
+}
+
+@font-face {
+    font-family: 'Geometos Neue Ultra';
+    src: url('./fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
+}
+
+.paragraph {
+    background-color: rgb(38, 38, 38);
+    background: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+    background-clip: text;
+    color: transparent;
+}
+
+.grayGradient {
+    background: rgb(129, 138, 146);
+    background: linear-gradient(90deg, rgba(129, 138, 146, 1) 0%, rgba(108, 117, 120, 1) 73%, rgba(98, 107, 110, 1) 100%);
+}
+
+.grayGradient:hover {
+    background: #1aa8d7;
+    transition: 1s all ease-in-out;
+}
+
+.backPreFooter {
+    background-image: url('./../public/images/Teste.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.bg-gradient {
+    background-color: rgb(38, 38, 38);
+    background-image: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+  }
