@@ -1,17 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/app/**/*.{js,ts,jsx,tsx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}', // Note the addition of the `app` directory.
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       fontFamily: {
         'gacor': ['Gacor'],
         'coolveticaLt': ['Coolvetica Light'],
@@ -26,6 +21,15 @@ module.exports = {
         'geometosBl': ['Geometos Neue Black'],
         'geometosEb': ['Geometos Neue Extra Bold'],
         'geometosUl': ['Geometos Neue Ultra'],
+      },
+      animation: {
+        "clip-from-top-animation": "clip 1s ease-in-out 5.5s forwards",
+      },
+      keyframes: {
+        "clip": {
+          "0%": { 'clip-path': "ellipse(100% 100% at 50% 50%)" },
+          "100%": { 'clip-path': "ellipse(160% 160% at 50% 160%)" },
+        },
       },
     },
   },
