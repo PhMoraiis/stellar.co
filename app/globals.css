@@ -85,10 +85,10 @@
 }
 
 .backPreFooter {
-    background-image: url('./../public/images/Teste.png');
+    background-image: url('/images/Group.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: center;
 }
 
 .bg-gradient {

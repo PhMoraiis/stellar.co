@@ -1,7 +1,7 @@
 import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
 import { BsFacebook } from "react-icons/bs";
 import Link from "next/link";
-import LogoWhite from "../Logo";
+import LogoWhite from "../LogoWhite";
 import AnimatedLink from "../AnimatedLink";
 
 const Footer = () => {
@@ -55,9 +55,11 @@ const Footer = () => {
           <div className="flex flex-col mt-6 md:mt-0">
             <h3 className="text-white text-[1rem] pb-4">Brilhe Conosco</h3>
             <p className="text-gray-400 text-[0.9rem] pb-2">Venha fazer parte conosco da Stellar</p>
-            <Link href="https://www.instagram.com/stellar.ti/" className="inline-block py-2 px-2 text-white hover:bg-[#1aa8d7] font-coolveticaLt grayGradient rounded-md">
-              Saiba Mais
-            </Link>
+            <div className="flex justify-start items-center sm:space-y-0">
+              <Link href="https://www.instagram.com/stellar.ti/" className="block py-2 px-8 lg:px-[2rem] lg:py-2 lg:text-xl text-white text-md mt-2 font-coolveticaLt grayGradient rounded-md">
+                Saiba Mais
+              </Link>
+            </div>
           </div>
         </div>
         <div className="mt-10 py-10 border-t border-gray-300 items-center justify-between sm:flex">
