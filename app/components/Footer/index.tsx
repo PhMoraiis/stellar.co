@@ -90,7 +90,7 @@ const Footer = () => {
         <div className="lg:flex">
           <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
             <h1 className="text-[1.6rem] lg:text-[3rem] text-white font-coolveticaRg flex items-center">
-              Relaxa. Nos guiamos você <StarWhite />
+              Relaxa. Nós guiamos você <StarWhite />
             </h1>
             <div className="text-white text-xl lg:text-2xl font-coolveticaLt border-b-[1px] border-white inline-block">
               <AnimatedLink href="https://www.instagram.com/stellar.ti/" target="_blank" title={"Descubra mais sobre nós."} />
