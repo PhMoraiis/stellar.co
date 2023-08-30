@@ -23,7 +23,7 @@ module.exports = {
         'geometosUl': ['Geometos Neue Ultra'],
       },
       animation: {
-        "clip-from-top-animation": "clip 1s ease-in-out 5.5s forwards",
+        "clip-from-top-animation": "clip 1s ease-in-out 6s forwards",
       },
       keyframes: {
         "clip": {

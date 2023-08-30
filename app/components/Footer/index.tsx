@@ -1,83 +1,123 @@
-import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
-import { BsFacebook } from "react-icons/bs";
-import Link from "next/link";
-import LogoWhite from "../LogoWhite";
 import AnimatedLink from "../AnimatedLink";
+import StarWhite from "../StarWhite";
+
+import { FiArrowUpRight } from "react-icons/fi";
+
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+
 
 const Footer = () => {
-
-  const footerNavs = [
-    {
-      label: "About",
-      items: [
-        {
-          name: "Termos",
-        },
-        {
-          name: "Licenças",
-        },
-        {
-          name: "Privacidade",
-        },
-        {
-          name: "Sobre Nós",
-        },
-      ],
-    },
-  ];
+  const pathname = usePathname();
 
   const renderFooterNavs = () => {
+    const navItems = [
+      { title: "home.", route: "/" },
+      { title: "soluções.", route: "/solutions" },
+      { title: "stellaris.", route: "/stellaris" },
+      { title: "works.", route: "/works" },
+      { title: "sobre.", route: "/about" },
+      { title: "contato.", route: "/contact" },
+    ];
+
     return (
-      <ul className="flex flex-col gap-y-3 text-gray-200">
-        <li>
-          <ul className="flex gap-x-4 py-2">
-            <li className="flex gap-x-4">
-              <AnimatedLink title={"Termos"} />
-              <AnimatedLink title={"Licenças"} />
-              <AnimatedLink title={"Privacidade"} />
-              <AnimatedLink title={"Sobre Nós"} />
-            </li>
-          </ul>
+      <ul className="text-gray-200 text-xl lg:text-2xl">
+        {navItems.map((item) => (
+          <li
+            key={item.title}
+            className={`flex flex-col gap-y-2 ${pathname.toString() === item.route ? "border-b-[1px] border-white inline-flex" : ""
+              }`}
+          >
+            <Link href={item.route}>
+              <AnimatedLink title={item.title} href={item.route} />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const renderFooterSocials = () => {
+    return (
+      <ul className="text-gray-200 text-xl lg:text-2xl">
+        <li className="flex flex-col gap-y-2">
+          <div className="flex items-center">
+            <AnimatedLink title={"x."} />
+            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
+          </div>
+          <div className="flex items-center">
+            <AnimatedLink title={"instagram."} />
+            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
+          </div>
+          <div className="flex items-center">
+            <AnimatedLink title={"linkedin."} />
+            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
+          </div>
         </li>
       </ul>
     );
   };
 
-  return (
-    <footer className="pt-10 bg-[#171718]">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8">
-        <div className="justify-between items-center gap-12 md:flex">
-          <div className="flex-1 max-w-lg">
-            <Link href="/">
-              <LogoWhite />
+  const renderFooterLegals = () => {
+
+    const navItemsLegals = [
+      { title: "termos.", route: "/terms" },
+      { title: "privacidade.", route: "/privacy" },
+      { title: "cookies.", route: "/cookies" },
+    ];
+
+    return (
+      <ul className="text-gray-200 text-xl lg:text-2xl mb-[2.7rem]">
+        {navItemsLegals.map((item) => (
+          <li
+            key={item.title}
+            className={`flex flex-col gap-y-2 ${pathname.toString() === item.route ? "border-b-[1px] border-white inline-block" : ""
+              }`}
+          >
+            <Link href={item.route}>
+              <AnimatedLink title={item.title} href={item.route} />
             </Link>
-          </div>
-          <div className="flex flex-col mt-6 md:mt-0">
-            <h3 className="text-white text-[1rem] pb-4">Brilhe Conosco</h3>
-            <p className="text-gray-400 text-[0.9rem] pb-2">Venha fazer parte conosco da Stellar</p>
-            <div className="flex justify-start items-center sm:space-y-0">
-              <Link href="https://www.instagram.com/stellar.ti/" className="block py-2 px-8 lg:px-[2rem] lg:py-2 lg:text-xl text-white text-md mt-2 font-coolveticaLt grayGradient rounded-md">
-                Saiba Mais
-              </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  return (
+    <footer className="py-4 pb-6 lg:py-12 bg-[#171718] font-coolveticaLt">
+      <div className="px-4 lg:px-20">
+        <div className="lg:flex">
+          <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
+            <h1 className="text-[1.6rem] lg:text-[3rem] text-white font-coolveticaRg flex items-center">
+              Relaxa. Nos guiamos você <StarWhite />
+            </h1>
+            <div className="text-white text-xl lg:text-2xl font-coolveticaLt border-b-[1px] border-white inline-block">
+              <AnimatedLink href="https://www.instagram.com/stellar.ti/" target="_blank" title={"Descubra mais sobre nós."} />
             </div>
           </div>
-        </div>
-        <div className="mt-10 py-10 border-t border-gray-300 items-center justify-between sm:flex">
-          <div>{renderFooterNavs()}</div>
-          <p className="text-gray-300">
-            © 2023 Stellar Inovações. Todos os direitos reservados.
-          </p>
-          <div className="flex items-center gap-x-6 py-2 text-gray-300">
-            <Link href="https://www.instagram.com/stellar.ti/">
-              <BsFacebook className="w-8 h-8 hover:text-gray-500 duration-150" />
-            </Link>
-            <Link href="https://www.instagram.com/stellar.ti/">
-              <IoLogoTwitter className="w-8 h-8 hover:text-gray-500 duration-150" />
-            </Link>
-            <Link href="https://www.instagram.com/stellar.ti/">
-              <IoLogoInstagram className="w-8 h-8 hover:text-gray-500 duration-150" />
-            </Link>
+          <div className="flex flex-col">
+            <div className="grid grid-cols-2 gap-12">
+              <div className="pb-12">
+                {renderFooterNavs()}
+              </div>
+              <div className="text-white text-xl pb-4 lg:ml-8">
+                <h3 className="font-coolveticaEl text-gray-400 mb-1">©2023 Legal</h3>
+                {renderFooterLegals()}
+              </div>
+            </div>
+            {renderFooterSocials()}
           </div>
+        </div>
+        <div className="flex flex-row justify-center gap-2 mt-10 py-2 mx-auto w-[2rem] lg:w-full lg:justify-between">
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/s.svg" width={200} height={220} alt="Stellar" />
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/t.svg" width={200} height={220} alt="Stellar" />
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/e.svg" width={200} height={220} alt="Stellar" />
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/l.svg" width={200} height={220} alt="Stellar" />
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/l.svg" width={200} height={220} alt="Stellar" />
+          <h1 className="hover:scale-105 duration-100 ease-in-out font-geometosBd text-white text-[3.2rem] mt-[1rem] lg:text-[20rem] lg:mt-[4rem]">A</h1>
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/r.svg" width={210} height={220} alt="Stellar" />
+          <Image className="hover:scale-110 duration-100 ease-in-out mb-16 lg:mb-52" src="/images/Ellipse.svg" width={60} height={60} alt="Stellar" />
         </div>
       </div>
     </footer>

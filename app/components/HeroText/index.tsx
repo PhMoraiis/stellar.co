@@ -1,8 +1,8 @@
 'use client'
 
 import { motion } from "framer-motion";
-import Compass from "../Compass";
 import { animationStart, reveal } from "./../../utils/animation";
+import Star from "../Star";
 
 function HeroText() {
   return (
@@ -21,9 +21,9 @@ function HeroText() {
         className="flex flex-col text-[6vw] md:text-[4rem] font-geometosRg mb-[30px] pt-[100px]"
       >
         <span className="flex items-center gap-[10px]">
-          uma nova <Compass /> para voce
+          um novo <Star /> caminho
         </span>
-        <span>era</span>
+        <span>para as estrelas</span>
       </motion.div>
       <motion.span
         variants={reveal}

@@ -9,8 +9,8 @@ import AnimatedLink from "../AnimatedLink";
 
 const navLinks = [
   { title: "soluções.", href: "/solutions" },
-  { title: "serviços.", href: "/services" },
-  { title: "recursos.", href: "/resources" },
+  { title: "stellaris.", href: "/stellaris" },
+  { title: "works.", href: "/works" },
   { title: "sobre.", href: "/about" },
   { title: "contato.", href: "/contact" },
 ];
@@ -82,22 +82,13 @@ const Navbar = () => {
           </Link>
         </motion.div>
         <div className="md:flex gap-[20px] text-lg items-center hidden">
-          <Link href="">
-            <AnimatedLink title={"soluções."} />
-          </Link>
-          <Link href="">
-            <AnimatedLink title={"serviços."} />
-          </Link>
-          <Link href="">
-            <AnimatedLink title={"recursos."} />
-          </Link>
-          <Link href="">
-            <AnimatedLink title={"sobre."} />
-          </Link>
-          <Link href="">
-            <AnimatedLink title={"contato."} />
-          </Link>
+          {navLinks.map((link) => (
+            <Link key={link.title} href={link.href}>
+              <AnimatedLink title={link.title} />
+            </Link>
+          ))}
         </div>
+
         <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
           <motion.div
             variants={reveal}

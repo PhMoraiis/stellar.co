@@ -22,7 +22,7 @@ const MenuNavLink = ({ title, href }: any) => {
     return (
         <motion.div
             variants={mobileLinkVars}
-            className="text-6xl uppercase text-black"
+            className="text-6xl uppercase font-coolveticaLt text-black"
         >
             <Link href={href}>{title}</Link>
         </motion.div>
