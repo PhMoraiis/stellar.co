@@ -110,7 +110,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-row justify-center gap-2 mt-10 py-2 mx-auto w-[2rem] lg:w-full lg:justify-between">
-          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/s.svg" width={200} height={220} alt="Stellar" />
+          <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/S.svg" width={200} height={220} alt="Stellar" />
           <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/t.svg" width={200} height={220} alt="Stellar" />
           <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/e.svg" width={200} height={220} alt="Stellar" />
           <Image className="hover:scale-110 duration-100 ease-in-out" src="/images/l.svg" width={200} height={220} alt="Stellar" />
