@@ -6,6 +6,7 @@ import Section from './components/Section';
 import SectionClone from './components/SectionClone';
 import PreFooter from './components/PreFooter';
 import Footer from './components/Footer';
+import SlideSection from './components/SlideSection';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       </div>
       <div className='bg-black'>
         <Section />
+        <SlideSection />
         <SectionClone />
         <PreFooter />
         <Footer />

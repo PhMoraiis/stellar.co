@@ -63,7 +63,7 @@ export default function AnimatedLink({ title }: any) {
                 variants={titleAnimation}
                 initial="rest"
                 animate={isHovered ? "hover" : "rest"}
-                className="whitespace-nowrap relative"
+                className="whitespace-nowrap relative borderAnim"
             >
                 {title
                     .split("")

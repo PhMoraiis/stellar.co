@@ -83,7 +83,7 @@ const Navbar = () => {
         </motion.div>
         <div className="md:flex gap-[20px] text-lg items-center hidden">
           {navLinks.map((link) => (
-            <Link key={link.title} href={link.href}>
+            <Link key={link.title} href={link.href} className="borderAnimBlack">
               <AnimatedLink title={link.title} />
             </Link>
           ))}
@@ -92,7 +92,7 @@ const Navbar = () => {
         <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
           <motion.div
             variants={reveal}
-            className="md:flex gap-[5px] text-lg items-center cursor-pointer hidden"
+            className="md:flex gap-[5px] text-lg items-center cursor-pointer hidden borderAnimBlack"
           >
             <AnimatedLink className="mb-[3px] font-coolveticaLt" title={"Descubra Mais"} />
             <ArrowRight />
