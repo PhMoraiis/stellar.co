@@ -8,7 +8,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'gacor': ['Gacor'],
         'coolveticaLt': ['Coolvetica Light'],
         'coolveticaEl': ['Coolvetica Extra Light'],
         'coolveticaRg': ['Coolvetica'],
