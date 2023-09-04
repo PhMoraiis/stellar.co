@@ -1,5 +1,5 @@
 const SectionClone = () => (
-  <section className="py-12 lg:py-28">
+  <section className="py-12 lg:py-[13rem]">
     <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse lg:justify-between">
         <div className="flex flex-col justify-center px-4 space-y-8 sm:px-0 md:mt-0 lg:max-w-2xl lg:justify-start text-center lg:text-left">

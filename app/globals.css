@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* FONTS */
+
 @font-face {
     font-family: 'Coolvetica';
     src: url('./fonts/coolveticarg.otf');
@@ -62,25 +64,47 @@
     src: url('./fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
 }
 
+/* FIM FONTS */
+
+
+/* BACKGROUNDS */
+
 .paragraph {
     background-color: rgb(38, 38, 38);
-    background: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+    background: radial-gradient(at 28% 4%, #e3e3e3 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
     background-clip: text;
     color: transparent;
 }
 
 .bg-gradient {
     background-color: rgb(38, 38, 38);
-    background-image: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+    background-image: radial-gradient(at 28% 4%, #e3e3e3 0, transparent 100%), radial-gradient(at 24% 29%, #475569 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, #64748b 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
 }
 
+
+.magicpattern {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("/images/pattern.png");
+}
+
+
 .bg-preFooter {
-    background-image: url('../public/images/noise.png');
     background-color: #e3e3e3;
+    opacity: 1;
+    background-image: radial-gradient(circle at center center, #e3e3e3, #171718), repeating-radial-gradient(circle at center center, #e3e3e3, #e3e3e3, 40px, transparent 80px, transparent 40px);
+    background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+/* FIM BACKGROUNDS */
+
+/* BOTÕES */
 
 .btn span {
     position: relative;
@@ -97,7 +121,7 @@
     height: 0;
     border-radius: 50%;
     background-color: rgb(38, 38, 38);
-    background-image: radial-gradient(at 28% 4%, rgb(209, 250, 229) 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+    background-image: radial-gradient(at 28% 4%, #e3e3e3 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
     transition: width 0.5s, height 0.5s;
 }
 
@@ -105,6 +129,10 @@
     width: 200px;
     height: 200px;
 }
+
+/* FIM BOTÕES */
+
+/* BORDAS ANIMAÇÂO */
 
 .borderAnim {
     position: relative;
@@ -148,3 +176,5 @@
     list-style: none;
     padding-left: 20px;
 }
+
+/* FIM BORDAS ANIMAÇÂO */

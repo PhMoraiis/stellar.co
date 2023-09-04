@@ -25,7 +25,7 @@ function HeroText() {
         </span>
         <span>para as estrelas</span>
       </motion.div>
-      <motion.span
+      {/* <motion.span
         variants={reveal}
         initial="hiddenVariant"
         animate="revealedVariant"
@@ -35,7 +35,7 @@ function HeroText() {
         Apaixonados por tecnologia, inovação e resultados. Nossa missão é transformar ideias ousadas em soluções práticas que impulsionam o sucesso dos nossos clientes.
 
         Combinamos expertise técnica com criatividade, criando produtos e serviços que redefinem a forma como o mundo funciona.
-      </motion.span>
+      </motion.span> */}
     </motion.div>
   );
 }

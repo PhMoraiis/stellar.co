@@ -2,7 +2,9 @@ import React, { useRef } from "react";
 import Link from "next/link";
 import { ButtonProps } from "./ButtonProps";
 
-const Button = ({ href, title, bg, text }: ButtonProps) => {
+
+
+const ButtonVar = ({ href, title, bg, text }: ButtonProps) => {
     const btnRef = useRef<HTMLDivElement | null>(null);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -17,11 +19,11 @@ const Button = ({ href, title, bg, text }: ButtonProps) => {
 
     return (
         <Link href={href}>
-            <div className={`mt-8 lg:mt-16 inline-block py-4 px-6 lg:px-[2rem] lg:py-[1.5rem] lg:text-2xl text-xl text-${text} font-geometosBd bg-${bg} rounded-full relative tracking-wide overflow-hidden border-0 btn`} ref={btnRef} onMouseMove={handleMouseMove}>
+            <div className={`mt-8 lg:mt-16 inline-block py-2 px-4 lg:px-[1.5rem] lg:py-[1rem] lg:text-xl text-xl text-${text} font-geometosBd border-[2px] rounded-full relative tracking-wide overflow-hidden btn`} ref={btnRef} onMouseMove={handleMouseMove}>
                 <span>{title}</span>
             </div>
         </Link>
     )
 }
 
-export default Button;
+export default ButtonVar;

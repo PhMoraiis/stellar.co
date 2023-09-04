@@ -1,6 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
-import MiniStar from "../MiniStar";
 import Button from "../Button";
 
 const PreFooter = () => {
@@ -15,7 +12,7 @@ const PreFooter = () => {
         <span className="text-7xl leading-[4rem] font-coolveticaRg uppercase lg:hidden md:hidden">Visão</span>
         <span className="text-7xl leading-[3rem] font-coolveticaRg uppercase lg:hidden md:hidden">Para a</span>
         <span className="text-7xl leading-[4rem] font-coolveticaRg uppercase lg:hidden md:hidden">web!</span>
-        <Button href="https://www.instagram.com/stellar.ti/" title="Fale Conosco" />
+        <Button href="https://www.instagram.com/stellar.ti/" title="Fale Conosco" text="white" bg="black"  />
       </div>
     </div>
   );
