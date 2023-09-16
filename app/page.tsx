@@ -8,6 +8,7 @@ import PreFooter from './components/PreFooter';
 import Footer from './components/Footer';
 import SlideSection from './components/SlideSection';
 import BelowHero from './components/BelowHero';
+import BrowserBar from './components/BrowserBar';
 
 export default function Home() {
   return (
@@ -16,9 +17,9 @@ export default function Home() {
         <Hero />
       </div>
       <div className='bg-black'>
-        <BelowHero />
+        {/* <BelowHero />*/}
         <Section />
-        <SlideSection />
+        {/* <SlideSection /> */}
         <SectionClone />
         <PreFooter />
         <Footer />
