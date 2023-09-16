@@ -1,5 +1,3 @@
-'use client'
-
 import EarthVideo from "../EarthVideo";
 import HeroText from "../HeroText";
 import MapImages from "../MapImages";

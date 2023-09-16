@@ -42,15 +42,21 @@ const Footer = () => {
       <ul className="text-gray-200 text-xl lg:text-2xl md:text-3xl">
         <li className="flex flex-col gap-y-[2px]">
           <div className="flex items-center">
+            <Link href="/" target="_blank">
             <AnimatedLink title={"x."} />
+            </Link>
             <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
           </div>
           <div className="flex items-center">
-            <AnimatedLink title={"instagram."} />
+            <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
+              <AnimatedLink title={"instagram."} />
+            </Link>
             <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
           </div>
           <div className="flex items-center">
-            <AnimatedLink title={"linkedin."} />
+            <Link href="/" target="_blank">
+              <AnimatedLink title={"linkedin."} />
+            </Link>
             <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
           </div>
         </li>
@@ -67,7 +73,9 @@ const Footer = () => {
               Relaxa. Nós guiamos você! <StarWhite />
             </h1>
             <div className="text-white text-xl lg:text-2xl md:text-3xl font-coolveticaLt">
-              <AnimatedLink href="https://www.instagram.com/stellar.ti/" target="_blank" title={"descubra mais sobre nós."} />
+              <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
+                <AnimatedLink title={"descubra mais sobre nós."} />
+              </Link>
             </div>
           </div>
           <div className="flex flex-col">

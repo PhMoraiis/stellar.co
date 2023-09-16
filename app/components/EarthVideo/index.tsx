@@ -1,4 +1,4 @@
-function EarthVideo() {
+function EarthVideo () {
     return (
       <video
         className="h-[100vh] w-full object-cover animate-clip-from-top-animation"
