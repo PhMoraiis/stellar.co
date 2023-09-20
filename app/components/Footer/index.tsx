@@ -25,7 +25,7 @@ const Footer = () => {
         {navItems.map((item) => (
           <li
             key={item.title}
-            className={`flex-col gap-y-[4px] block ${pathname.toString() === item.route ? "border-b-[1px] border-white inline-flex" : ""
+            className={`flex-col gap-y-[4px] block duration-300 ease-in ${pathname.toString() === item.route ? "border-b-[1px] border-white inline-flex" : ""
               }`}
           >
             <Link href={item.route}>
@@ -38,28 +38,26 @@ const Footer = () => {
   };
 
   const renderFooterSocials = () => {
+    const NavSocialItems = [
+      { title: "x.", route: "/" },
+      { title: "instagram.", route: "https://www.instagram.com/stellar.ti/" },
+      { title: "linkedin.", route: "https://www.linkedin.com/company/stellar-ti/" }
+    ]
+
     return (
       <ul className="text-gray-200 text-xl lg:text-2xl md:text-3xl">
-        <li className="flex flex-col gap-y-[2px]">
-          <div className="flex items-center">
-            <Link href="/" target="_blank">
-            <AnimatedLink title={"x."} />
-            </Link>
-            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
-          </div>
-          <div className="flex items-center">
-            <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
-              <AnimatedLink title={"instagram."} />
-            </Link>
-            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
-          </div>
-          <div className="flex items-center">
-            <Link href="/" target="_blank">
-              <AnimatedLink title={"linkedin."} />
-            </Link>
-            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
-          </div>
-        </li>
+        {NavSocialItems.map((item) => (
+          <li
+            key={item.title}
+            className="flex-col gap-y-[2px] block">
+            <div className="flex items-center">
+              <Link href={item.route} target="_blank">
+                <AnimatedLink title={item.title} />
+              </Link>
+              <FiArrowUpRight className="hover:scale-125 duration-300 ease-in" />
+            </div>
+          </li>
+        ))}
       </ul>
     );
   };

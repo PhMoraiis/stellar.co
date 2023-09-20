@@ -34,7 +34,7 @@ const SlideSection = () => {
                 <h1 className="paragraph text-[11vw] lg:text-[6rem] font-coolveticaRg lg:leading-[4.5rem]">Como a Stellar</h1>
                 <span className="text-white text-[11vw] lg:text-[2rem] font-coolveticaRg lg:mb-12 lg:tracking-wide lg:leading-[2rem]">converte ideias em soluções.</span>
             </div>
-            <div className="flex flex-col lg:flex-row justify-center items-center lg:mx-auto lg:max-w-screen-2xl lg:gap-x-12">
+            <div className="flex flex-col lg:flex-row justify-center items-center lg:mx-auto lg:max-w-screen-2xl lg:gap-x-12 lg:pt-14">
                 <div className="flex items-center justify-center py-6 mx-4 lg:w-full">
                     <Image className="rounded-lg" src={images[currentSlide]} alt="imagem-slider" width={600} height={300} />
                 </div>

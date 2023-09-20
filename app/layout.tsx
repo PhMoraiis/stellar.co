@@ -4,10 +4,10 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   icons: {
     icon: {
-      url: "./images/favicon.ico",
+      url: "./images/favicon2.ico",
       type: "icon/ico",
     },
-    shortcut: { url: "./images/favicon.ico", type: "icon/ico" },
+    shortcut: { url: "./images/favicon2.ico", type: "icon/ico" },
   },
   title: "Stellar — Desenvolvimento de Software Personalizado",
   description: "A Stellar é uma empresa especializada em desenvolvimento de software personalizado para atender às necessidades exclusivas de cada cliente. Entre em contato conosco para saber mais.",
