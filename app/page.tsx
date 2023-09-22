@@ -8,6 +8,7 @@ import PreFooter from './components/PreFooter';
 import Footer from './components/Footer';
 import SlideSection from './components/SlideSection';
 import BelowText from './components/BelowText';
+import SectionMovie from './components/SectionMovie';
 
 export default function Home() {
   return (
@@ -15,9 +16,10 @@ export default function Home() {
       <div className="bg-[#f8f8ff]">
         <Hero />
       </div>
-      <div className='bg-black'>
+      <div className='bg-[#010101]'>
         <BelowText />
         <Section />
+        <SectionMovie />
         <SlideSection />
         <SectionClone />
         <PreFooter />

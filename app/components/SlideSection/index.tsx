@@ -1,56 +1,113 @@
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import React, { useEffect, useState, useRef } from "react";
+import { gsap } from "gsap";
+
 
 const SlideSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const videoRef = useRef(null);
 
-    // Defina as imagens e os textos correspondentes em arrays
-    const images = ["/images/imagem1.jpg", "/images/imagem2.jpg", "/images/imagem1.jpg", "/images/imagem2.jpg"];
-    const texts = [" A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.", "A inovão que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.", "A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.", "A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura."];
+    const videos = ["/movies/first.webm", "/movies/third.mp4", "/movies/third.mp4", "/movies/third.mp4"];
+    const texts = [
+        {
+            title: "A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.",
+        },
+        {
+            title: "A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.",
+        },
+        {
+            title: "A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.",
+        },
+        {
+            title: "A inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procuraA inovação que você procura.",
+        }
+    ]
 
-    // Função para trocar de slide com base no índice do texto clicado
     const changeSlide = (index: number) => {
         setCurrentSlide(index);
     };
 
-    // ...
     useEffect(() => {
-        // Define um intervalo de tempo para trocar automaticamente os slides a cada 5 segundos (5000 milissegundos)
-        const interval = setInterval(() => {
-            const nextSlide = (currentSlide + 1) % images.length; // Avança para o próximo slide
-            setCurrentSlide(nextSlide);
-        }, 5500);
+        // Atualize o vídeo quando o slide atual mudar
+        if (videoRef.current) {
+            (videoRef.current as HTMLVideoElement).load();
+        }
+    }, [currentSlide, videoRef]);
 
-        // Limpa o intervalo quando o componente é desmontado para evitar vazamento de memória
-        return () => clearInterval(interval);
-        // eslint-disable-next-line
+
+    // Função para animar elementos com GSAP
+    const animateElements = () => {
+        const tl = gsap.timeline();
+
+        // Animação para o vídeo
+        tl.to(videoRef.current, { opacity: 0, duration: 0.5 })
+            .call(() => {
+                if (videoRef.current) {
+                    (videoRef.current as HTMLVideoElement).load();
+                    (videoRef.current as HTMLVideoElement).play();
+                }
+            })
+
+            .to(videoRef.current, { opacity: 1, duration: 0.5 });
+
+        // Animação para os textos
+        texts.forEach((text, index) => {
+            const textElement = document.getElementById(`text-${index}`);
+            tl.to(textElement, { opacity: 0, y: -20, duration: 0.5 }, `-=${0.5}`);
+            tl.to(textElement, { opacity: 1, y: 0, duration: 0.5 }, `-=${0.2}`);
+        });
+
+        // Inicie a animação
+        tl.play();
+    };
+
+    // Chame a função de animação sempre que o slide mudar
+    useEffect(() => {
+        animateElements();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentSlide]);
-    // ...
-
 
     return (
-        <div className="py-12 lg:py-28">
-            <div className="flex flex-col justify-center items-center">
-                <h1 className="paragraph text-[11vw] lg:text-[6rem] font-coolveticaRg lg:leading-[4.5rem]">Como a Stellar</h1>
-                <span className="text-white text-[11vw] lg:text-[2rem] font-coolveticaRg lg:mb-12 lg:tracking-wide lg:leading-[2rem]">converte ideias em soluções.</span>
-            </div>
-            <div className="flex flex-col lg:flex-row justify-center items-center lg:mx-auto lg:max-w-screen-2xl lg:gap-x-12 lg:pt-14">
-                <div className="flex items-center justify-center py-6 mx-4 lg:w-full">
-                    <Image className="rounded-lg" src={images[currentSlide]} alt="imagem-slider" width={600} height={300} />
-                </div>
-                <div className="flex items-center justify-center text-white font-coolveticaRg text-left lg:text-lg">
-                    <ul className="flex flex-col justify-start items-start gap-y-4 lg:gap-y-12">
-                        {texts.map((text, index) => (
-                            <li
-                                className={` ${currentSlide === index ? "flex items-start justify-center gap-x-4 text-white" : "flex items-start justify-center gap-x-4 text-gray-500 hover:text-gray-600 duration-300 ease-in cursor-pointer"}`}
-                                key={index}
-                                onClick={() => changeSlide(index)}
+        <div className="py-12 lg:py-28 mx-auto">
+            <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
+                <div className="flex flex-col justify-center items-center px-4 space-y-2 sm:px-0 md:mt-0 lg:justify-center text-center lg:text-center">
+                    <h1 className="paragraph font-coolveticaRg lg:text-7xl text-2xl md:text-3xl">Encontre a melhor solução</h1>
+                    <span className="text-gray-400 text-[2rem] leading-9 font-coolveticaLt lg:text-2xl lg:w-3/4">Convertemos nossas ideias em grandes soluções para que nossos clientes tenham uma maior flexibilidade e eficiência em seus serviços.</span>
+                    <div className="flex flex-col lg:flex-row justify-center items-center lg:mx-auto lg:gap-x-12 lg:pt-14">
+                        <div className="flex items-center justify-center py-6 mx-4 lg:w-full">
+                            <video
+                                ref={videoRef}
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                style={{ opacity: 0 }} // Inicie com opacidade 0
                             >
-                                <span key={index} className={`${currentSlide === index ? "border-[2px] border-white bg-gray-500 py-[12px] px-[10px] rounded-full" : "px-[10px] py-[12px] bg-gray-400 rounded-full hover:bg-gray-600 duration-300 ease-in cursor-pointer"}`}></span>
-                                {text}
-                            </li>
-                        ))}
-                    </ul>
+                                <source src={videos[currentSlide]} type="video/mp4" />
+                            </video>
+                        </div>
+                        <div className="flex items-center justify-center text-white font-coolveticaRg text-left lg:text-lg">
+                            <ul className="flex flex-col justify-start items-start gap-y-4 lg:gap-y-12">
+                                {texts.map((text, index) => (
+                                    <li
+                                        id={`text-${index}`} // Adicione um ID único para cada elemento de texto
+                                        className={`flex items-start justify-center gap-x-4 ${currentSlide === index
+                                            ? "text-white"
+                                            : "text-gray-500 hover:text-gray-600 duration-300 ease-in"
+                                            } cursor-pointer`}
+                                        key={index}
+                                        onClick={() => changeSlide(index)}
+                                        style={{ opacity: 0, transform: "translateY(-20px)" }} // Inicie com opacidade 0 e posição y de -20px
+                                    >
+                                        <span
+                                            className={`border-[2px] bg-gray-400 py-[12px] px-[10px] rounded-full hover:bg-gray-600 duration-300 ease-in cursor-pointer ${currentSlide === index ? "border-white" : ""
+                                                }`}
+                                        ></span>
+                                        {text.title}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
