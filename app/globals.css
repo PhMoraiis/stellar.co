@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    @apply scrollbar-track-gray-400/20 scrollbar-thumb-[#303030] scrollbar-thin 
+    scroll-smooth;
+  }
+
 /* FONTS */
 
 @font-face {
