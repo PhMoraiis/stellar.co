@@ -21,6 +21,9 @@ module.exports = {
         'geometosEb': ['Geometos Neue Extra Bold'],
         'geometosUl': ['Geometos Neue Ultra'],
       },
+      screens: {
+        '2xl': '1960px',
+      },
       animation: {
         "clip-from-top-animation": "clip 1s ease-in 6s forwards",
       },

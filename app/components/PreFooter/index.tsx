@@ -2,7 +2,7 @@ import Button from "../Button";
 
 const PreFooter = () => {
   return (
-    <div className="mx-2 my-6 lg:mx-10 lg:my-12 md:mx-6 md:my-8 rounded-md py-14 lg:py-[10rem] md:py-[6rem] bg-preFooter">
+    <div className="my-6 lg:mx-10 lg:my-12 md:mx-6 md:my-8 rounded-md py-14 lg:py-[10rem] md:py-[6rem] bg-preFooter max-w-screen-xl mx-auto px-4 sm:px-8">
       <div className="flex flex-col items-center">
         <h6 className="text-xl lg:text-2xl md:text-xl text-black font-geometosLt uppercase mb-8 lg:mb-12">Tem um projeto em mente?</h6>
         <h2 className="lg:text-[12rem] md:text-[5rem] md:leading-[5rem] xl:text-[9rem] xl:leading-[6rem] lg:leading-[10rem] font-coolveticaRg uppercase hidden lg:flex md:flex">Traga sua visão</h2>

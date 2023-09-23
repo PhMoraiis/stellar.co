@@ -1,10 +1,9 @@
 import AnimatedLink from "../AnimatedLink";
 import StarWhite from "../StarWhite";
 
-import { FiArrowUpRight } from "react-icons/fi";
-
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import FooterSocials from "../FooterSocials";
 
 
 const Footer = () => {
@@ -25,7 +24,7 @@ const Footer = () => {
         {navItems.map((item) => (
           <li
             key={item.title}
-            className={`flex-col gap-y-[4px] block ${pathname.toString() === item.route ? "border-b-[1px] border-white inline-flex" : ""
+            className={`flex-col gap-y-[4px] block duration-300 ease-in ${pathname.toString() === item.route ? "border-b-[1px] border-white inline-flex" : ""
               }`}
           >
             <Link href={item.route}>
@@ -33,33 +32,6 @@ const Footer = () => {
             </Link>
           </li>
         ))}
-      </ul>
-    );
-  };
-
-  const renderFooterSocials = () => {
-    return (
-      <ul className="text-gray-200 text-xl lg:text-2xl md:text-3xl">
-        <li className="flex flex-col gap-y-[2px]">
-          <div className="flex items-center">
-            <Link href="/" target="_blank">
-            <AnimatedLink title={"x."} />
-            </Link>
-            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
-          </div>
-          <div className="flex items-center">
-            <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
-              <AnimatedLink title={"instagram."} />
-            </Link>
-            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
-          </div>
-          <div className="flex items-center">
-            <Link href="/" target="_blank">
-              <AnimatedLink title={"linkedin."} />
-            </Link>
-            <FiArrowUpRight className="hover:scale-125 duration-100 ease-in" />
-          </div>
-        </li>
       </ul>
     );
   };
@@ -84,14 +56,14 @@ const Footer = () => {
                 {renderFooterNavs()}
               </div>
               <div className="pb-4 lg:ml-8">
-                {renderFooterSocials()}
+                <FooterSocials />
               </div>
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center md:justify-start md:mx-12 lg:justify-start lg:mx-auto py-2 mx-auto mt-4 card-content">
+        <div className="block items-center justify-center md:block lg:mx-auto py-2 mx-auto mt-4 lg:block lg:justify-center lg:items-center">
           <Link href="/">
-            <svg width="100%" height="100%" viewBox="0 0 1098 196" fill="none" xmlns="http://www.w3.org/2000/svg" className="lg:w-[600%] md:w-[230%] w-[100%]">
+            <svg width="100%" height="100%" viewBox="0 0 1098 196" fill="none" xmlns="http://www.w3.org/2000/svg" className="">
               <path d="M9.50333 175.273L22.2963 155.9C31.4341 163.211 50.8063 171.983 66.3406 171.983C85.53 171.983 91.9265 164.307 91.9265 156.083C91.9265 143.473 77.4887 140.549 61.5889 137.442C45.8719 134.335 10.5999 129.401 10.5999 97.0529C10.5999 65.6188 38.9271 57.212 61.4062 57.212C83.8852 57.212 97.7747 64.1567 111.299 74.3911L97.2264 93.7633C86.261 86.2702 73.1026 80.9703 58.6648 80.9703C48.6132 80.9703 36.1858 84.0772 36.1858 94.4943C36.1858 106.739 53.1821 110.029 67.2544 112.953C83.3369 116.242 117.512 118.801 117.512 154.621C117.512 182.217 96.8609 195.559 66.7061 195.559C38.9271 195.559 23.5756 185.69 9.50333 175.273ZM242.819 59.2223V81.8841H204.623V193H179.037V81.8841H140.658V59.2223H242.819ZM379.725 81.8841H306.805V115.329H371.501V137.99H306.805V170.338H379.725V193H281.402V59.2223H379.725V81.8841ZM450.016 170.338H520.743V193H424.43V59.2223H450.016V170.338ZM580.73 170.338H651.457V193H555.144V59.2223H580.73V170.338ZM700.113 193H672.334L740.685 59.2223H743.243L811.594 193H783.815L773.398 171.983H710.347L700.113 193ZM741.964 109.298L722.774 149.687H760.971L741.964 109.298ZM894.684 150.418H869.281V193H843.878V59.2223H904.553C931.784 59.2223 950.607 78.229 950.607 105.277C950.607 125.38 939.642 143.473 922.828 148.042L956.273 193H925.753L894.684 150.418ZM869.281 81.8841V128.121H898.522C920.087 128.121 925.204 116.425 925.204 105.094C925.204 92.1185 917.346 81.8841 898.522 81.8841H869.281Z" fill="#303030" />
               <ellipse cx="1067.06" cy="31.0945" rx="30.1081" ry="31.0546" fill="#303030" />
             </svg>
