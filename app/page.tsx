@@ -6,9 +6,9 @@ import Section from './components/Section';
 import SectionClone from './components/SectionClone';
 import PreFooter from './components/PreFooter';
 import Footer from './components/Footer';
-import SlideSection from './components/SlideSection';
-import BelowText from './components/BelowText';
 import SectionMovie from './components/SectionMovie';
+/* import SlideSection from './components/SlideSection';
+import BelowText from './components/BelowText'; */
 
 export default function Home() {
   const [animationComplete, setAnimationComplete] = useState(false);
@@ -27,10 +27,10 @@ export default function Home() {
       </div>
       {animationComplete && (
         <div className='bg-[#010101]'>
-          <BelowText />
+          {/* <BelowText /> */}
           <Section />
           <SectionMovie />
-          <SlideSection />
+          {/* <SlideSection /> */}
           <SectionClone />
           <PreFooter />
           <Footer />
