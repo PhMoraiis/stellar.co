@@ -28,6 +28,7 @@
     "framer-motion": "^10.16.0",
     "gsap": "^3.12.2",
     "lottie-react": "^2.4.0",
-    "react-icons": "^4.10.1"
+    "react-icons": "^4.10.1",
+    "tailwind-scrollbar": "^3.0.5"
   }
 }
