@@ -1,23 +1,23 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import Hero from './components/Hero';
-import Section from './components/Section';
-import SectionClone from './components/SectionClone';
-import PreFooter from './components/PreFooter';
-import Footer from './components/Footer';
-import SectionMovie from './components/SectionMovie';
-/* import SlideSection from './components/SlideSection';
-import BelowText from './components/BelowText'; */
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import SectionClone from '../components/SectionClone';
+import PreFooter from '../components/PreFooter';
+import Footer from '../components/Footer';
+import SectionMovie from '../components/SectionMovie';
+import NumbersSection from '../components/NumbersSection';
+import SlideSection from '../components/SlideSection';
 
-export default function Home() {
+const Home = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
 
   useEffect(() => {
     // Simule a conclusão da animação após 6 segundos
     setTimeout(() => {
       setAnimationComplete(true);
-    }, 6000); // 6 segundos
+    }, 7000); // 7 segundos
   }, []);
 
   return (
@@ -27,10 +27,10 @@ export default function Home() {
       </div>
       {animationComplete && (
         <div className='bg-[#010101]'>
-          {/* <BelowText /> */}
           <Section />
+          <NumbersSection />
           <SectionMovie />
-          {/* <SlideSection /> */}
+          <SlideSection />
           <SectionClone />
           <PreFooter />
           <Footer />
@@ -39,3 +39,5 @@ export default function Home() {
     </div>
   );
 };
+
+export default Home;

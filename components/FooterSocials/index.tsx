@@ -7,7 +7,6 @@ const FooterSocials = () => {
         { title: "x.", route: "/" },
         { title: "instagram.", route: "https://www.instagram.com/stellar.ti/" },
         { title: "linkedin.", route: "https://www.linkedin.com/company/stellar-ti/" },
-        { title: "Pinterest.", route: "https://www.linkedin.com/company/stellar-ti/" }
     ]
 
     return (

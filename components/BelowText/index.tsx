@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { animationStart, reveal } from "@/app/utils/animation";
+import { animationStart, reveal } from "@/utils/animation";
 
 const BelowText = () => {
   return (

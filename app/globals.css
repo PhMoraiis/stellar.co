@@ -3,70 +3,68 @@
 @tailwind utilities;
 
 body {
-    @apply scrollbar-track-gray-400/20 scrollbar-thumb-[#303030] scrollbar-thin 
-    scroll-smooth;
-  }
+    @apply scrollbar-track-gray-400/20 scrollbar-thumb-[#303030] scrollbar-none scroll-smooth;
+}
 
 /* FONTS */
-
 @font-face {
     font-family: 'Coolvetica';
-    src: url('./fonts/coolveticarg.otf');
+    src: url('../fonts/coolveticarg.otf');
 }
 
 @font-face {
     font-family: 'Coolvetica Bold';
-    src: url('./fonts/CoolveticaRg-Bold.ttf');
+    src: url('../fonts/CoolveticaRg-Bold.ttf');
 }
 
 @font-face {
     font-family: 'Coolvetica Heavy';
-    src: url('./fonts/CoolveticaHv-Regular.ttf');
+    src: url('../fonts/CoolveticaHv-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Coolvetica Light';
-    src: url('./fonts/CoolveticaLt-Regular.ttf');
+    src: url('../fonts/CoolveticaLt-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Coolvetica Extra Light';
-    src: url('./fonts/CoolveticaEl-Regular.ttf');
+    src: url('../fonts/CoolveticaEl-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Extra Light';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_extralight.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue_extralight.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Light';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_light.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue_light.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Regular';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Bold';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_bold.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue_bold.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Black';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_black.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue_black.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Extra Bold';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_extrabold.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue_extrabold.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Ultra';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
+    src: url('../fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
 }
 
 /* FIM FONTS */
@@ -75,14 +73,19 @@ body {
 /* BACKGROUNDS */
 
 .paragraph {
-    background-color: rgb(38, 38, 38);
-    background: radial-gradient(at 28% 4%, #e3e3e3 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
+    background-image: url("/images/download.png");
+    background-position: 10% 15%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* background-color: rgb(38, 38, 38);
+    background: radial-gradient(at 28% 4%, #e5e5e5 0, transparent 100%), radial-gradient(at 24% 29%, rgb(71, 85, 105) 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, rgb(100, 116, 139) 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%); */
     background-clip: text;
     color: transparent;
 }
 
 .bg-gradient {
-    background-color: rgb(38, 38, 38);
+    background-color: #262626;
     background-image: radial-gradient(at 28% 4%, #e3e3e3 0, transparent 100%), radial-gradient(at 24% 29%, #475569 0, transparent 39%), radial-gradient(at 47% 6%, rgb(30, 64, 175) 0, transparent 6%), radial-gradient(at 77% 48%, rgb(120, 113, 108) 0, transparent 43%), radial-gradient(at 79% 97%, #64748b 0, transparent 62%), radial-gradient(at 48% 58%, rgb(167, 139, 250) 0, transparent 95%);
 }
 
@@ -183,3 +186,8 @@ body {
 }
 
 /* FIM BORDAS ANIMAÇÂO */
+
+
+.test {
+    transform: translate(0px, 0px);
+}

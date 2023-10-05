@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { reveal } from "@/app/utils/animation";
+import { reveal } from "@/utils/animation";
 
 const titleAnimation = {
     rest: {

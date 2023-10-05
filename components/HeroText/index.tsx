@@ -21,9 +21,9 @@ function HeroText() {
         className="flex flex-col text-[6vw] md:text-[4rem] font-geometosRg mb-[30px] pt-[100px]"
       >
         <span className="flex items-center gap-[10px]">
-          um novo <Star /> caminho
+          inovando <Star /> futuro com
         </span>
-        <span>para as estrelas</span>
+        <span>tecnologia</span>
       </motion.div>
       {/* <motion.span
         variants={reveal}

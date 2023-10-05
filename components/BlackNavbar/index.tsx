@@ -1,11 +1,11 @@
-import Logo from "../Logo";
-import ArrowRight from "../Arrow";
 import { AnimatePresence, motion } from "framer-motion";
-import { animationStart, reveal } from "../../utils/animation";
 import Link from "next/link";
 import { useState } from "react";
 import MenuNavLink from "../MenuNavLink";
 import AnimatedLink from "../AnimatedLink";
+import LogoWhite from "../LogoWhite";
+import Logo from "../Logo";
+import ArrowRightWhite from "../ArrowRightWhite";
 
 const navLinks = [
   { title: "soluções.", href: "/solutions" },
@@ -15,7 +15,7 @@ const navLinks = [
   { title: "contato.", href: "/contact" },
 ];
 
-const Navbar = () => {
+const BlackNavbar = () => {
   const [open, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -61,29 +61,20 @@ const Navbar = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: animationStart }}
     >
       <motion.div
-        variants={reveal}
         initial="hiddenVariant"
         animate="revealedVariant"
-        transition={{
-          ease: "easeIn",
-          type: "tween",
-          staggerChildren: 0.1,
-          duration: 0.5,
-          delayChildren: animationStart + 0.5,
-        }}
-        className="font-coolveticaLt w-full flex items-center justify-around h-[80px] absolute top-0 bg-[#f8f8ff] z-50"
+        className="font-coolveticaLt text-white w-full flex items-center justify-around h-[80px] absolute top-0 bg-[#171718] z-50"
       >
-        <motion.div variants={reveal} className="mt-2">
+        <motion.div className="mt-2">
           <Link href="/">
-            <Logo />
+            <LogoWhite />
           </Link>
         </motion.div>
         <div className="md:flex gap-[20px] text-lg items-center hidden">
           {navLinks.map((link) => (
-            <Link key={link.title} href={link.href} className="borderAnimBlack">
+            <Link key={link.title} href={link.href}>
               <AnimatedLink title={link.title} />
             </Link>
           ))}
@@ -91,15 +82,14 @@ const Navbar = () => {
 
         <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
           <motion.div
-            variants={reveal}
-            className="md:flex gap-[5px] text-lg items-center cursor-pointer hidden borderAnimBlack"
+            className="md:flex gap-[5px] text-lg items-center cursor-pointer hidden"
           >
             <AnimatedLink className="mb-[3px] font-coolveticaLt" title={"Descubra Mais"} />
-            <ArrowRight />
+            <ArrowRightWhite />
           </motion.div>
         </Link>
         <div
-          className="cursor-pointer md:hidden text-lg text-black"
+          className="cursor-pointer md:hidden text-lg text-white"
           onClick={toggleMenu}
         >
           Menu
@@ -111,7 +101,7 @@ const Navbar = () => {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="fixed left-0 top-0 w-full h-screen origin-top bg-gradient text-black p-10"
+              className="fixed left-0 top-0 w-full h-screen origin-top bg-gradient text-white p-10"
             >
               <div className="flex h-full flex-col">
                 <div className="flex justify-between">
@@ -121,7 +111,7 @@ const Navbar = () => {
                     </Link>
                   </div>
                   <p
-                    className="cursor-pointer text-lg text-black"
+                    className="cursor-pointer text-lg text-white"
                     onClick={toggleMenu}
                   >
                     Close
@@ -154,4 +144,4 @@ const Navbar = () => {
   );
 }
 
-export default Navbar;
+export default BlackNavbar;

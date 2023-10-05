@@ -3,10 +3,10 @@ const Section = () => (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:flex-row-reverse lg:justify-between">
         <div className="flex flex-col justify-center px-4 space-y-8 sm:px-0 md:mt-0 lg:max-w-2xl lg:justify-start text-center lg:text-left">
-          <h3 className="paragraph font-coolveticaRg lg:text-3xl text-2xl md:text-3xl">
+          <h3 className="paragraph font-coolveticaRg lg:text-4xl text-4xl md:text-3xl">
             Bem vindo à Stellar
           </h3>
-          <p className="text-white text-[2rem] leading-9 font-coolveticaRg sm:text-7xl">
+          <p className="text-gray-200 text-[2rem] leading-9 font-coolveticaRg sm:text-7xl">
             A especialista no que você imaginar.
           </p>
           <p className="mt-4 text-gray-400 text-lg sm:text-lg font-coolveticaLt">
