@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -28,12 +29,12 @@ const config: Config = {
         'geometosUl': ['Geometos Neue Ultra'],
       },
       animation: {
-        "clip-from-top-animation": "clip 1s ease-in 6s forwards",
+        'clip-from-top-animation': 'clip 1s ease-in 6s forwards',
       },
       keyframes: {
-        "clip": {
-          "0%": { 'clip-path': "ellipse(100% 100% at 50% 50%)" },
-          "100%": { 'clip-path': "ellipse(160% 160% at 50% 160%)" },
+        'clip': {
+          '0%': { 'clip-path': 'ellipse(100% 100% at 50% 50%)' },
+          '100%': { 'clip-path': 'ellipse(160% 160% at 50% 160%)' },
         },
       },
     },
