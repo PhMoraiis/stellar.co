@@ -1,12 +1,12 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import Hero from './components/Hero';
-import Section from './components/Section';
-import SectionClone from './components/SectionClone';
-import PreFooter from './components/PreFooter';
-import Footer from './components/Footer';
-import SectionMovie from './components/SectionMovie';
+import Hero from '../components/Hero';
+import Section from '../components/Section';
+import SectionClone from '../components/SectionClone';
+import PreFooter from '../components/PreFooter';
+import Footer from '../components/Footer';
+import SectionMovie from '../components/SectionMovie';
 /* import SlideSection from './components/SlideSection';
 import BelowText from './components/BelowText'; */
 

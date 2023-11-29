@@ -11,62 +11,62 @@ body {
 
 @font-face {
     font-family: 'Coolvetica';
-    src: url('./fonts/coolveticarg.otf');
+    src: url('/fonts/coolveticarg.otf');
 }
 
 @font-face {
     font-family: 'Coolvetica Bold';
-    src: url('./fonts/CoolveticaRg-Bold.ttf');
+    src: url('/fonts/CoolveticaRg-Bold.ttf');
 }
 
 @font-face {
     font-family: 'Coolvetica Heavy';
-    src: url('./fonts/CoolveticaHv-Regular.ttf');
+    src: url('/fonts/CoolveticaHv-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Coolvetica Light';
-    src: url('./fonts/CoolveticaLt-Regular.ttf');
+    src: url('/fonts/CoolveticaLt-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Coolvetica Extra Light';
-    src: url('./fonts/CoolveticaEl-Regular.ttf');
+    src: url('/fonts/CoolveticaEl-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Extra Light';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_extralight.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue_extralight.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Light';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_light.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue_light.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Regular';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Bold';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_bold.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue_bold.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Black';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_black.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue_black.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Extra Bold';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_extrabold.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue_extrabold.otf');
 }
 
 @font-face {
     font-family: 'Geometos Neue Ultra';
-    src: url('./fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
+    src: url('/fonts/Fontspring-DEMO-geometos_neue_ultra.otf');
 }
 
 /* FIM FONTS */
