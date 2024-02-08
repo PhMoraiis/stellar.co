@@ -11,13 +11,15 @@ import AnimatedLink from '../AnimatedLink'
 
 import { TfiMenu } from 'react-icons/tfi'
 import { GrClose } from 'react-icons/gr'
+import { Cloudy } from 'lucide-react'
 
 const navLinks = [
-  { title: 'Desenvolvimento.', href: '/development' },
-  { title: 'Design.', href: '/design' },
-  { title: 'Sobre.', href: '/about' },
-  { title: 'Blog.', href: '/blog' },
-  { title: 'Contato.', href: '/contact' },
+  { title: 'Desenvolvimento', href: '/development' },
+  { title: 'Design', href: '/design' },
+  { title: 'Branding', href: '/branding' },
+  { title: 'Blog', href: '/blog' },
+  { title: 'Sobre', href: '/about' },
+  { title: 'Contato', href: '/contact' },
 ]
 
 const Navbar = () => {
@@ -79,30 +81,37 @@ const Navbar = () => {
           duration: 0.5,
           delayChildren: animationStart + 0.5,
         }}
-        className="font-coolveticaLt w-full flex items-center justify-around h-[80px] absolute top-0 bg-[#f6f6f6] z-50 shadow-md"
+        className="font-coolveticaLt w-full flex items-center justify-around h-[50px] absolute top-0 bg-[#f6f6f6] z-50 shadow-md"
       >
         <motion.div variants={reveal} className="mt-2">
           <Link href="/">
-            <Logo color="#000000"/>
+            <Logo color="#000000" />
           </Link>
         </motion.div>
-        <div className="md:flex gap-8 text-lg items-center hidden">
+        <div className="md:flex gap-8 text-md items-center hidden">
           {navLinks.map((link) => (
             <Link key={link.title} href={link.href} className="borderAnimBlack">
               <AnimatedLink title={link.title} />
             </Link>
           ))}
+          <Link  href='/nimbus' className="flex items-end text-xl mb-2 gap-1 text-[#6DACDF] font-azedoBd">
+            <AnimatedLink title='Nimbus' />
+            <Cloudy size={20} color='#6DACDF'/>
+          </Link>
         </div>
 
-        <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
-          <motion.div
-            variants={reveal}
-            className="md:flex gap-[5px] text-lg items-center cursor-pointer hidden borderAnimBlack"
-          >
-            <AnimatedLink className="mb-[3px] font-coolveticaLt" title={'Descubra Mais'} />
-            <ArrowRight />
-          </motion.div>
-        </Link>
+        <div className='flex items-center justify-center gap-4'>
+          <Link href="/call" target="_blank">
+            <motion.div
+              variants={reveal}
+              className="md:flex gap-[5px] text-md items-center cursor-pointer hidden borderAnimBlack"
+            >
+              <AnimatedLink className="mb-[3px] font-coolveticaLt" title={'Agende uma chamada'} />
+              <ArrowRight />
+            </motion.div>
+          </Link>
+        </div>
+
         <div
           className="cursor-pointer md:hidden text-lg mx-8 text-black"
           onClick={toggleMenu}
@@ -129,7 +138,7 @@ const Navbar = () => {
                     className="cursor-pointer text-lg text-black"
                     onClick={toggleMenu}
                   >
-                    <GrClose size={25}/>
+                    <GrClose size={25} />
                   </p>
                 </div>
                 <motion.div

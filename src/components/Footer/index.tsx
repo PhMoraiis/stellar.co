@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import FooterSocials from '../FooterSocials'
 import Star from '../Star'
+import { FiArrowUpRight } from 'react-icons/fi'
 
 
 const Footer = () => {
@@ -14,9 +15,9 @@ const Footer = () => {
   const renderFooterNavs = () => {
     const navItems = [
       { title: 'home.', route: '/' },
-      { title: 'soluções.', route: '/solutions' },
-      { title: 'stellaris.', route: '/stellaris' },
-      { title: 'works.', route: '/works' },
+      { title: 'desenvolvimento.', route: '/development' },
+      { title: 'design.', route: '/design' },
+      { title: 'branding.', route: '/branding' },
       { title: 'sobre.', route: '/about' },
       { title: 'contato.', route: '/contact' },
     ]
@@ -26,7 +27,7 @@ const Footer = () => {
         {navItems.map((item) => (
           <li
             key={item.title}
-            className={`flex-col gap-y-[4px] block duration-300 ease-in ${pathname.toString() === item.route ? 'border-b-[1px] border-white inline-flex' : ''
+            className={`flex-col gap-y-[4px] block duration-300 ease-in-out ${pathname.toString() === item.route ? 'border-b-[1px] border-white inline-flex' : ''
             }`}
           >
             <Link href={item.route}>
@@ -47,8 +48,9 @@ const Footer = () => {
               Relaxa. Nós guiamos você! <Star color="#f6f6f6" />
             </h1>
             <div className="text-white text-xl lg:text-2xl md:text-3xl font-coolveticaLt">
-              <Link href="https://www.instagram.com/stellar.ti/" target="_blank">
-                <AnimatedLink title={'descubra mais sobre nós.'} />
+              <Link href="/call" target="_blank" className='flex items-center justify-center'>
+                <AnimatedLink title={'agende hoje mesmo uma chamada.'} />
+                <FiArrowUpRight className="hover:scale-125 duration-300 ease-in" />
               </Link>
             </div>
           </div>
@@ -81,7 +83,7 @@ const Footer = () => {
               <AnimatedLink title={'Termos'} />
             </Link>
           </div>
-          <p>©2023 Stellar TI. Todos os direitos reservados.</p>
+          <p>©2024 Stellar TI. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

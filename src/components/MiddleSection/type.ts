@@ -4,4 +4,5 @@ export interface IMiddleSectionProps {
     linkTitle: string;
     linkPath: string;
     moviePath: string;
+    bgColor?: string;
 }

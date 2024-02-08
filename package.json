@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "stellar_website",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -24,6 +24,7 @@
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
     "lottie-react": "^2.4.0",
+    "lucide-react": "^0.323.0",
     "postcss": "^8",
     "react-icons": "^4.11.0",
     "tailwind-scrollbar": "^3.0.5",

@@ -8,8 +8,7 @@ interface ILayoutProps {
 const Layout = ({ children }: ILayoutProps) => {
   return (
     <body>
-      <BlackNavbar />
-            
+      <BlackNavbar /> 
       {children}
       <Footer />
     </body>

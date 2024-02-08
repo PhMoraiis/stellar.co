@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
-import PreFooter from '@/components/PreFooter'
 import ExtremitySection from '@/components/ExtremitySection'
 import MiddleSection from '@/components/MiddleSection'
+import NimbusSection from '@/components/NimbusSection'
 
 
 const Home = () => {
@@ -20,23 +20,24 @@ const Home = () => {
 
   return (
     <div>
-      <div className="bg-[#f6f6f6] overflow-hidden">
+      <div className="bg-[#ffffff] overflow-hidden">
         <Hero />
       </div>
       {animationComplete && (
-        <div className='bg-[#000000]'>
-          <ExtremitySection
+        <div>
+          {/* <ExtremitySection
             title='Bem vindo à Stellar'
             subtitle='A especialista no que você imaginar.'
             description='Dedicada a iluminar o caminho do futuro. A Stellar é uma empresa que não só desenvolve soluções tecnológicas, mas também promove ideias e impulsiona o potencial humano. Na Stellar, acreditamos que juntos, podemos criar um impacto brilhante no mundo.'
             moviePath='./movies/231981044_226614866009546_642779584055189382_n.mp4'
-          />
+          /> */}
           <MiddleSection
             title='Desenvolvimento.'
             description='Teve uma ideia incrível? Você está no meio do caminho! Agora vamos fazer um produto totalmente funcional com isso.'
             linkTitle='Saiba Mais'
             linkPath='/development'
             moviePath='/movies/third.mp4'
+            bgColor='#FAFAFA'
           />
           <MiddleSection
             title='Web Design.'
@@ -44,6 +45,7 @@ const Home = () => {
             linkTitle='Saiba Mais'
             linkPath='/design'
             moviePath='/movies/second.mp4'
+            bgColor='#FFFFFF'
           />
           <MiddleSection
             title='Branding.'
@@ -51,14 +53,9 @@ const Home = () => {
             linkTitle='Saiba Mais'
             linkPath='/branding'
             moviePath='/movies/test.mp4'
+            bgColor='#FAFAFA'
           />
-          <ExtremitySection
-            title='Futuro Brilhante'
-            subtitle='A inovação que você procura.'
-            description='Assim como um diamante é lapidado para brilhar, a tecnologia é polida para iluminar o futuro, revelando incríveis inovações que brilham com o potencial de transformar nossa sociedade, conectando pessoas, simplificando tarefas e ampliando horizontes.'
-            moviePath='./movies/pinterest-video48.mp4'
-          />
-          <PreFooter />
+          <NimbusSection />
           <Footer />
         </div>
       )}

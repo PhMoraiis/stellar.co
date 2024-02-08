@@ -9,11 +9,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       fontFamily: {
         'coolveticaLt': ['Coolvetica Light'],
         'coolveticaEl': ['Coolvetica Extra Light'],
@@ -27,6 +22,8 @@ const config: Config = {
         'geometosBl': ['Geometos Neue Black'],
         'geometosEb': ['Geometos Neue Extra Bold'],
         'geometosUl': ['Geometos Neue Ultra'],
+        'azedo': ['Azedo Light'],
+        'azedoBd': ['Azedo Bold'],
       },
       animation: {
         'clip-from-top-animation': 'clip 1s ease-in 6s forwards',
