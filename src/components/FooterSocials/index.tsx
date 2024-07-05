@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import AnimatedLink from '../AnimatedLink'
 import { FiArrowUpRight } from 'react-icons/fi'
 
 const FooterSocials = () => {
@@ -18,7 +17,7 @@ const FooterSocials = () => {
           className="flex-col gap-y-[2px] block">
           <div className="flex items-center">
             <Link href={item.route} target="_blank">
-              <AnimatedLink title={item.title} />
+              {item.title}
             </Link>
             <FiArrowUpRight className="hover:scale-125 duration-300 ease-in" />
           </div>
