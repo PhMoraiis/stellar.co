@@ -1,37 +1,63 @@
-import { ArrowRight, ChevronRight, Trophy } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { motion } from 'motion/react'
+import { ArrowUpRight } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center py-32 rounded-3xl">
-      <div className="flex items-start justify-center flex-col max-w-screen-xl mx-auto pb-4 px-4 sm:px-8 space-y-8">
-        <div className="text-center items-start justify-center flex flex-col space-y-8 max-w-screen-md">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-coolvetica text-left">
-            Estúdio de design, focado na construção <span>image</span> branding{' '}
-            <span>image</span> ux, software <span>image</span> e apps.
-          </h1>
-          <p className="text-md font-semibold text-muted-foreground max-w-xl mt-4 text-md text-left">
-            Gerencie suas finanças de forma simples. Alcance suas metas,
-            acompanhe ganhos, controle gastos e veja seu progresso em tempo
-            real.
-          </p>
+    <section className="flex items-center justify-center py-32 min-h-screen p-4">
+      <div className="flex items-center justify-center flex-col max-w-screen-xl mx-auto pb-4 px-4 sm:px-8 space-y-32 mt-6 relative">
+        <div className="my-20 px-4 text-center">
+          <h2 className="text-center text-7xl font-movatif-regular md:text-9xl">
+            <span className="text-zinc-400">Um grande </span>
+            <span className="font-medium text-black">negócio </span>
+            <br />
+            <span className="text-zinc-400">é </span>
+            <span className="font-medium text-black">o</span>
+            <Image
+              src="https://images.unsplash.com/photo-1561070791-36c11767b26a?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Design showcase"
+              width={100}
+              height={100}
+              className="mx-8 inline-block rounded-lg object-cover object-bottom w-64 h-30"
+            />
+            <span className="font-medium text-black">resultado </span>
+            <span className="text-zinc-400">de um </span>
+            <span className="font-medium text-black">
+              grande <span>design</span>
+            </span>
+          </h2>
         </div>
-        <div className="flex items-center justify-center space-x-4 mt-4">
-          <Button
-            size="lg"
-            className="bg-primary text-secondary py-6 hover:bg-primary-dslight hover:text-secondary transition-all duration-200 ease-in rounded-full cursor-pointer text-md font-semibold shadow-lg"
+        <div className="mt-32 flex flex-wrap justify-center gap-24 px-4 text-2xl md:justify-around">
+          <Link
+            href="#"
+            className="group flex items-end gap-2 text-zinc-700 transition-colors hover:text-black"
           >
-            <ArrowRight strokeWidth={3} />
-            Comece gratuitamente
-          </Button>
-          <Button
-            size="lg"
-            className="bg-secondary text-primary py-6 hover:bg-secondary-dslight hover:text-primary transition-all duration-200 ease-in rounded-full cursor-pointer text-md font-semibold shadow-lg"
+            UI/UX Design
+            <ArrowUpRight
+              className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              size={20}
+            />
+          </Link>
+          <Link
+            href="#"
+            className="group flex items-end gap-2 text-zinc-700 transition-colors hover:text-black"
           >
-            Assistir intro
-            <ChevronRight strokeWidth={3} />
-          </Button>
+            Development
+            <ArrowUpRight
+              className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              size={20}
+            />
+          </Link>
+          <Link
+            href="#"
+            className="group flex items-end gap-2 text-zinc-700 transition-colors hover:text-black"
+          >
+            Branding
+            <ArrowUpRight
+              className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              size={20}
+            />
+          </Link>
         </div>
       </div>
     </section>

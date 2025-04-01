@@ -1,15 +1,11 @@
-'use client'
-
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import FooterSocials from './Socials'
+import CenterUnderline from '../ui/underline-center'
+import { Separator } from '../ui/separator'
 
 const Footer = () => {
-  const pathname = usePathname()
-
   const renderFooterNavs = () => {
     const navItems = [
-      { title: 'home', route: '/' },
       { title: 'soluções', route: '/solutions' },
       { title: 'works', route: '/works' },
       { title: 'sobre', route: '/about' },
@@ -17,17 +13,15 @@ const Footer = () => {
     ]
 
     return (
-      <ul className="text-gray-200 text-xl lg:text-2xl md:text-3xl">
+      <ul className="text-gray-200 text-xl lg:text-3xl md:text-3xl">
         {navItems.map(item => (
           <li
             key={item.title}
-            className={`flex-col gap-y-[4px] block duration-300 ease-in ${
-              pathname.toString() === item.route
-                ? 'border-b-[1px] border-white inline-flex'
-                : ''
-            }`}
+            className="flex-col gap-y-[4px] block duration-300 ease-in"
           >
-            <Link href={item.route}>{item.title}</Link>
+            <Link href={item.route}>
+              <CenterUnderline label={item.title} />
+            </Link>
           </li>
         ))}
       </ul>
@@ -35,28 +29,25 @@ const Footer = () => {
   }
 
   return (
-    <footer className="py-4 pb-6 lg:pt-20 bg-[#171718] font-coolveticaLt">
+    <footer className="py-4 pb-6 lg:pt-20 bg-[#171718] font-movatif-regular">
       <div className="px-4 lg:px-20">
         <div className="lg:flex">
           <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
-            <h1 className="text-[1.6rem] lg:text-[3rem] md:text-5xl text-white font-coolveticaRg flex items-center">
-              Relaxa. Nós guiamos você!
-            </h1>
-            <div className="text-white text-xl lg:text-2xl md:text-3xl font-coolveticaLt">
-              <Link
-                href="https://www.instagram.com/stellar.ti/"
-                target="_blank"
-              >
-                descubra mais sobre nós.
-              </Link>
+            <Link href="mailto:hello@stellarstudio.tech">
+              <CenterUnderline
+                underlineHeightRatio={0.05}
+                underlinePaddingRatio={0.05}
+                label="hello@stellarstudio.tech"
+                className="text-[1.6rem] lg:text-[3rem] md:text-5xl text-white font-coolveticaRg flex items-center"
+              />
+            </Link>
+            <div className="text-white text-xl lg:text-2xl md:text-3xl font-movatif-regular">
+              <FooterSocials />
             </div>
           </div>
           <div className="flex flex-col">
             <div className="grid grid-cols-2 gap-12">
               <div className="pb-12">{renderFooterNavs()}</div>
-              <div className="pb-4 lg:ml-8">
-                <FooterSocials />
-              </div>
             </div>
           </div>
         </div>
@@ -83,13 +74,10 @@ const Footer = () => {
             />
           </svg>
         </div>
-        <div className="text-gray-300 md:text-xl flex items-center flex-col mt-12 md:flex-row md:justify-between lg:flex-row lg:justify-between">
-          <div className="flex">
-            <Link href="/privacy">Politica de Privacidade</Link>
-            <span>/</span>
-            <Link href="/terms">Termos</Link>
-          </div>
-          <p>©2025 Stellar Studio. Todos os direitos reservados.</p>
+        <Separator className="bg-muted-foreground/50 my-6" />
+        <div className="text-gray-300 md:text-xl flex items-center flex-col mt-12 md:flex-row md:justify-between lg:flex-row lg:justify-between text-xl lg:text-2xl">
+          <p>Copyright ©2025 Stellar Studio. Todos os direitos reservados.</p>
+          <div className="flex">Brasília, BRA</div>
         </div>
       </div>
     </footer>
