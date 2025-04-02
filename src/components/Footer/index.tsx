@@ -29,8 +29,8 @@ const Footer = () => {
   }
 
   return (
-    <footer className="py-4 pb-6 lg:pt-20 bg-[#171718] font-movatif-regular">
-      <div className="px-4 lg:px-20">
+    <footer className="py-16 px-4 md:py-16 pb-6 lg:pt-20 bg-[#171718] font-movatif-regular">
+      <div className="px-4 lg:px-20 sm:px-6 py-12 md:py-10">
         <div className="lg:flex">
           <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
             <Link href="mailto:hello@stellarstudio.tech">
@@ -75,7 +75,7 @@ const Footer = () => {
           </svg>
         </div>
         <Separator className="bg-muted-foreground/50 my-6" />
-        <div className="text-gray-300 md:text-xl flex items-center flex-col mt-12 md:flex-row md:justify-between lg:flex-row lg:justify-between text-xl lg:text-2xl">
+        <div className="text-gray-300 md:text-xl flex items-start lg:items-center flex-col mt-6 lg:mt-12 md:flex-row md:justify-between lg:flex-row lg:justify-between text-xl lg:text-2xl space-y-6">
           <p>Copyright ©2025 Stellar Studio. Todos os direitos reservados.</p>
           <div className="flex">Brasília, BRA</div>
         </div>
