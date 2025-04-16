@@ -89,7 +89,7 @@ export default function Header() {
           transition={{ duration: 0.3 }}
         >
           <motion.div
-            className="bg-white shadow-md rounded-full py-3 px-4 sm:px-6 md:px-8 w-full max-w-[95%] sm:max-w-[90%] md:max-w-[85%] lg:max-w-2xl flex items-center justify-between sm:justify-evenly overflow-hidden"
+            className="bg-white shadow-md rounded-full py-3 px-4 sm:px-6 md:px-8 w-full max-w-[95%] sm:max-w-[26rem] md:max-w-[33rem] lg:max-w-[38rem] flex items-center justify-between sm:justify-evenly overflow-hidden"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.2 }}
@@ -109,12 +109,12 @@ export default function Header() {
             </nav>
 
             <motion.button
-              className="bg-amber-400 hover:bg-amber-500 text-gray-900 ml-2 sm:ml-4 px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-3xl flex items-center font-medium transition-colors whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg"
+              className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-1.5 sm:px-4 sm:py-2 md:px-6 md:py-2.5 lg:px-8 lg:py-3 rounded-3xl flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="inline-block h-1.5 w-1.5 sm:h-2 sm:w-2 bg-gray-900 rounded-full mr-1.5 sm:mr-2" />
-              <span>Fale conosco</span>
+              <span className="inline-block h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary rounded-full mr-1.5 sm:mr-2" />
+              <span>Agendar Meet</span>
             </motion.button>
           </motion.div>
         </motion.header>

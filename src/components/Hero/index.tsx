@@ -27,7 +27,7 @@ export default function Hero() {
           </h2>
 
           <LayoutGroup>
-            <motion.p
+            <motion.div
               className="mt-2 flex text-center font-movatif-regular text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl"
               layout
             >
@@ -40,7 +40,7 @@ export default function Hero() {
               </motion.span>
               <TextRotate
                 texts={['desenvolvimento.', 'design.', 'branding.']}
-                mainClassName="text-white px-2 sm:px-3 md:px-4 bg-[#ff5941] overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg h-10 sm:h-14 md:h-20 lg:h-34 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4"
+                mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg h-10 sm:h-14 md:h-20 lg:h-34 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4"
                 staggerFrom={'last'}
                 initial={{ y: '100%' }}
                 animate={{ y: 0 }}
@@ -50,7 +50,7 @@ export default function Hero() {
                 transition={{ type: 'spring', damping: 30, stiffness: 400 }}
                 rotationInterval={3500}
               />
-            </motion.p>
+            </motion.div>
           </LayoutGroup>
         </div>
 

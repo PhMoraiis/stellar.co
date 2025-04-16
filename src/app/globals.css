@@ -49,6 +49,8 @@
   --font-movatif-rg: "Movatif RG";
   --font-movatif-regular: "Movatif Regular";
   --color-gray-footer: var(--gray-footer);
+  --color-primaryds: var(--primaryds);
+  --color-secondaryds: var(--secondaryds);
 }
 
 :root {
@@ -85,6 +87,8 @@
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
   --gray-footer: oklch(30.92% 0.0 0);
+  --primaryds: oklch(0.67 0.206 38.2);
+  --secondaryds: oklch(0.73 0.165 43.9);
 }
 
 .dark {
@@ -120,6 +124,8 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.552 0.016 285.938);
   --gray-footer: oklch(30.92% 0.0 0);
+  --primaryds: oklch(0.67 0.206 38.2);
+  --secondaryds: oklch(0.73 0.165 43.9);
 }
 
 @layer base {
