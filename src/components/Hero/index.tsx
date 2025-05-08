@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use client'
 
 import { ArrowUpRight } from 'lucide-react'
@@ -74,22 +73,3 @@ export default function Hero() {
     </section>
   )
 }
-=======
-import EarthVideo from "../EarthVideo";
-import HeroText from "../HeroText";
-import MapImages from "../MapImages";
-import Navbar from "../Navbar";
-
-function Home() {
-  return (
-    <>
-      <Navbar />
-      <HeroText />
-      <MapImages />
-      <EarthVideo />
-    </>
-  );
-}
-
-export default Home;
->>>>>>> 1195f16999c15de8b2092f6f835d139e8244440a
