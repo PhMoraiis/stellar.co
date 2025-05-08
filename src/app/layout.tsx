@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+
+const interSans = Inter({
+  variable: '--font-inter-sans',
+  subsets: ['latin'],
+})
+
+export const metadata: Metadata = {
+  title: 'Stellar | Agência de Tecnologia estratégica e criativa',
+  description:
+    'Stellar é uma agência de tecnologia estratégica e criativa que ajuda empresas a crescerem e se destacarem no mercado, com serviços de branding, design e desenvolvimento de aplicações web & mobile.',
+=======
 import './globals.css'
 import type { Metadata } from 'next'
 
@@ -15,10 +30,22 @@ export const metadata: Metadata = {
   creator: "Philipe Morais",
   viewport: "width=device-width, initial-scale=1.0",
   applicationName: "Stellar Website",
+>>>>>>> 1195f16999c15de8b2092f6f835d139e8244440a
 }
 
 export default function RootLayout({
   children,
+<<<<<<< HEAD
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html lang="en">
+      <body className={`${interSans.variable} antialiased`}>{children}</body>
+    </html>
+  )
+}
+=======
 }: {
   children: React.ReactNode
 }) {
@@ -28,3 +55,4 @@ export default function RootLayout({
     </html>
   )
 }
+>>>>>>> 1195f16999c15de8b2092f6f835d139e8244440a
