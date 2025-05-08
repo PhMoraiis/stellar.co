@@ -41,13 +41,14 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-movatif-bd: "Movatif Bold";
-  --font-movatif-bk: "Movatif Book";
-  --font-movatif-el: "Movatif Extra Light";
-  --font-movatif-hv: "Movatif Heavy Light";
-  --font-movatif-ul: "Movatit Ultra Light";
-  --font-movatif-rg: "Movatif RG";
   --font-movatif-regular: "Movatif Regular";
+  --font-movatif-bold: "Movatif Bold";
+  --font-movatif-extralight: "Movatif Extra Light";
+  --font-movatif-heavy: "Movatif Heavy";
+  --font-movatif-light: "Movatif Light";
+  --font-movatif-ultralight: "Movatif Ultra Light";
+  --font-movatif-book: "Movatif Book";
+  --font-gorga: "Gorga";
   --color-gray-footer: var(--gray-footer);
   --color-primaryds: var(--primaryds);
   --color-secondaryds: var(--secondaryds);
@@ -138,30 +139,41 @@
 }
 
 @font-face {
-  font-family: "Movatif Bold";
-  src: url("/fonts/Movatif/movatif_bd.otf");
+  font-family: "Movatif Regular";
+  src: url("/fonts/Movatif/MovatifRegular.woff2");
 }
+
 @font-face {
-  font-family: "Movatif Book";
-  src: url("/fonts/Movatif/movatif_bk.otf");
+  font-family: "Movatif Bold";
+  src: url("/fonts/Movatif/MovatifBold.woff2");
 }
+
 @font-face {
   font-family: "Movatif Extra Light";
-  src: url("/fonts/Movatif/movatif_el.otf");
+  src: url("/fonts/Movatif/MovatifExtraLight.woff2");
 }
+
 @font-face {
-  font-family: "Movatif Heavy Light";
-  src: url("/fonts/Movatif/movatif_hv.otf");
+  font-family: "Movatif Heavy";
+  src: url("/fonts/Movatif/MovatifHeavy.woff2");
 }
+
+@font-face {
+  font-family: "Movatif Light";
+  src: url("/fonts/Movatif/MovatifLight.woff2");
+}
+
 @font-face {
   font-family: "Movatif Ultra Light";
-  src: url("/fonts/Movatif/movatif_ul.otf");
+  src: url("/fonts/Movatif/MovatifUltraLight.woff2");
 }
+
 @font-face {
-  font-family: "Movatif RG";
-  src: url("/fonts/Movatif/movatif_rg.otf");
+  font-family: "Movatif Book";
+  src: url("/fonts/Movatif/MovatifBook.woff2");
 }
+
 @font-face {
-  font-family: "Movatif Regular";
-  src: url("/fonts/Movatif/movatif_regular.otf");
+  font-family: "Gorga";
+  src: url("/fonts/gorga.ttf");
 }
