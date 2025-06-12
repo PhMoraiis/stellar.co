@@ -1,4 +1,4 @@
-import { TbClover, TbPlanet } from 'react-icons/tb'
+import { CloverIcon, PlanetIcon } from "@phosphor-icons/react/ssr";
 
 const FastAbout = () => {
   return (
@@ -6,7 +6,7 @@ const FastAbout = () => {
       <div className="max-w-7xl mx-auto flex flex-col space-y-42">
         <div className="text-left max-w-5xl gap-6 flex flex-col">
           <h4 className="text-lg font-medium uppercase mb-4 flex gap-2 items-center">
-            <TbPlanet className="size-6" /> Por que nós existimos
+            <PlanetIcon className="size-6" /> Por que nós existimos
           </h4>
           <h2 className="text-4xl md:text-6xl font-movatif-regular">
             Reconhecemos uma lacuna na indústria criativa: Pequenas empresas
@@ -16,8 +16,8 @@ const FastAbout = () => {
         </div>
         <div className="flex justify-between flex-col md:flex-row lg:flex-row gap-12">
           <div className="flex items-center justify-start space-x-4">
-            <TbClover className="size-42 text-[#BA6139]" />
-            <TbClover className="size-42 text-[#BA6139]" />
+            <CloverIcon className="size-44 text-[#BA6139]" />
+            <CloverIcon className="size-44 text-[#BA6139]" />
           </div>
           <div className="max-w-lg">
             <p className="font-normal text-xl">
@@ -30,7 +30,7 @@ const FastAbout = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FastAbout
+export default FastAbout;

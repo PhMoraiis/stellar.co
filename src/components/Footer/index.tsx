@@ -1,20 +1,20 @@
-import Link from 'next/link'
-import FooterSocials from './Socials'
-import CenterUnderline from '../ui/underline-center'
-import { Separator } from '../ui/separator'
+import Link from "next/link";
+import FooterSocials from "./Socials";
+import CenterUnderline from "../ui/underline-center";
+import { Separator } from "../ui/separator";
 
 const Footer = () => {
   const renderFooterNavs = () => {
     const navItems = [
-      { title: 'soluções', route: '/solutions' },
-      { title: 'works', route: '/works' },
-      { title: 'sobre', route: '/about' },
-      { title: 'contato', route: '/contact' },
-    ]
+      { title: "soluções", route: "/solutions" },
+      { title: "works", route: "/works" },
+      { title: "blog", route: "/blog" },
+      { title: "sobre", route: "/about" },
+    ];
 
     return (
       <ul className="text-gray-200 text-xl lg:text-3xl md:text-3xl">
-        {navItems.map(item => (
+        {navItems.map((item) => (
           <li
             key={item.title}
             className="flex-col gap-y-[4px] block duration-300 ease-in"
@@ -25,8 +25,8 @@ const Footer = () => {
           </li>
         ))}
       </ul>
-    )
-  }
+    );
+  };
 
   return (
     <footer className="py-16 px-4 md:py-16 pb-6 lg:pt-20 bg-[#171718] font-movatif-regular">
@@ -35,8 +35,7 @@ const Footer = () => {
           <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
             <Link href="mailto:hello@stellarstudio.tech">
               <CenterUnderline
-                underlineHeightRatio={0.05}
-                underlinePaddingRatio={0.05}
+                underlinePaddingRatio={0.07}
                 label="hello@stellarstudio.tech"
                 className="text-[1.6rem] lg:text-[3rem] md:text-5xl text-white font-coolveticaRg flex items-center"
               />
@@ -77,11 +76,11 @@ const Footer = () => {
         <Separator className="bg-muted-foreground/50 my-6" />
         <div className="text-gray-300 md:text-xl flex items-start lg:items-center flex-col mt-6 lg:mt-12 md:flex-row md:justify-between lg:flex-row lg:justify-between text-xl lg:text-2xl space-y-6">
           <p>Copyright ©2025 Stellar Studio. Todos os direitos reservados.</p>
-          <div className="flex">Brasília, BRA</div>
+          <div className="flex">Brasília, BR</div>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
