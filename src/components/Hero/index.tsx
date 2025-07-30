@@ -17,13 +17,16 @@ export default function Hero() {
       <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="mb-16 flex flex-col items-center justify-center px-4 text-center md:mb-24 lg:mb-32">
           <h2 className="font-movatif-regular text-3xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
-            <span className="text-zinc-400">Um grande </span>
+            <span className="font-medium text-black">Um </span>
+            <span className="bg-gradient-to-r from-zinc-400 via-zinc-600 to-zinc-800 bg-clip-text text-transparent">
+              grande{' '}
+            </span>
             <span className="font-medium text-black">negócio </span>
             <br />
-            <span className="text-zinc-400">é </span>
+            <span className="font-medium text-black">é </span>
             <span className="font-medium text-black">o </span>
             <span className="font-medium text-black">resultado </span>
-            <span className="text-zinc-400">de um</span>
+            <span className="font-medium text-black">de um</span>
           </h2>
 
           <LayoutGroup>
