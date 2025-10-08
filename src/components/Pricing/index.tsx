@@ -2,6 +2,7 @@
 
 import { CurrencyCircleDollarIcon } from '@phosphor-icons/react/dist/ssr'
 import { ArrowUpRight } from 'lucide-react'
+import { motion } from 'motion/react'
 import { useCallback, useMemo, useState } from 'react'
 import { Button } from '../ui/button'
 import { Card, CardContent } from '../ui/card'
@@ -427,10 +428,7 @@ const ContactSection = ({
     }
 
     // Add extras
-    const allExtras = [
-      ...webDesignExtras,
-      ...productDesignExtras,
-    ]
+    const allExtras = [...webDesignExtras, ...productDesignExtras]
     if (allExtras.length > 0) {
       body += 'ENTREGAS EXTRAS:\n'
       for (const extra of allExtras) {
@@ -504,10 +502,16 @@ const Pricing = () => {
   } = usePricingState()
 
   return (
-    <div className="py-16 px-4 md:py-24">
+    <div id="pricing" className="py-16 px-4 md:py-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col gap-6 mb-8">
+        <motion.div
+          className="flex flex-col gap-6 mb-8"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+        >
           <h4 className="text-lg font-medium uppercase mb-4 flex gap-2 items-center">
             <CurrencyCircleDollarIcon className="size-6" /> Orçamento
           </h4>
@@ -516,9 +520,15 @@ const Pricing = () => {
             activeService={activeService}
             onServiceChange={setActiveService}
           />
-        </div>
+        </motion.div>
 
-        <div className="max-w-7xl mx-auto">
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+        >
           <Card className="bg-primary text-white border-0 rounded-md">
             <CardContent className="p-8">
               <div className="flex justify-between items-start mb-6">
@@ -564,7 +574,7 @@ const Pricing = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

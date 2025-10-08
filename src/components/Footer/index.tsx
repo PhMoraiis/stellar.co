@@ -6,10 +6,10 @@ import FooterSocials from './Socials'
 const Footer = () => {
   const renderFooterNavs = () => {
     const navItems = [
-      { title: 'soluções', route: '/solutions' },
-      { title: 'works', route: '/works' },
-      { title: 'blog', route: '/blog' },
-      { title: 'sobre', route: '/about' },
+      { title: 'sobre', route: '#about' },
+      { title: 'soluções', route: '#solutions' },
+      { title: 'preços', route: '#pricing' },
+      { title: 'faq', route: '#faq' },
     ]
 
     return (
