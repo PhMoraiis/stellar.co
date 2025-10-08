@@ -1,6 +1,13 @@
 'use client'
 
 import {
+  AnimatePresence,
+  type AnimatePresenceProps,
+  type MotionProps,
+  type Transition,
+  motion,
+} from 'motion/react'
+import {
   forwardRef,
   useCallback,
   useEffect,
@@ -8,13 +15,6 @@ import {
   useMemo,
   useState,
 } from 'react'
-import {
-  AnimatePresence,
-  type AnimatePresenceProps,
-  motion,
-  type MotionProps,
-  type Transition,
-} from 'motion/react'
 
 import { cn } from '@/lib/utils'
 

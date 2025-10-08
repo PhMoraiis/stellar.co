@@ -1,13 +1,13 @@
 'use client'
 
-import type React from 'react'
-import { useEffect, useRef, useState } from 'react'
 import cn from 'clsx'
 import {
+  type ValueAnimationTransition,
   motion,
   useAnimationControls,
-  type ValueAnimationTransition,
 } from 'motion/react'
+import type React from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface GoesOutComesInUnderlineProps {
   label: string

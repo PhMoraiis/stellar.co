@@ -1,29 +1,29 @@
-"use client";
+'use client'
 
-import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
-import { useScrolled } from "@/hooks/useScrolled";
-import { StellarLogo } from "../Logos";
-import { usePathname } from "next/navigation";
-import CenterUnderline from "../ui/underline-center";
+import { useScrolled } from '@/hooks/useScrolled'
+import { AnimatePresence, motion } from 'motion/react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { StellarLogo } from '../Logos'
+import CenterUnderline from '../ui/underline-center'
 
 export default function Header() {
-  const { scrolled } = useScrolled({ initial: false });
-  const pathname = usePathname();
+  const { scrolled } = useScrolled({ initial: false })
+  const pathname = usePathname()
 
   const initialNavLinks = [
-    { name: "Soluções", href: "/solutions" },
-    { name: "Works", href: "/works" },
-    { name: "Blog", href: "/blog" },
-    { name: "Sobre", href: "/about" },
-  ];
+    { name: 'Soluções', href: '/solutions' },
+    { name: 'Works', href: '/works' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Sobre', href: '/about' },
+  ]
 
   const scrolledNavLinks = [
-    { name: "Soluções", href: "/solutions" },
-    { name: "Works", href: "/works" },
-    { name: "Blog", href: "/blog" },
-    { name: "Sobre", href: "/about" },
-  ];
+    { name: 'Soluções', href: '/solutions' },
+    { name: 'Works', href: '/works' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Sobre', href: '/about' },
+  ]
 
   return (
     <AnimatePresence mode="wait">
@@ -39,12 +39,12 @@ export default function Header() {
           <div className="flex items-center justify-center px-2 xs:px-4 sm:px-6">
             <div className="flex items-center justify-between w-full max-w-sm sm:max-w-sm md:max-w-sm lg:max-w-lg">
               <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-8 mr-1 xs:mr-2 sm:mr-3">
-                {initialNavLinks.slice(0, 2).map((link) => (
+                {initialNavLinks.slice(0, 2).map(link => (
                   <Link
                     key={link.name}
                     href={link.href}
                     className={`text-gray-800 text-md xs:text-md sm:text-md md:text-lg hover:text-gray-600 transition-colors whitespace-nowrap ${
-                      pathname === link.href ? "font-medium" : ""
+                      pathname === link.href ? 'font-medium' : ''
                     }`}
                   >
                     <CenterUnderline label={link.name} />
@@ -65,12 +65,12 @@ export default function Header() {
               </Link>
 
               <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 ml-1 xs:ml-2 sm:ml-3">
-                {initialNavLinks.slice(2).map((link) => (
+                {initialNavLinks.slice(2).map(link => (
                   <Link
                     key={link.name}
                     href={link.href}
                     className={`text-gray-800 text-md xs:text-md sm:text-md md:text-lg hover:text-gray-600 transition-colors whitespace-nowrap ${
-                      pathname === link.href ? "font-medium" : ""
+                      pathname === link.href ? 'font-medium' : ''
                     }`}
                   >
                     <CenterUnderline label={link.name} />
@@ -96,12 +96,12 @@ export default function Header() {
             transition={{ duration: 0.2 }}
           >
             <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-8 lg:space-x-12">
-              {scrolledNavLinks.map((link) => (
+              {scrolledNavLinks.map(link => (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={`text-gray-800 text-xs sm:text-sm md:text-base hover:text-gray-600 transition-colors whitespace-nowrap ${
-                    pathname === link.href ? "font-medium" : ""
+                    pathname === link.href ? 'font-medium' : ''
                   }`}
                 >
                   <CenterUnderline label={link.name} />
@@ -123,5 +123,5 @@ export default function Header() {
         </motion.header>
       )}
     </AnimatePresence>
-  );
+  )
 }

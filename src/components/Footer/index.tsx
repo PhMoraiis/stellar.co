@@ -1,20 +1,20 @@
-import Link from "next/link";
-import FooterSocials from "./Socials";
-import CenterUnderline from "../ui/underline-center";
-import { Separator } from "../ui/separator";
+import Link from 'next/link'
+import { Separator } from '../ui/separator'
+import CenterUnderline from '../ui/underline-center'
+import FooterSocials from './Socials'
 
 const Footer = () => {
   const renderFooterNavs = () => {
     const navItems = [
-      { title: "soluções", route: "/solutions" },
-      { title: "works", route: "/works" },
-      { title: "blog", route: "/blog" },
-      { title: "sobre", route: "/about" },
-    ];
+      { title: 'soluções', route: '/solutions' },
+      { title: 'works', route: '/works' },
+      { title: 'blog', route: '/blog' },
+      { title: 'sobre', route: '/about' },
+    ]
 
     return (
       <ul className="text-gray-200 text-xl lg:text-3xl md:text-3xl">
-        {navItems.map((item) => (
+        {navItems.map(item => (
           <li
             key={item.title}
             className="flex-col gap-y-[4px] block duration-300 ease-in"
@@ -25,8 +25,8 @@ const Footer = () => {
           </li>
         ))}
       </ul>
-    );
-  };
+    )
+  }
 
   return (
     <footer className="py-16 px-4 md:py-16 pb-6 lg:pt-20 bg-[#171718] font-movatif-regular">
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -23,3 +23,4 @@ export default function RootLayout({
       <body className={`${interSans.variable} antialiased`}>{children}</body>
     </html>
   )
+}

@@ -1,4 +1,4 @@
-import { CloverIcon, PlanetIcon } from "@phosphor-icons/react/ssr";
+import { CloverIcon, PlanetIcon } from '@phosphor-icons/react/ssr'
 
 const FastAbout = () => {
   return (
@@ -10,8 +10,8 @@ const FastAbout = () => {
           </h4>
           <h2 className="text-4xl md:text-6xl font-movatif-regular">
             Reconhecemos uma lacuna na indústria criativa: Pequenas empresas
-            frequentemente têm dificuldade em encontrar soluções de design de
-            alta qualidade, porém acessíveis. É por isso que existimos.
+            frequentemente têm dificuldade em encontrar soluções de tecnologia
+            de alta qualidade, porém acessíveis. É por isso que existimos.
           </h2>
         </div>
         <div className="flex justify-between flex-col md:flex-row lg:flex-row gap-12">
@@ -21,16 +21,16 @@ const FastAbout = () => {
           </div>
           <div className="max-w-lg">
             <p className="font-normal text-xl">
-              Oferecemos um conjunto selecionado de serviços de design,
+              Oferecemos um conjunto selecionado de serviços de tecnologia,
               especialmente elaborados para pequenos empresários. Do web design
-              à identidade visual, simplificamos a construção de uma presença
-              online sólida sem nenhum custo adicional.
+              à implementação de softwares, simplificamos a construção de uma
+              presença online sólida sem nenhum custo adicional.
             </p>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FastAbout;
+export default FastAbout

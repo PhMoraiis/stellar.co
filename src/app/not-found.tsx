@@ -1,9 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, useAnimate, AnimatePresence } from 'motion/react'
-import Link from 'next/link'
 import { ArrowLeft, Home } from 'lucide-react'
+import { AnimatePresence, motion, useAnimate } from 'motion/react'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export default function NotFound() {
   const [isLoaded, setIsLoaded] = useState(false)

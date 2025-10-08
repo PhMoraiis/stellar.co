@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { GlobeIcon } from "@phosphor-icons/react/dist/ssr";
+} from '@/components/ui/accordion'
+import { GlobeIcon } from '@phosphor-icons/react/dist/ssr'
 
 export default function FAQ() {
   return (
@@ -18,7 +18,7 @@ export default function FAQ() {
 
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               Quais serviços a Stellar Studio oferece?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -29,7 +29,7 @@ export default function FAQ() {
           </AccordionItem>
 
           <AccordionItem value="item-2" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               Quanto tempo demora um projeto típico?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -40,7 +40,7 @@ export default function FAQ() {
           </AccordionItem>
 
           <AccordionItem value="item-3" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               O preço calculado pela sua calculadora online é final?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -51,7 +51,7 @@ export default function FAQ() {
           </AccordionItem>
 
           <AccordionItem value="item-4" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               Vocês oferecem algum plano de pagamento?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -62,7 +62,7 @@ export default function FAQ() {
           </AccordionItem>
 
           <AccordionItem value="item-5" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               Que tipo de suporte posso esperar após o lançamento?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -73,7 +73,7 @@ export default function FAQ() {
           </AccordionItem>
 
           <AccordionItem value="item-6" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               Você terceiriza algum trabalho?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -84,7 +84,7 @@ export default function FAQ() {
           </AccordionItem>
 
           <AccordionItem value="item-7" className="py-4">
-            <AccordionTrigger className="flex justify-between text-xl font-movatif-book text-neutral-800 hover:no-underline">
+            <AccordionTrigger className="flex justify-between text-xl text-neutral-800 hover:no-underline">
               Como faço para começar?
             </AccordionTrigger>
             <AccordionContent className="text-zinc-500">
@@ -96,5 +96,5 @@ export default function FAQ() {
         </Accordion>
       </div>
     </div>
-  );
+  )
 }

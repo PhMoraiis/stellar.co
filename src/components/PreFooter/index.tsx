@@ -1,7 +1,7 @@
-"use client";
+'use client'
 
-import { ArrowRight } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { ArrowRight } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
 
 export default function PreFooter() {
   return (
@@ -10,7 +10,7 @@ export default function PreFooter() {
         {/* Main heading */}
         <h1 className="font-movatif-regular text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12 bg-gradient-to-b from-zinc-400 via-zinc-300 to-zinc-300 bg-clip-text text-transparent">
           Trabalhe perfeitamente com uma equipe criativa criada para acompanhar
-          seu ritmo e {""}
+          seu ritmo e {''}
           <span className="bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-400 bg-clip-text text-transparent">
             supere suas expectativas<span className="text-primaryds">.</span>
           </span>
@@ -21,10 +21,10 @@ export default function PreFooter() {
           type="button"
           className="inline-flex items-center bg-gray-footer rounded-full shadow-2xl px-3 pr-6 py-2 text-white hover:bg-zinc-900 transition-colors duration-200 ease-in-out cursor-pointer"
           onClick={() => {
-            const subject = encodeURIComponent("Quero marcar um meet");
-            const body = encodeURIComponent("Olá gostaria de marcar um meet!");
-            const mailtoUrl = `mailto:hello@stellarstudio.tech?subject=${subject}&body=${body}`;
-            window.open(mailtoUrl);
+            const subject = encodeURIComponent('Quero marcar um meet')
+            const body = encodeURIComponent('Olá gostaria de marcar um meet! Com a Stellar Studio.')
+            const mailtoUrl = `mailto:hello@stellarstudio.tech?subject=${subject}&body=${body}`
+            window.open(mailtoUrl)
           }}
         >
           <div className="flex items-center justify-center space-x-4">
@@ -45,5 +45,5 @@ export default function PreFooter() {
         </button>
       </div>
     </div>
-  );
+  )
 }

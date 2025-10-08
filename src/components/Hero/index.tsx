@@ -1,16 +1,15 @@
-"use client";
+'use client'
 
-import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
-import TextRotate from "../ui/text-rotate";
-import { motion, LayoutGroup } from "motion/react";
+import { ArrowUpRight } from 'lucide-react'
+import { LayoutGroup, motion } from 'motion/react'
+import Link from 'next/link'
+import TextRotate from '../ui/text-rotate'
 
 export default function Hero() {
   const links = [
-    { name: "Branding", href: "/branding", id: 1 },
-    { name: "Desenvolvimento", href: "/development", id: 2 },
-    { name: "UI/UX Design", href: "/product-design", id: 3 },
-  ];
+    { name: 'Desenvolvimento', href: '/development', id: 2 },
+    { name: 'UI/UX Design', href: '/product-design', id: 3 },
+  ]
 
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden p-4 py-16 md:py-24 lg:py-32">
@@ -34,26 +33,29 @@ export default function Hero() {
               <motion.span
                 className="pt-0.5 sm:pt-1 md:pt-2"
                 layout
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                transition={{ type: 'spring', damping: 30, stiffness: 400 }}
               >
-                grande{" "}
+                grande{' '}
               </motion.span>
               <TextRotate
                 texts={[
-                  "desenvolvimento.",
-                  "design.",
-                  "branding.",
-                  "studio.",
-                  "time.",
+                  'desenvolvimento.',
+                  'design.',
+                  'software.',
+                  'projeto.',
+                  'studio.',
+                  'time.',
+                  'produto.',
+                  'futuro.',
                 ]}
                 mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg h-10 sm:h-14 md:h-20 lg:h-34 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4"
-                staggerFrom={"last"}
-                initial={{ y: "100%" }}
+                staggerFrom={'last'}
+                initial={{ y: '100%' }}
                 animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
+                exit={{ y: '-120%' }}
                 staggerDuration={0.025}
                 splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-4"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                transition={{ type: 'spring', damping: 30, stiffness: 400 }}
                 rotationInterval={3500}
               />
             </motion.div>
@@ -61,7 +63,7 @@ export default function Hero() {
         </div>
 
         <div className="flex w-full flex-col items-center justify-center gap-8 px-4 text-lg sm:flex-row sm:gap-12 md:gap-16 lg:gap-24 lg:text-xl xl:text-2xl">
-          {links.map((link) => (
+          {links.map(link => (
             <Link
               key={link.id}
               href={link.href}
@@ -77,5 +79,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  );
+  )
 }
