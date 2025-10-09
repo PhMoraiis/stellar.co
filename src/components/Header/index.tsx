@@ -1,29 +1,38 @@
 "use client";
 
-import Link from "next/link";
-import { motion, AnimatePresence } from "motion/react";
-import { useScrolled } from "@/hooks/useScrolled";
-import { StellarLogo } from "../Logos";
-import { usePathname } from "next/navigation";
-import CenterUnderline from "../ui/underline-center";
+import { useScrolled } from '@/hooks/useScrolled'
+import { getCalApi } from '@calcom/embed-react'
+import { AnimatePresence, motion } from 'motion/react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect } from 'react'
+import { StellarLogo } from '../Logos'
+import CenterUnderline from '../ui/underline-center'
 
 export default function Header() {
-  const { scrolled } = useScrolled({ initial: false });
-  const pathname = usePathname();
+  const { scrolled } = useScrolled({ initial: false })
+  const pathname = usePathname()
+
+  useEffect(() => {
+    ;(async () => {
+      const cal = await getCalApi({ namespace: '30min' })
+      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
+    })()
+  }, [])
 
   const initialNavLinks = [
-    { name: "Soluções", href: "/solutions" },
-    { name: "Works", href: "/works" },
-    { name: "Blog", href: "/blog" },
-    { name: "Sobre", href: "/about" },
-  ];
+    { name: 'Sobre', href: '#about' },
+    { name: 'Soluções', href: '#solutions' },
+    { name: 'Preços', href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
+  ]
 
   const scrolledNavLinks = [
-    { name: "Soluções", href: "/solutions" },
-    { name: "Works", href: "/works" },
-    { name: "Blog", href: "/blog" },
-    { name: "Sobre", href: "/about" },
-  ];
+    { name: 'Sobre', href: '#about' },
+    { name: 'Soluções', href: '#solutions' },
+    { name: 'Preços', href: '#pricing' },
+    { name: 'FAQ', href: '#faq' },
+  ]
 
   return (
     <AnimatePresence mode="wait">
@@ -109,16 +118,19 @@ export default function Header() {
               ))}
             </nav>
 
-            <motion.a
+            <motion.button
               className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-1.5 sm:px-2 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-2 rounded-3xl flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:meet@stellarstudio.tech?subject=Marcar%20meet%20virtual&body=Ol%C3%A1%2C%0A%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o%20virtual%20com%20a%20Stellar.%20Fico%20%C3%A0%20disposi%C3%A7%C3%A3o%20para%20conhecer%20os%20hor%C3%A1rios%20dispon%C3%ADveis.%0A%0AAguardo%20seu%20retorno.%0A%0AAtenciosamente%2C%0A%5BSeu%20Nome%5D%0A%5BSeu%20Cargo%5D%0A%5BSeu%20Telefone%5D%0A%5BSeu%20e-mail%5D%0A%5BNome%20da%20Empresa%5D
-"
+              //               href="mailto:meet@stellarstudio.tech?subject=Marcar%20meet%20virtual&body=Ol%C3%A1%2C%0A%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o%20virtual%20com%20a%20Stellar.%20Fico%20%C3%A0%20disposi%C3%A7%C3%A3o%20para%20conhecer%20os%20hor%C3%A1rios%20dispon%C3%ADveis.%0A%0AAguardo%20seu%20retorno.%0A%0AAtenciosamente%2C%0A%5BSeu%20Nome%5D%0A%5BSeu%20Cargo%5D%0A%5BSeu%20Telefone%5D%0A%5BSeu%20e-mail%5D%0A%5BNome%20da%20Empresa%5D
+              // "
+              data-cal-namespace="30min"
+              data-cal-link="stellar-studio/30min"
+              data-cal-config='{"layout":"month_view"}'
             >
               <span className="inline-block h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary rounded-full mr-1.5 sm:mr-2" />
               <span>Agendar Meet</span>
-            </motion.a>
+            </motion.button>
           </motion.div>
         </motion.header>
       )}

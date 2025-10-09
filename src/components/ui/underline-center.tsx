@@ -1,7 +1,7 @@
 'use client'
 
+import { type ValueAnimationTransition, motion } from 'motion/react'
 import { useEffect, useRef } from 'react'
-import { motion, type ValueAnimationTransition } from 'motion/react'
 
 interface UnderlineProps {
   label: string

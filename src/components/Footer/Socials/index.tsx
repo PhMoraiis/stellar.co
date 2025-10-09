@@ -1,32 +1,31 @@
 import Link from "next/link";
 import {
-  RiGithubFill,
-  RiLinkedinFill,
-  RiInstagramFill,
-  RiDribbbleFill,
   RiBehanceFill,
-} from "react-icons/ri";
+  RiDribbbleFill,
+  RiInstagramFill,
+  RiLinkedinFill,
+} from 'react-icons/ri'
 
 const FooterSocials = () => {
   const NavSocialItems = [
     {
       icon: <RiInstagramFill />,
-      route: "https://www.instagram.com/stellarstudio.br/",
+      route: 'https://www.instagram.com/stellarstudio.br/',
       id: 1,
     },
     {
       icon: <RiLinkedinFill />,
-      route: "https://www.instagram.com/stellarstudio.br/",
+      route: '/',
       id: 2,
     },
     {
       icon: <RiDribbbleFill />,
-      route: "https://www.instagram.com/stellarstudio.br/",
+      route: '/',
       id: 3,
     },
     {
       icon: <RiBehanceFill />,
-      route: "https://www.instagram.com/stellarstudio.br/",
+      route: '/',
       id: 4,
     },
   ];
