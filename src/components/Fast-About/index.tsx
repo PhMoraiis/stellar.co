@@ -51,7 +51,7 @@ const FastAbout = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FastAbout
+export default FastAbout;
