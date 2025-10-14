@@ -137,6 +137,17 @@
   body {
     @apply bg-background text-foreground scroll-smooth;
   }
+  
+  /* Cor de seleção de texto customizada */
+  ::selection {
+    background-color: oklch(0.67 0.206 38.2);
+    color: white;
+  }
+  
+  ::-moz-selection {
+    background-color: oklch(0.67 0.206 38.2);
+    color: white;
+  }
 }
 
 @font-face {

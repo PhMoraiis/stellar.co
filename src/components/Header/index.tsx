@@ -1,18 +1,30 @@
 "use client";
 
-import { useScrolled } from '@/hooks/useScrolled'
+import { useScrollDirection } from '@/hooks/useScrollDirection'
 import { getCalApi } from '@calcom/embed-react'
 import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { StellarLogo } from '../Logos'
 import CenterUnderline from '../ui/underline-center'
 import SmoothScrollLink from '../ui/smooth-scroll-link'
 
 export default function Header() {
-  const { scrolled } = useScrolled({ initial: false })
+  const { scrollDirection, isAtTop } = useScrollDirection(100)
   const pathname = usePathname()
+  const [showScrolledNav, setShowScrolledNav] = useState(false)
+
+  useEffect(() => {
+    // Lógica para mostrar/esconder navbar scrolled
+    if (isAtTop) {
+      setShowScrolledNav(false)
+    } else if (scrollDirection === 'down') {
+      setShowScrolledNav(true)
+    } else if (scrollDirection === 'up') {
+      setShowScrolledNav(false)
+    }
+  }, [scrollDirection, isAtTop])
 
   useEffect(() => {
     ;(async () => {
@@ -37,7 +49,7 @@ export default function Header() {
 
   return (
     <AnimatePresence mode="wait">
-      {!scrolled ? (
+      {isAtTop ? (
         <motion.header
           key="initial-navbar"
           className="fixed top-0 left-0 right-0 z-50 py-4 sm:py-6 md:py-8 md:h-16 mt-2 sm:mt-3 md:mt-4"
@@ -94,14 +106,14 @@ export default function Header() {
             </div>
           </div>
         </motion.header>
-      ) : (
+      ) : showScrolledNav ? (
         <motion.header
           key="scrolled-navbar"
           className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center px-4 py-4"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          exit={{ opacity: 0, y: -100 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <motion.div
             className="bg-white shadow-md rounded-full py-3 px-4 sm:px-6 md:px-8 w-full max-w-[95%] sm:max-w-[26rem] md:max-w-[33rem] lg:max-w-[38rem] flex flex-col gap-2 sm:gap-0 sm:flex-row lg:gap-0 md:gap-0 lg:flex-row md:flex-row items-center justify-between sm:justify-evenly overflow-hidden"
@@ -140,7 +152,7 @@ export default function Header() {
             </motion.button>
           </motion.div>
         </motion.header>
-      )}
+      ) : null}
     </AnimatePresence>
   );
 }
