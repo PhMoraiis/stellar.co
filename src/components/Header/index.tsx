@@ -1,17 +1,19 @@
 "use client";
 
 import { useScrollDirection } from '@/hooks/useScrollDirection'
+import { useActiveSection } from '@/hooks/useActiveSection'
 import { getCalApi } from '@calcom/embed-react'
 import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { StellarLogo } from '../Logos'
+import { StellarLogo, StellarLogoName } from '../Logos'
 import CenterUnderline from '../ui/underline-center'
 import SmoothScrollLink from '../ui/smooth-scroll-link'
 
 export default function Header() {
   const { scrollDirection, isAtTop } = useScrollDirection(100)
+  const activeSection = useActiveSection()
   const pathname = usePathname()
   const [showScrolledNav, setShowScrolledNav] = useState(false)
 
@@ -19,10 +21,10 @@ export default function Header() {
     // Lógica para mostrar/esconder navbar scrolled
     if (isAtTop) {
       setShowScrolledNav(false)
-    } else if (scrollDirection === 'down') {
-      setShowScrolledNav(true)
     } else if (scrollDirection === 'up') {
-      setShowScrolledNav(false)
+      setShowScrolledNav(true)   // Scrollando para cima: mostra navbar compacta
+    } else if (scrollDirection === 'down') {
+      setShowScrolledNav(false)  // Scrollando para baixo: esconde navbar compacta
     }
   }, [scrollDirection, isAtTop])
 
@@ -36,14 +38,14 @@ export default function Header() {
   const initialNavLinks = [
     { name: 'Sobre', href: '#about' },
     { name: 'Soluções', href: '#solutions' },
-    { name: 'Preços', href: '#pricing' },
+    { name: 'Orçamentos', href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
   ]
 
   const scrolledNavLinks = [
     { name: 'Sobre', href: '#about' },
     { name: 'Soluções', href: '#solutions' },
-    { name: 'Preços', href: '#pricing' },
+    { name: 'Orçamentos', href: '#pricing' },
     { name: 'FAQ', href: '#faq' },
   ]
 
@@ -109,40 +111,64 @@ export default function Header() {
       ) : showScrolledNav ? (
         <motion.header
           key="scrolled-navbar"
-          className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center px-4 py-4"
+          className="fixed top-0 left-0 right-0 z-50 flex justify-center items-center px-4 py-3 sm:py-4"
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <motion.div
-            className="bg-white shadow-md rounded-full py-3 px-4 sm:px-6 md:px-8 w-full max-w-[95%] sm:max-w-[26rem] md:max-w-[33rem] lg:max-w-[38rem] flex flex-col gap-2 sm:gap-0 sm:flex-row lg:gap-0 md:gap-0 lg:flex-row md:flex-row items-center justify-between sm:justify-evenly overflow-hidden"
+            className="bg-primary backdrop-blur-md bg-opacity-95 shadow-2xl rounded-xl py-3 px-6 w-full max-w-[90%] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl xl:max-w-7xl flex items-center justify-between border border-white/10 max-h-20 relative overflow-visible"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-8 lg:space-x-12">
-              {scrolledNavLinks.map((link) => (
-                <SmoothScrollLink
-                  key={link.name}
-                  href={link.href}
-                  className={`text-gray-800 text-xs sm:text-sm md:text-base hover:text-gray-600 transition-colors whitespace-nowrap ${
-                    pathname === link.href ? "font-medium" : ""
-                  }`}
-                  offset={-100}
-                  duration={1.5}
-                >
-                  <CenterUnderline label={link.name} />
-                </SmoothScrollLink>
-              ))}
+            <Link
+              href="/"
+              className="flex items-center mr-6 sm:mr-8 md:mr-10 lg:mr-12"
+            >
+              <StellarLogoName />
+            </Link>
+
+            <nav className="flex items-center space-x-6 sm:space-x-8 md:space-x-10 lg:space-x-12 relative">
+              {scrolledNavLinks.map((link) => {
+                const sectionId = link.href.replace('#', '');
+                const isActive = activeSection === sectionId;
+                
+                return (
+                  <SmoothScrollLink
+                    key={link.name}
+                    href={link.href}
+                    className="relative py-4"
+                    offset={-100}
+                    duration={1.5}
+                  >
+                    <span
+                      className={`text-sm sm:text-base md:text-base lg:text-base transition-colors duration-200 whitespace-nowrap ${
+                        isActive
+                          ? "text-white font-medium"
+                          : "text-zinc-400 font-light hover:text-zinc-200"
+                      }`}
+                    >
+                      {link.name}
+                    </span>
+                    
+                    {/* Indicador laranja embaixo - na borda da navbar */}
+                    {isActive && (
+                      <div
+                        className="absolute left-0 right-0 h-[3px] bg-primaryds rounded-t-sm"
+                        style={{ bottom: '-12px' }}
+                      />
+                    )}
+                  </SmoothScrollLink>
+                );
+              })}
             </nav>
 
             <motion.button
-              className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-1.5 sm:px-2 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-2 rounded-3xl flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
+              className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-1.5 sm:px-2 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-2 rounded-md flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              //               href="mailto:meet@stellarstudio.tech?subject=Marcar%20meet%20virtual&body=Ol%C3%A1%2C%0A%0AGostaria%20de%20agendar%20uma%20reuni%C3%A3o%20virtual%20com%20a%20Stellar.%20Fico%20%C3%A0%20disposi%C3%A7%C3%A3o%20para%20conhecer%20os%20hor%C3%A1rios%20dispon%C3%ADveis.%0A%0AAguardo%20seu%20retorno.%0A%0AAtenciosamente%2C%0A%5BSeu%20Nome%5D%0A%5BSeu%20Cargo%5D%0A%5BSeu%20Telefone%5D%0A%5BSeu%20e-mail%5D%0A%5BNome%20da%20Empresa%5D
-              // "
               data-cal-namespace="30min"
               data-cal-link="stellar-studio/30min"
               data-cal-config='{"layout":"month_view"}'

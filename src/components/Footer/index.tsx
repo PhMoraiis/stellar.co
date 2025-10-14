@@ -9,7 +9,7 @@ const Footer = () => {
     const navItems = [
       { title: 'sobre', route: '#about' },
       { title: 'soluções', route: '#solutions' },
-      { title: 'preços', route: '#pricing' },
+      { title: 'orçamentos', route: '#pricing' },
       { title: 'faq', route: '#faq' },
     ]
 
