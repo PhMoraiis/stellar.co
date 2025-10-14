@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PreFooter from "@/components/PreFooter";
 import Pricing from "@/components/Pricing";
+import ScrollToTop from "@/components/ScrollToTop";
 import Stats from "@/components/Stats";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <FAQ />
       <PreFooter />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

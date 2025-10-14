@@ -42,6 +42,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias de ponta:
 ### UI Components & Animation
 
 - **[Motion (Framer Motion) 12.6.2](https://motion.dev/)** - Biblioteca de animações para React
+- **[Lenis 1.3.11](https://lenis.darkroom.engineering/)** - Smooth scroll library de alta performance
 - **[Radix UI](https://www.radix-ui.com/)** - Componentes acessíveis e sem estilo
   - Accordion, Avatar, Dialog, Separator, Slot, Tabs
 - **[Vaul](https://vaul.emilkowal.ski/)** - Drawer component
