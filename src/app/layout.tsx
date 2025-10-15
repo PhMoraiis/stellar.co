@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import SmoothScroll from '@/components/SmoothScroll'
 import './globals.css'
 
 const interSans = Inter({
@@ -19,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${interSans.variable} antialiased`}>{children}</body>
+    <html lang="pt-BR">
+      <body className={`${interSans.variable} antialiased`}>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   )
 }

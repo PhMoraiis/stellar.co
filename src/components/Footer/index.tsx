@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Separator } from '../ui/separator'
 import CenterUnderline from '../ui/underline-center'
+import SmoothScrollLink from '../ui/smooth-scroll-link'
 import FooterSocials from './Socials'
 
 const Footer = () => {
@@ -8,7 +9,7 @@ const Footer = () => {
     const navItems = [
       { title: 'sobre', route: '#about' },
       { title: 'soluções', route: '#solutions' },
-      { title: 'preços', route: '#pricing' },
+      { title: 'orçamentos', route: '#pricing' },
       { title: 'faq', route: '#faq' },
     ]
 
@@ -19,9 +20,13 @@ const Footer = () => {
             key={item.title}
             className="flex-col gap-y-[4px] block duration-300 ease-in"
           >
-            <Link href={item.route}>
+            <SmoothScrollLink 
+              href={item.route}
+              offset={-100}
+              duration={1.8}
+            >
               <CenterUnderline label={item.title} />
-            </Link>
+            </SmoothScrollLink>
           </li>
         ))}
       </ul>

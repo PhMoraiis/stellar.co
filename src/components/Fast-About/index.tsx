@@ -14,8 +14,9 @@ const FastAbout = () => {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h4 className="text-lg font-medium uppercase mb-4 flex gap-2 items-center">
-            <PlanetIcon className="size-6" /> Por que nós existimos
+          <h4 className="text-2xl font-medium uppercase mb-4 flex items-center">
+            Por que nós existimos
+             <span className="text-white text-2xl">.</span>
           </h4>
           <h2 className="text-4xl md:text-6xl font-movatif-regular">
             Reconhecemos uma lacuna na indústria criativa: Pequenas empresas
@@ -51,7 +52,7 @@ const FastAbout = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FastAbout;
+export default FastAbout

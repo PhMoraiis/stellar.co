@@ -1,7 +1,7 @@
 'use client'
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ChevronDownIcon } from 'lucide-react'
+import { ChevronDownIcon, PlusIcon, XIcon } from 'lucide-react'
 import type * as React from 'react'
 
 import { cn } from '@/lib/utils'
@@ -35,13 +35,18 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          'focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity- [&[data-state=open]>svg]:rotate-180',
+          'focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 group',
           className
         )}
         {...props}
       >
         {children}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+        <div className="relative size-6 shrink-0 translate-y-0.5">
+          {/* Ícone + (visível quando fechado) */}
+          <PlusIcon className="absolute inset-0 size-6 text-primaryds transition-all duration-200 ease-in-out group-data-[state=open]:scale-0 group-data-[state=open]:opacity-0" />
+          {/* Ícone X (visível quando aberto) */}
+          <XIcon className="absolute inset-0 size-6 text-primaryds scale-0 opacity-0 transition-all duration-200 ease-in-out group-data-[state=open]:scale-100 group-data-[state=open]:opacity-100" />
+        </div>
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )

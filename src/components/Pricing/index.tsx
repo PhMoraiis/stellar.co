@@ -512,9 +512,20 @@ const Pricing = () => {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <h4 className="text-lg font-medium uppercase mb-4 flex gap-2 items-center">
-            <CurrencyCircleDollarIcon className="size-6" /> Orçamento
-          </h4>
+          <motion.div
+            className="lg:col-span-5"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif-regular leading-tight">
+             Orçamento
+                <span className="text-primaryds">.</span>
+              <span className="block">
+              </span>
+            </h2>
+          </motion.div>
 
           <ServiceTabs
             activeService={activeService}
