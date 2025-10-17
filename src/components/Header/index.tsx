@@ -130,7 +130,7 @@ export default function Header() {
               <StellarLogoName />
             </Link>
 
-            <nav className="flex items-center space-x-6 sm:space-x-8 md:space-x-10 lg:space-x-12 relative">
+            <nav className="hidden sm:flex items-center space-x-6 sm:space-x-8 md:space-x-10 lg:space-x-12 relative">
               {scrolledNavLinks.map((link) => {
                 const sectionId = link.href.replace('#', '');
                 const isActive = activeSection === sectionId;
@@ -164,9 +164,8 @@ export default function Header() {
                 );
               })}
             </nav>
-
             <motion.button
-              className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-1.5 sm:px-2 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-2 rounded-md flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
+              className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-3 sm:px-2 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-2 rounded-md flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-cal-namespace="30min"
