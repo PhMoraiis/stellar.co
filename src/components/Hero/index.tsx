@@ -1,21 +1,44 @@
 "use client";
 
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowRightIcon, ArrowUpRight } from 'lucide-react'
 import { LayoutGroup, motion } from 'motion/react'
 import Link from 'next/link'
 import TextRotate from '../ui/text-rotate'
+import { AnimatedShinyText } from '../ui/animated-shiny-text';
+import { cn } from '@/lib/utils';
+import { useEffect } from 'react';
+import { getCalApi } from '@calcom/embed-react';
 
 export default function Hero() {
   const links = [
-    { name: 'Desenvolvimento', href: '/development', id: 2 },
-    { name: 'UI/UX Design', href: '/product-design', id: 3 },
+    { name: 'Agenda de 2025 Aberta', href: '/product-design', id: 3 },
   ]
+
+  useEffect(() => {
+    ;(async () => {
+      const cal = await getCalApi({ namespace: '30min' })
+      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
+    })()
+  }, [])
 
   return (
     <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden p-4 py-16 md:py-24 lg:py-32">
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-6">
+        <button
+          data-cal-namespace="30min"
+          data-cal-link="stellar-studio/30min"
+          data-cal-config='{"layout":"month_view"}'
+          className={cn(
+            "group rounded-full border border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+          )}
+        >
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <span>✨ Agenda de 2025 Aberta</span>
+            <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          </AnimatedShinyText>
+        </button>
         <div className="mb-16 flex flex-col items-center justify-center px-4 text-center md:mb-24 lg:mb-32 uppercase">
-          <h2 className="font-movatif-regular text-3xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
+          <h2 className="font-movatif-regular text-5xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
             <span className="font-medium text-black">Um </span>
             <span className="bg-gradient-to-r from-zinc-400 via-zinc-600 to-zinc-800 bg-clip-text text-transparent">
               grande{' '}
@@ -25,24 +48,24 @@ export default function Hero() {
             <span className="font-medium text-black">é </span>
             <span className="font-medium text-black">o </span>
             <span className="font-medium text-black">resultado </span>
-            <span className="font-medium text-black">de um</span>
+            <span className="font-medium text-black">de um </span>
+            <span className="font-medium text-black">grande</span>
           </h2>
 
           <LayoutGroup>
             <motion.div
-              className="mt-2 flex text-center font-movatif-regular text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl"
+              className="mt-2 flex text-center font-movatif-regular text-5xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl"
               layout
             >
-              <motion.span
+              {/* <motion.span
                 className="pt-0.5 sm:pt-1 md:pt-2"
                 layout
                 transition={{ type: "spring", damping: 30, stiffness: 400 }}
               >
                 grande{" "}
-              </motion.span>
+              </motion.span> */}
               <TextRotate
                 texts={[
-                  'desenvolvimento.',
                   'design.',
                   'software.',
                   'projeto.',
@@ -51,7 +74,7 @@ export default function Hero() {
                   'produto.',
                   'futuro.',
                 ]}
-                mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg h-10 sm:h-14 md:h-20 lg:h-34 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4"
+                mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg h-14 sm:h-14 md:h-16 lg:h-24 xl:h-28 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4 xl:mx-6"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
@@ -63,22 +86,6 @@ export default function Hero() {
               />
             </motion.div>
           </LayoutGroup>
-        </div>
-
-        <div className="flex w-full flex-col items-center justify-center gap-8 px-4 text-lg sm:flex-row sm:gap-12 md:gap-16 lg:gap-24 lg:text-xl xl:text-2xl">
-          {links.map((link) => (
-            <Link
-              key={link.id}
-              href={link.href}
-              className="group flex items-center gap-2 text-zinc-700 transition-colors hover:text-black"
-            >
-              {link.name}
-              <ArrowUpRight
-                className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                size={20}
-              />
-            </Link>
-          ))}
         </div>
       </div>
     </section>
