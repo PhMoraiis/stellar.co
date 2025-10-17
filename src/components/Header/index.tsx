@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react'
 import { StellarLogo, StellarLogoName } from '../Logos'
 import CenterUnderline from '../ui/underline-center'
 import SmoothScrollLink from '../ui/smooth-scroll-link'
-import LiveButton from '../ui/live-button';
 
 export default function Header() {
   const { scrollDirection, isAtTop } = useScrollDirection(100)
