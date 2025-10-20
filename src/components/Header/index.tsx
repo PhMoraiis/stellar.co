@@ -59,10 +59,12 @@ export default function Header() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
+          role="banner"
+          aria-label="Navegação principal"
         >
           <div className="flex items-center justify-center px-2 xs:px-4 sm:px-6">
             <div className="flex items-center justify-between w-full max-w-sm sm:max-w-sm md:max-w-sm lg:max-w-lg">
-              <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-8 mr-1 xs:mr-2 sm:mr-3">
+              <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-8 mr-1 xs:mr-2 sm:mr-3" role="navigation" aria-label="Menu principal">
                 {initialNavLinks.slice(0, 2).map((link) => (
                   <SmoothScrollLink
                     key={link.name}
@@ -81,16 +83,17 @@ export default function Header() {
               <Link
                 href="/"
                 className="flex justify-center items-center mx-1 xs:mx-2 sm:mx-3"
+                aria-label="Stellar Studio - Página inicial"
               >
                 <div className="hidden xs:block">
-                  <StellarLogo width={25} height={25} />
+                  <StellarLogo width={25} height={25} aria-hidden="true" />
                 </div>
                 <div className="block xs:hidden">
-                  <StellarLogo width={35} height={35} />
+                  <StellarLogo width={35} height={35} aria-hidden="true" />
                 </div>
               </Link>
 
-              <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 ml-1 xs:ml-2 sm:ml-3">
+              <nav className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 ml-1 xs:ml-2 sm:ml-3" role="navigation" aria-label="Menu secundário">
                 {initialNavLinks.slice(2).map((link) => (
                   <SmoothScrollLink
                     key={link.name}
