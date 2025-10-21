@@ -14,7 +14,7 @@ const interSans = Inter({
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ lang: "en" | "pt-BR" }>;
+  params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params
   
@@ -124,7 +124,7 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode
-  params: Promise<{ lang: "en" | "pt-BR" }>;
+  params: Promise<{ lang: string }>;
 }) {
   return (
     <html lang={(await params).lang}>
