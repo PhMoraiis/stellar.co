@@ -1,0 +1,89 @@
+{
+    "headerAndFooter": {
+      "about": "About",
+      "solutions": "Solutions",
+      "pricing": "Pricing",
+      "faq": "FAQ",
+      "btn": "Schedule a Meet"
+    },
+    "hero": {
+        "badge": "Now Booking 2025",
+        "titulo1": "A ",
+        "titulo2": "great ",
+        "titulo3": "business ",
+        "titulo4": "is ",
+        "titulo5": "the ",
+        "titulo6": "result ",
+        "titulo7": "of a ",
+        "titulo8": "great ",
+        "projeto": "project.",
+        "time": "team.",
+        "produto": "product.",
+        "futuro": "future."
+    },
+    "about": {
+        "titulo": "Why we exist",
+        "text": "We recognize a gap in the creative industry: Small businesses often struggle to find high-quality yet affordable technology solutions. That's why we exist.",
+        "paragraph": "We offer a curated suite of technology services specifically designed for small business owners. From web design to software implementation, we simplify building a solid online presence at no additional cost."
+    },
+    "solutions": {
+        "h1": " We make you unforgettable through",
+        "span1": "design",
+        "span2": "attract new customers with strategic",
+        "span3": "websites",
+        "span4": "and drive your growth through ongoing",
+        "span5": "partnerships"
+    },
+    "pricing": {
+        "titulo": "Pricing",
+        "optionDev": "1. Development Type:",
+        "optionDev2": "2. Project Urgency:",
+        "optionDev3": "3. Extra Deliveries",
+        "optionDes": "1. Type of Product Design:",
+        "optionDes2": "2. Project Urgency:",
+        "optionDes3": "3. Extra Deliveries",
+        "web-design-label": "Development",
+        "complete-product-label": "Complete Product",
+        "very-urgent": "Very Urgent",
+        "still-important": "Still Important",
+        "flexible": "Flexible",
+        "stationery": "Paper Design (Stationery)",
+        "illustrations": "Custom Illustrations",
+        "optimization": "SEO optimization",
+        "animations": "Custom Animations",
+        "cms": "CMS Integration",
+        "prototype": "Prototyping",
+        "usability": "Usability Testing",
+        "paragraph": "Our pricing calculator provides a quick estimate to get you started, but your unique vision may involve specific needs that could adjust the final cost. Pricing here isn't fixed and will largely depend on the final scope of your project.",
+        "contact": "Contact",
+        "h3Contact": "Ready to elevate your brand?"
+    },
+    "faq": {
+        "titulo": "Frequently Asked Questions",
+        "q1": "What services does Stellar Studio offer?",
+        "a1": "We offer complete solutions in Branding, Product Design, UX/UI Design, Front-end and Back-end Development. Our focus is transforming ideas into high-impact digital products.",
+        "q2": "How long does a typical project take?",
+        "a2": "The timeframe varies depending on the complexity, but typical projects last between 1 and 3 months, including planning, design, development and testing stages.",
+        "q3": "Is the price calculated by your online calculator final?",
+        "a3": "No. The calculator provides an initial estimate. The final value is determined after a detailed analysis of the scope, technical requirements, and resources involved.",
+        "q4": "Do you offer any payment plans?",
+        "a4": "We don't have fixed plans yet, but we can create customized proposals with payment terms adapted to the client's scope and budget.",
+        "q5": "What kind of support can I expect after launch?",
+        "a5": "We provide post-launch technical support and maintenance to ensure product stability, security, and proper functioning.",
+        "q6": "Do you outsource any work?",
+        "a6": "Yes. We work with a network of experts in various fields to ensure quality and efficiency at every stage of the project, whenever necessary.",
+        "q7": "How do I get started?",
+        "a7": "Just contact us. We'll understand your needs, propose the best solution, and send you a personalized proposal to get the project started."
+    },
+    "preFooter": {
+        "h1": "Work seamlessly with a creative team built to keep up with your pace and ",
+        "span": "exceed your expectations",
+        "btnTitle": "Schedule a Meet",
+        "btnText": "Let's talk about your project"
+    },
+    "footer": {
+      "copyright": "Copyright ©2025 Stellar Studio. All rights reserved.",
+      "location": "Brasília, BR"
+    }
+    
+  }

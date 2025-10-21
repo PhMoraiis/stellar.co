@@ -1,0 +1,89 @@
+{
+    "headerAndFooter": {
+      "about": "Sobre",
+      "solutions": "Soluções",
+      "pricing": "Orçamentos",
+      "faq": "FAQ",
+      "btn": "Agendar Meet"
+    },
+    "hero": {
+        "badge": "Agenda de 2025 Aberta",
+        "titulo1": "Um ",
+        "titulo2": "grande ",
+        "titulo3": "negócio ",
+        "titulo4": "é ",
+        "titulo5": "o ",
+        "titulo6": "resultado ",
+        "titulo7": "de um ",
+        "titulo8": "grande ",
+        "projeto": "projeto.",
+        "time": "time.",
+        "produto": "produto.",
+        "futuro": "futuro."
+    },
+    "about": {
+        "titulo": "Por que nós existimos",
+        "text": "Reconhecemos uma lacuna na indústria criativa: Pequenas empresas frequentemente têm dificuldade em encontrar soluções de tecnologia de alta qualidade, porém acessíveis. É por isso que existimos.",
+        "paragraph": "Oferecemos um conjunto selecionado de serviços de tecnologia, especialmente elaborados para pequenos empresários. Do web design à implementação de softwares, simplificamos a construção de uma presença online sólida sem nenhum custo adicional."
+    },
+    "solutions": {
+        "h1": " Fazemos de você inesquecível por meio do",
+        "span1": "design",
+        "span2": ", atraímos novos clientes com",
+        "span3": "websites",
+        "span4": "estratégicos e impulsionamos seu crescimento através de contínuas",
+        "span5": "parcerias"
+    },
+    "pricing": {
+        "titulo": "Orçamento",
+        "optionDev": "1. Tipo de Desenvolvimento:",
+        "optionDev2": "2. Urgência do Projeto:",
+        "optionDev3": "3. Entregas Extras",
+        "optionDes": "1. Tipo de Product Design:",
+        "optionDes2": "2. Urgência do Projeto:",
+        "optionDes3": "3. Entregas Extras",
+        "web-design-label": "Desenvolvimento",
+        "complete-product-label": "Produto Completo",
+        "very-urgent": "Muito Urgente",
+        "still-important": "Ainda Importante",
+        "flexible": "Flexível",
+        "stationery": "Design para Papéis",
+        "illustrations": "Ilustrações Customizadas",
+        "optimization": "Otimização de SEO",
+        "animations": "Animações Personalizadas",
+        "cms": "Integração CMS",
+        "prototype": "Prototipagem",
+        "usability": "Testes de Usabilidade",
+        "paragraph": "Nossa calculadora de preços fornece uma estimativa rápida para você começar, mas sua visão única pode envolver necessidades específicas que podem ajustar o custo final. O preço aqui não é fixo e dependerá muito do escopo final do seu projeto.",
+        "contact": "Contato",
+        "h3Contact": "Pronto para elevar sua marca?"
+    },
+    "faq": {
+        "titulo": "Perguntas Frequentes",
+        "q1": "Quais serviços a Stellar Studio oferece?",
+        "a1": "Oferecemos soluções completas em Branding, Design de Produto, UX/UI Design, Desenvolvimento Front-end e Back-end. Nosso foco é transformar ideias em produtos digitais de alto impacto.",
+        "q2": "Quanto tempo demora um projeto típico?",
+        "a2": "O prazo varia conforme a complexidade, mas projetos típicos duram entre 1 e 3 meses, incluindo etapas de planejamento, design, desenvolvimento e testes.",
+        "q3": "O preço calculado pela sua calculadora online é final?",
+        "a3": "Não. A calculadora fornece uma estimativa inicial. O valor final é definido após análise detalhada do escopo, requisitos técnicos e recursos envolvidos.",
+        "q4": "Vocês oferecem algum plano de pagamento?",
+        "a4": "Ainda não temos planos fixos, mas podemos criar propostas personalizadas com condições de pagamento adaptadas ao escopo e orçamento do cliente.",
+        "q5": "Que tipo de suporte posso esperar após o lançamento?",
+        "a5": "Oferecemos suporte técnico e manutenção pós-lançamento para garantir a estabilidade, segurança e funcionamento adequado do produto.",
+        "q6": "Você terceiriza algum trabalho?",
+        "a6": "Sim. Trabalhamos com uma rede de especialistas em diversas áreas para garantir qualidade e eficiência em cada etapa do projeto, quando necessário.",
+        "q7": "Como faço para começar?",
+        "a7": "Basta entrar em contato conosco. Vamos entender suas necessidades, propor a melhor solução e enviar uma proposta personalizada para dar início ao projeto."
+    },
+    "preFooter": {
+        "h1": "Trabalhe perfeitamente com uma equipe criativa criada para acompanhar seu ritmo e ",
+        "span": "supere suas expectativas",
+        "btnTitle": "Agende um Meet",
+        "btnText": "Vamos conversar sobre seu projeto"
+    },
+    "footer": {
+      "copyright": "Copyright ©2025 Stellar Studio. Todos os direitos reservados.",
+      "location": "Brasília, BR"
+    }
+    
+  }

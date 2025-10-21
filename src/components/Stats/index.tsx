@@ -3,8 +3,11 @@
 import { ArrowLeftRight, Sparkles } from 'lucide-react'
 import { motion } from 'motion/react'
 import { BiCodeBlock } from 'react-icons/bi'
+import { useDictionary } from '@/hooks/useDictionary';
 
 export default function Stats() {
+  const dict = useDictionary()
+
   return (
     <div
       id="solutions"
@@ -19,7 +22,7 @@ export default function Stats() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
           <h1 className="text-2xl md:text-4xl lg:text-6xl font-movatif-regular text-[#333] space-y-3">
-            Fazemos de você inesquecível por meio do
+            {dict.solutions.h1}
             <motion.span
               className="inline-flex items-center justify-center mx-2 px-4 py-2 bg-[#222] text-white rounded-full"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -28,9 +31,9 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Sparkles className="size-6 lg:size-8 text-primaryds mr-2" />
-              design
+            {dict.solutions.span1}
             </motion.span>
-            , atraímos novos clientes com
+           {dict.solutions.span2}
             <motion.span
               className="inline-flex items-center justify-center mx-2 px-4 py-2 bg-[#222] text-white rounded-full"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -39,9 +42,9 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <BiCodeBlock className="size-6 lg:size-8 text-primaryds mr-2" />{' '}
-              websites
+              {dict.solutions.span3}
             </motion.span>
-            estratégicos e impulsionamos seu crescimento através de contínuas
+            {dict.solutions.span4}
             <motion.span
               className="inline-flex items-center justify-center mx-2 px-4 py-2 bg-[#222] text-white rounded-full"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -50,7 +53,7 @@ export default function Stats() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <ArrowLeftRight className="size-6 lg:size-8 text-primaryds mr-2" />{' '}
-              parcerias
+              {dict.solutions.span5}
             </motion.span>
           </h1>
         </motion.div>

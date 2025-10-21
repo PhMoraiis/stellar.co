@@ -10,12 +10,14 @@ import { useEffect, useState } from 'react'
 import { StellarLogo, StellarLogoName } from '../Logos'
 import CenterUnderline from '../ui/underline-center'
 import SmoothScrollLink from '../ui/smooth-scroll-link'
+import { useDictionary } from '@/hooks/useDictionary';
 
 export default function Header() {
   const { scrollDirection, isAtTop } = useScrollDirection(100)
   const activeSection = useActiveSection()
   const pathname = usePathname()
   const [showScrolledNav, setShowScrolledNav] = useState(false)
+  const dict = useDictionary();
 
   useEffect(() => {
     // Lógica para mostrar/esconder navbar scrolled
@@ -36,17 +38,17 @@ export default function Header() {
   }, [])
 
   const initialNavLinks = [
-    { name: 'Sobre', href: '#about' },
-    { name: 'Soluções', href: '#solutions' },
-    { name: 'Orçamentos', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
+    { name: dict.headerAndFooter.about, href: '#about' },
+    { name: dict.headerAndFooter.solutions, href: '#solutions' },
+    { name: dict.headerAndFooter.pricing, href: '#pricing' },
+    { name: dict.headerAndFooter.faq, href: '#faq' },
   ]
 
   const scrolledNavLinks = [
-    { name: 'Sobre', href: '#about' },
-    { name: 'Soluções', href: '#solutions' },
-    { name: 'Orçamentos', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
+    { name: dict.headerAndFooter.about, href: '#about' },
+    { name: dict.headerAndFooter.solutions, href: '#solutions' },
+    { name: dict.headerAndFooter.pricing, href: '#pricing' },
+    { name: dict.headerAndFooter.faq, href: '#faq' },
   ]
 
   return (
@@ -176,7 +178,7 @@ export default function Header() {
               data-cal-config='{"layout":"month_view"}'
             >
               <span className="inline-block h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary rounded-full mr-1.5 sm:mr-2" />
-              <span>Agendar Meet</span>
+              <span>{dict.headerAndFooter.btn}</span>
             </motion.button>
           </motion.div>
         </motion.header>

@@ -6,9 +6,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { useDictionary } from '@/hooks/useDictionary'
 import { motion } from 'motion/react'
 
 export default function FAQ() {
+  const dict = useDictionary()
+
   return (
     <div id="faq" className="py-16 px-4 md:py-36">
       <div className="max-w-7xl mx-auto">
@@ -22,7 +25,7 @@ export default function FAQ() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif-regular leading-tight">
-             Perguntas Frequentes
+             {dict.faq.titulo}
                 <span className="text-primaryds">.</span>
               <span className="block">
               </span>
@@ -43,12 +46,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  Quais serviços a Stellar Studio oferece?
+                {dict.faq.q1}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  Oferecemos soluções completas em Branding, Design de Produto,
-                  UX/UI Design, Desenvolvimento Front-end e Back-end. Nosso foco
-                  é transformar ideias em produtos digitais de alto impacto.
+                {dict.faq.a1}
                 </AccordionContent>
               </AccordionItem>
 
@@ -57,12 +58,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  Quanto tempo demora um projeto típico?
+                {dict.faq.q2}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  O prazo varia conforme a complexidade, mas projetos típicos
-                  duram entre 1 e 3 meses, incluindo etapas de planejamento,
-                  design, desenvolvimento e testes.
+                {dict.faq.a2}
                 </AccordionContent>
               </AccordionItem>
 
@@ -71,12 +70,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  O preço calculado pela sua calculadora online é final?
+                {dict.faq.q3}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  Não. A calculadora fornece uma estimativa inicial. O valor
-                  final é definido após análise detalhada do escopo, requisitos
-                  técnicos e recursos envolvidos.
+                {dict.faq.a3}
                 </AccordionContent>
               </AccordionItem>
 
@@ -85,12 +82,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  Vocês oferecem algum plano de pagamento?
+                {dict.faq.q4}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  Ainda não temos planos fixos, mas podemos criar propostas
-                  personalizadas com condições de pagamento adaptadas ao escopo
-                  e orçamento do cliente.
+                {dict.faq.a4}
                 </AccordionContent>
               </AccordionItem>
 
@@ -99,12 +94,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  Que tipo de suporte posso esperar após o lançamento?
+                {dict.faq.q5}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  Oferecemos suporte técnico e manutenção pós-lançamento para
-                  garantir a estabilidade, segurança e funcionamento adequado do
-                  produto.
+                {dict.faq.a5}
                 </AccordionContent>
               </AccordionItem>
 
@@ -113,12 +106,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  Você terceiriza algum trabalho?
+                {dict.faq.q6}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  Sim. Trabalhamos com uma rede de especialistas em diversas
-                  áreas para garantir qualidade e eficiência em cada etapa do
-                  projeto, quando necessário.
+                {dict.faq.a6}
                 </AccordionContent>
               </AccordionItem>
 
@@ -127,12 +118,10 @@ export default function FAQ() {
                 className="border-none bg-[#E8DED0] rounded-lg px-6 py-2"
               >
                 <AccordionTrigger className="text-lg md:text-xl text-neutral-800 hover:no-underline font-normal">
-                  Como faço para começar?
+                {dict.faq.q7}
                 </AccordionTrigger>
                 <AccordionContent className="text-zinc-600 text-base">
-                  Basta entrar em contato conosco. Vamos entender suas
-                  necessidades, propor a melhor solução e enviar uma proposta
-                  personalizada para dar início ao projeto.
+                {dict.faq.a7}
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
