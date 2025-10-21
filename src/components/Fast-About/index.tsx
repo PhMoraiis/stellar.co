@@ -1,9 +1,12 @@
 'use client'
 
-import { CloverIcon, PlanetIcon } from '@phosphor-icons/react/ssr'
+import { CloverIcon } from '@phosphor-icons/react/ssr'
 import { motion } from 'motion/react'
+import { useDictionary } from '@/hooks/useDictionary';
 
 const FastAbout = () => {
+  const dict = useDictionary()
+
   return (
     <div id="about" className="py-16 px-4 md:py-36 bg-secondaryds">
       <div className="max-w-7xl mx-auto flex flex-col space-y-42">
@@ -15,13 +18,11 @@ const FastAbout = () => {
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
           <h4 className="text-2xl font-medium uppercase mb-4 flex items-center">
-            Por que nós existimos
+            {dict.about.titulo}
              <span className="text-white text-2xl">.</span>
           </h4>
           <h2 className="text-4xl md:text-6xl font-movatif-regular">
-            Reconhecemos uma lacuna na indústria criativa: Pequenas empresas
-            frequentemente têm dificuldade em encontrar soluções de tecnologia
-            de alta qualidade, porém acessíveis. É por isso que existimos.
+          {dict.about.text}
           </h2>
         </motion.div>
         <div className="flex justify-between flex-col md:flex-row lg:flex-row gap-12">
@@ -43,10 +44,7 @@ const FastAbout = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
           >
             <p className="font-normal text-xl">
-              Oferecemos um conjunto selecionado de serviços de tecnologia,
-              especialmente elaborados para pequenos empresários. Do web design
-              à implementação de softwares, simplificamos a construção de uma
-              presença online sólida sem nenhum custo adicional.
+            {dict.about.paragraph}
             </p>
           </motion.div>
         </div>

@@ -8,7 +8,7 @@ import Pricing from "@/components/Pricing";
 import ScrollToTop from "@/components/ScrollToTop";
 import Stats from "@/components/Stats";
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       <Header />

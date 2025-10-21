@@ -1,20 +1,25 @@
+'use client'
+
 import Link from 'next/link'
 import { Separator } from '../ui/separator'
 import CenterUnderline from '../ui/underline-center'
 import SmoothScrollLink from '../ui/smooth-scroll-link'
 import FooterSocials from './Socials'
+import SwitcherOrigin from '../SwitcherLanguage'
+import { useDictionary } from '@/hooks/useDictionary'
 
 const Footer = () => {
+  const dict = useDictionary()
   const renderFooterNavs = () => {
     const navItems = [
-      { title: 'sobre', route: '#about' },
-      { title: 'soluções', route: '#solutions' },
-      { title: 'orçamentos', route: '#pricing' },
-      { title: 'faq', route: '#faq' },
+      { title: dict.headerAndFooter.about, route: '#about' },
+      { title: dict.headerAndFooter.solutions, route: '#solutions' },
+      { title: dict.headerAndFooter.pricing, route: '#pricing' },
+      { title: dict.headerAndFooter.faq, route: '#faq' },
     ]
 
     return (
-      <ul className="text-gray-200 text-xl lg:text-3xl md:text-3xl">
+      <ul className="text-gray-200 text-xl lg:text-3xl md:text-3xl lowercase">
         {navItems.map((item) => (
           <li
             key={item.title}
@@ -80,8 +85,11 @@ const Footer = () => {
         </div>
         <Separator className="bg-muted-foreground/50 my-6" />
         <div className="text-gray-300 md:text-xl flex items-start lg:items-center flex-col mt-6 lg:mt-12 md:flex-row md:justify-between lg:flex-row lg:justify-between text-xl lg:text-2xl space-y-6">
-          <p>Copyright ©2025 Stellar Studio. Todos os direitos reservados.</p>
-          <div className="flex">Brasília, BR</div>
+          <p>{dict.footer.copyright}</p>
+          <div className="flex items-center gap-4">
+            <span>{dict.footer.location}</span>
+            <SwitcherOrigin />
+          </div>
         </div>
       </div>
     </footer>

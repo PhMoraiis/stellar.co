@@ -6,6 +6,7 @@ import { motion } from 'motion/react'
 import { useCallback, useMemo, useState } from 'react'
 import { Button } from '../ui/button'
 import { Card, CardContent } from '../ui/card'
+import { useDictionary } from '@/hooks/useDictionary'
 
 // Types
 type ServiceType = 'web-design' | 'product-design'
@@ -14,6 +15,8 @@ type ProductDesignType = 'ui-design' | 'ux-research' | 'complete-product'
 type UrgencyType = 'very-urgent' | 'still-important' | 'flexible'
 type ExtraType =
   | 'stationery'
+  | 'illustrations'
+  | 'motion'
   | 'optimization'
   | 'animations'
   | 'cms'
@@ -48,6 +51,8 @@ const PRICING_DATA: PricingData = {
   },
   extras: {
     stationery: 400,
+    illustrations: 800,
+    motion: 1200,
     optimization: 1000,
     animations: 1500,
     cms: 3000,
@@ -57,47 +62,7 @@ const PRICING_DATA: PricingData = {
   },
 }
 
-const SERVICE_TABS = [
-  { key: 'web-design' as const, label: 'Desenvolvimento' },
-  { key: 'product-design' as const, label: 'Product Design' },
-]
 
-const WEB_DESIGN_OPTIONS = [
-  { key: 'landing-page' as const, label: 'Landing Page' },
-  { key: 'ecommerce' as const, label: 'E-commerce' },
-  { key: 'frontend' as const, label: 'Front-end' },
-  { key: 'backend' as const, label: 'Back-end' },
-]
-
-const PRODUCT_DESIGN_OPTIONS = [
-  { key: 'ui-design' as const, label: 'UI Design' },
-  { key: 'ux-research' as const, label: 'UX Research' },
-  { key: 'complete-product' as const, label: 'Produto Completo' },
-]
-
-const URGENCY_OPTIONS = [
-  { key: 'very-urgent' as const, label: 'Muito Urgente' },
-  { key: 'still-important' as const, label: 'Ainda Importante' },
-  { key: 'flexible' as const, label: 'Flexível' },
-]
-
-const EXTRAS_BY_SERVICE = {
-  branding: [
-    { key: 'stationery' as const, label: 'Design para Papéis' },
-    { key: 'illustrations' as const, label: 'Ilustrações Customizadas' },
-    { key: 'motion' as const, label: 'Motion Design' },
-  ],
-  'web-design': [
-    { key: 'optimization' as const, label: 'SEO Otimização' },
-    { key: 'animations' as const, label: 'Animações Personalizadas' },
-    { key: 'cms' as const, label: 'Integração CMS' },
-  ],
-  'product-design': [
-    { key: 'prototype' as const, label: 'Prototipagem' },
-    { key: 'usability' as const, label: 'Testes de Usabilidade' },
-    { key: 'designSystem' as const, label: 'Design System' },
-  ],
-}
 
 // Utility functions
 const formatPrice = (price: number): string => {
@@ -224,11 +189,12 @@ const usePricingState = () => {
 interface ServiceTabsProps {
   activeService: ServiceType
   onServiceChange: (service: ServiceType) => void
+  tabs: readonly { key: ServiceType; label: string }[]
 }
 
-const ServiceTabs = ({ activeService, onServiceChange }: ServiceTabsProps) => (
+const ServiceTabs = ({ activeService, onServiceChange, tabs }: ServiceTabsProps) => (
   <div className="flex lg:flex-row flex-col gap-4 mb-8">
-    {SERVICE_TABS.map(({ key, label }) => (
+    {tabs.map(({ key, label }) => (
       <Button
         key={key}
         className="px-6 py-3 rounded-xs"
@@ -309,6 +275,10 @@ interface ServiceContentProps {
   setSelectedUrgency: (value: UrgencyType | null) => void
   getCurrentExtras: () => Set<ExtraType>
   toggleExtra: (extra: ExtraType) => void
+  webDesignOptions: readonly { key: WebDesignType; label: string }[]
+  productDesignOptions: readonly { key: ProductDesignType; label: string }[]
+  urgencyOptions: readonly { key: UrgencyType; label: string }[]
+  extrasByService: Record<string, readonly { key: ExtraType; label: string }[]>
 }
 
 const ServiceContent = ({
@@ -321,28 +291,34 @@ const ServiceContent = ({
   setSelectedUrgency,
   getCurrentExtras,
   toggleExtra,
+  webDesignOptions,
+  productDesignOptions,
+  urgencyOptions,
+  extrasByService,
 }: ServiceContentProps) => {
   const currentExtras = getCurrentExtras()
+
+  const dict = useDictionary()
 
   return (
     <>
       {activeService === 'web-design' && (
         <>
           <OptionSelector
-            title="1. Tipo de Desenvolvimento:"
-            options={WEB_DESIGN_OPTIONS}
+            title={dict.pricing.optionDev}
+            options={webDesignOptions}
             selected={selectedWebDesign}
             onSelect={setSelectedWebDesign}
           />
           <OptionSelector
-            title="2. Urgência do Projeto:"
-            options={URGENCY_OPTIONS}
+            title={dict.pricing.optionDev2}
+            options={urgencyOptions}
             selected={selectedUrgency}
             onSelect={setSelectedUrgency}
           />
           <ExtrasSelector
-            title="3. Entregas Extras"
-            extras={EXTRAS_BY_SERVICE['web-design']}
+            title={dict.pricing.optionDev3}
+            extras={extrasByService['web-design']}
             selectedExtras={currentExtras}
             onToggle={toggleExtra}
           />
@@ -352,20 +328,20 @@ const ServiceContent = ({
       {activeService === 'product-design' && (
         <>
           <OptionSelector
-            title="1. Tipo de Product Design:"
-            options={PRODUCT_DESIGN_OPTIONS}
+            title={dict.pricing.optionDes}
+            options={productDesignOptions}
             selected={selectedProductDesign}
             onSelect={setSelectedProductDesign}
           />
           <OptionSelector
-            title="2. Urgência do Projeto:"
-            options={URGENCY_OPTIONS}
+            title={dict.pricing.optionDes2}
+            options={urgencyOptions}
             selected={selectedUrgency}
             onSelect={setSelectedUrgency}
           />
           <ExtrasSelector
-            title="3. Entregas Extras"
-            extras={EXTRAS_BY_SERVICE['product-design']}
+            title={dict.pricing.optionDes3}
+            extras={extrasByService['product-design']}
             selectedExtras={currentExtras}
             onToggle={toggleExtra}
           />
@@ -382,6 +358,10 @@ interface ContactSectionProps {
   webDesignExtras: Set<ExtraType>
   productDesignExtras: Set<ExtraType>
   totalPrice: number
+  webDesignOptions: readonly { key: WebDesignType; label: string }[]
+  productDesignOptions: readonly { key: ProductDesignType; label: string }[]
+  urgencyOptions: readonly { key: UrgencyType; label: string }[]
+  extrasByService: Record<string, readonly { key: ExtraType; label: string }[]>
 }
 
 const ContactSection = ({
@@ -391,6 +371,10 @@ const ContactSection = ({
   webDesignExtras,
   productDesignExtras,
   totalPrice,
+  webDesignOptions,
+  productDesignOptions,
+  urgencyOptions,
+  extrasByService,
 }: ContactSectionProps) => {
   const generateEmailBody = () => {
     let body =
@@ -399,13 +383,13 @@ const ContactSection = ({
     // Add selected services
     const services = []
     if (selectedWebDesign) {
-      const webDesignLabel = WEB_DESIGN_OPTIONS.find(
+      const webDesignLabel = webDesignOptions.find(
         opt => opt.key === selectedWebDesign
       )?.label
       services.push(`Desenvolvimento: ${webDesignLabel}`)
     }
     if (selectedProductDesign) {
-      const productDesignLabel = PRODUCT_DESIGN_OPTIONS.find(
+      const productDesignLabel = productDesignOptions.find(
         opt => opt.key === selectedProductDesign
       )?.label
       services.push(`Product Design: ${productDesignLabel}`)
@@ -421,7 +405,7 @@ const ContactSection = ({
 
     // Add urgency
     if (selectedUrgency) {
-      const urgencyLabel = URGENCY_OPTIONS.find(
+      const urgencyLabel = urgencyOptions.find(
         opt => opt.key === selectedUrgency
       )?.label
       body += `URGÊNCIA DO PROJETO: ${urgencyLabel}\n\n`
@@ -435,7 +419,7 @@ const ContactSection = ({
         let extraLabel = ''
 
         // Find the label for each extra
-        for (const serviceExtras of Object.values(EXTRAS_BY_SERVICE)) {
+        for (const serviceExtras of Object.values(extrasByService)) {
           const found = serviceExtras.find(e => e.key === extra)
           if (found) extraLabel = found.label
         }
@@ -460,6 +444,8 @@ const ContactSection = ({
     window.open(mailtoUrl)
   }
 
+  const dict = useDictionary()
+
   return (
     <button
       type="button"
@@ -469,10 +455,10 @@ const ContactSection = ({
       <div className="flex items-end justify-between">
         <div className="flex flex-col gap-2">
           <h2 className="text-orange-500 font-movatif-regular text-lg">
-            Contato
+            {dict.pricing.contact}
           </h2>
           <h3 className="text-black font-movatif-book text-lg max-w-[180px] leading-tight">
-            Pronto para elevar sua marca?
+          {dict.pricing.h3Contact}
           </h3>
         </div>
         <div className="flex items-end">
@@ -501,6 +487,50 @@ const Pricing = () => {
     calculateTotal,
   } = usePricingState()
 
+  const dict = useDictionary()
+
+  const SERVICE_TABS = [
+    { key: 'web-design' as const, label: dict.pricing['web-design-label']},
+    { key: 'product-design' as const, label: 'Product Design' },
+  ]
+
+  const WEB_DESIGN_OPTIONS = [
+    { key: 'landing-page' as const, label: 'Landing Page' },
+    { key: 'ecommerce' as const, label: 'E-commerce' },
+    { key: 'frontend' as const, label: 'Front-end' },
+    { key: 'backend' as const, label: 'Back-end' },
+  ]
+
+  const PRODUCT_DESIGN_OPTIONS = [
+    { key: 'ui-design' as const, label: 'UI Design' },
+    { key: 'ux-research' as const, label: 'UX Research' },
+    { key: 'complete-product' as const, label: dict.pricing['complete-product-label'] },
+  ]
+
+  const URGENCY_OPTIONS = [
+    { key: 'very-urgent' as const, label: dict.pricing['very-urgent'] },
+    { key: 'still-important' as const, label: dict.pricing['still-important'] },
+    { key: 'flexible' as const, label: dict.pricing['flexible'] },
+  ]
+
+  const EXTRAS_BY_SERVICE = {
+    branding: [
+      { key: 'stationery' as const, label: dict.pricing.stationery },
+      { key: 'illustrations' as const, label: dict.pricing.illustrations },
+      { key: 'motion' as const, label: 'Motion Design' },
+    ],
+    'web-design': [
+      { key: 'optimization' as const, label: dict.pricing.optimization },
+      { key: 'animations' as const, label: dict.pricing.animations },
+      { key: 'cms' as const, label: dict.pricing.cms },
+    ],
+    'product-design': [
+      { key: 'prototype' as const, label: dict.pricing.prototype },
+      { key: 'usability' as const, label: dict.pricing.usability },
+      { key: 'designSystem' as const, label: 'Design System' },
+    ],
+  }
+
   return (
     <div id="pricing" className="py-16 px-4 md:py-24">
       <div className="max-w-7xl mx-auto">
@@ -520,7 +550,7 @@ const Pricing = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif-regular leading-tight">
-             Orçamento
+             {dict.pricing.titulo}
                 <span className="text-primaryds">.</span>
               <span className="block">
               </span>
@@ -530,6 +560,7 @@ const Pricing = () => {
           <ServiceTabs
             activeService={activeService}
             onServiceChange={setActiveService}
+            tabs={SERVICE_TABS}
           />
         </motion.div>
 
@@ -559,6 +590,10 @@ const Pricing = () => {
                 setSelectedUrgency={setSelectedUrgency}
                 getCurrentExtras={getCurrentExtras}
                 toggleExtra={toggleExtra}
+                webDesignOptions={WEB_DESIGN_OPTIONS}
+                productDesignOptions={PRODUCT_DESIGN_OPTIONS}
+                urgencyOptions={URGENCY_OPTIONS}
+                extrasByService={EXTRAS_BY_SERVICE}
               />
 
               <hr className="border-gray-700 my-8" />
@@ -566,11 +601,7 @@ const Pricing = () => {
               <div className="flex lg:flex-row flex-col justify-between items-start gap-8">
                 <div className="max-w-sm">
                   <p className="text-gray-400 text-sm leading-relaxed">
-                    Nossa calculadora de preços fornece uma estimativa rápida
-                    para você começar, mas sua visão única pode envolver
-                    necessidades específicas que podem ajustar o custo final. O
-                    preço aqui não é fixo e dependerá muito do escopo final do
-                    seu projeto.
+                    {dict.pricing.paragraph}
                   </p>
                 </div>
 
@@ -581,6 +612,10 @@ const Pricing = () => {
                   webDesignExtras={webDesignExtras}
                   productDesignExtras={productDesignExtras}
                   totalPrice={calculateTotal}
+                  webDesignOptions={WEB_DESIGN_OPTIONS}
+                  productDesignOptions={PRODUCT_DESIGN_OPTIONS}
+                  urgencyOptions={URGENCY_OPTIONS}
+                  extrasByService={EXTRAS_BY_SERVICE}
                 />
               </div>
             </CardContent>

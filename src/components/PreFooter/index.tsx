@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useEffect } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
+import { useDictionary } from '@/hooks/useDictionary'
 
 export default function PreFooter() {
   useEffect(() => {
@@ -13,6 +14,8 @@ export default function PreFooter() {
       cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
     })()
   }, [])
+
+  const dict = useDictionary()
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">
@@ -25,10 +28,9 @@ export default function PreFooter() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          Trabalhe perfeitamente com uma equipe criativa criada para acompanhar
-          seu ritmo e {''}
+          {dict.preFooter.h1} {''}
           <span className="bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-400 bg-clip-text text-transparent">
-            supere suas expectativas<span className="text-primaryds">.</span>
+          {dict.preFooter.span}<span className="text-primaryds">.</span>
           </span>
         </motion.h1>
 
@@ -53,11 +55,11 @@ export default function PreFooter() {
             </Avatar>
             <div className="text-left">
               <div className="flex items-center space-x-2">
-                <span className="font-medium">Agende um Meet</span>
+                <span className="font-medium">{dict.preFooter.btnTitle}</span>
                 <ArrowRight className="size-4" />
               </div>
               <div className="text-sm text-zinc-400">
-                Vamos conversar sobre seu projeto
+              {dict.preFooter.btnText}
               </div>
             </div>
           </div>

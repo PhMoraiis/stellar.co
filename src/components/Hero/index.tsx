@@ -2,24 +2,22 @@
 
 import { ArrowRightIcon, ArrowUpRight } from 'lucide-react'
 import { LayoutGroup, motion } from 'motion/react'
-import Link from 'next/link'
 import TextRotate from '../ui/text-rotate'
 import { AnimatedShinyText } from '../ui/animated-shiny-text';
 import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
 import { getCalApi } from '@calcom/embed-react';
+import { useDictionary } from '@/hooks/useDictionary';
 
 export default function Hero() {
-  const links = [
-    { name: 'Agenda de 2025 Aberta', href: '/product-design', id: 3 },
-  ]
-
   useEffect(() => {
     ;(async () => {
       const cal = await getCalApi({ namespace: '30min' })
       cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
     })()
   }, [])
+
+  const dict = useDictionary()
 
   return (
     <section 
@@ -37,23 +35,23 @@ export default function Hero() {
           aria-label="Agendar reunião de 30 minutos com a Stellar Studio"
         >
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
-            <span>✨ Agenda de 2025 Aberta</span>
+            <span>✨ {dict.hero.badge}</span>
             <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" aria-hidden="true" />
           </AnimatedShinyText>
         </button>
         <div className="mb-16 flex flex-col items-center justify-center px-4 text-center md:mb-24 lg:mb-32 uppercase">
           <h1 className="font-movatif-regular text-5xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
-            <span className="font-medium text-black">Um </span>
+            <span className="font-medium text-black">{dict.hero.titulo1} </span>
             <span className="bg-gradient-to-r from-zinc-400 via-zinc-600 to-zinc-800 bg-clip-text text-transparent">
-              grande{' '}
+            {dict.hero.titulo2}{' '}
             </span>
-            <span className="font-medium text-black">negócio </span>
+            <span className="font-medium text-black">{dict.hero.titulo3} </span>
             <br />
-            <span className="font-medium text-black">é </span>
-            <span className="font-medium text-black">o </span>
-            <span className="font-medium text-black">resultado </span>
-            <span className="font-medium text-black">de um </span>
-            <span className="font-medium text-black">grande</span>
+            <span className="font-medium text-black">{dict.hero.titulo4} </span>
+            <span className="font-medium text-black">{dict.hero.titulo5} </span>
+            <span className="font-medium text-black">{dict.hero.titulo6} </span>
+            <span className="font-medium text-black">{dict.hero.titulo7} </span>
+            <span className="font-medium text-black">{dict.hero.titulo8}</span>
           </h1>
 
           <LayoutGroup>
@@ -72,11 +70,11 @@ export default function Hero() {
                 texts={[
                   'design.',
                   'software.',
-                  'projeto.',
+                  dict.hero.projeto,
                   'studio.',
-                  'time.',
-                  'produto.',
-                  'futuro.',
+                  dict.hero.time,
+                  dict.hero.produto,
+                  dict.hero.futuro,
                 ]}
                 mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg h-14 sm:h-14 md:h-16 lg:h-24 xl:h-28 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4 xl:mx-6"
                 staggerFrom={"last"}

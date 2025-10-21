@@ -5,7 +5,12 @@ import { AnimatePresence, motion, useAnimate } from 'motion/react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-export default function NotFound() {
+export default async function NotFound({
+  params,
+}: {
+  params: Promise<{ lang: string }>
+}) {
+  const { lang } = await params
   const [isLoaded, setIsLoaded] = useState(false)
   const [scope, animate] = useAnimate()
 
