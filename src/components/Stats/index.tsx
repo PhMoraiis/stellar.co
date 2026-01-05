@@ -21,7 +21,7 @@ export default function Stats() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <h1 className="text-2xl md:text-4xl lg:text-6xl font-movatif-regular text-[#333] space-y-3">
+          <h1 className="text-2xl md:text-4xl lg:text-6xl font-movatif font-normal text-[#333] space-y-3">
             {dict.solutions.h1}
             <motion.span
               className="inline-flex items-center justify-center mx-2 px-4 py-2 bg-[#222] text-white rounded-full"

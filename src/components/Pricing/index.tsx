@@ -454,10 +454,10 @@ const ContactSection = ({
     >
       <div className="flex items-end justify-between">
         <div className="flex flex-col gap-2">
-          <h2 className="text-orange-500 font-movatif-regular text-lg">
+          <h2 className="text-orange-500 font-movatif text-lg">
             {dict.pricing.contact}
           </h2>
-          <h3 className="text-black font-movatif-book text-lg max-w-[180px] leading-tight">
+          <h3 className="text-black font-movatif text-lg max-w-[180px] leading-tight">
           {dict.pricing.h3Contact}
           </h3>
         </div>
@@ -549,7 +549,7 @@ const Pricing = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif-regular leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif leading-tight">
              {dict.pricing.titulo}
                 <span className="text-primaryds">.</span>
               <span className="block">

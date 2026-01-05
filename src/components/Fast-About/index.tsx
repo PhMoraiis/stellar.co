@@ -21,7 +21,7 @@ const FastAbout = () => {
             {dict.about.titulo}
              <span className="text-white text-2xl">.</span>
           </h4>
-          <h2 className="text-4xl md:text-6xl font-movatif-regular">
+          <h2 className="text-4xl md:text-6xl font-movatif">
           {dict.about.text}
           </h2>
         </motion.div>

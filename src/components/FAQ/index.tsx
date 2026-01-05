@@ -24,7 +24,7 @@ export default function FAQ() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif-regular leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-movatif leading-tight">
              {dict.faq.titulo}
                 <span className="text-primaryds">.</span>
               <span className="block">
