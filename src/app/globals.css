@@ -7,9 +7,10 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: var(--font-geist-sans);
+    --font-sans: var(--font-inter-sans);
     --font-mono: var(--font-geist-mono);
-    --color-sidebar-ring: var(--sidebar-ring);
+    --font-movatif: var(--font-movatif);
+    --font-gorga: var(--font-gorga);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-accent: var(--sidebar-accent);
@@ -42,14 +43,6 @@
     --radius-md: calc(var(--radius) - 2px);
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
-    --font-movatif-regular: "Movatif Regular";
-    --font-movatif-bold: "Movatif Bold";
-    --font-movatif-extralight: "Movatif Extra Light";
-    --font-movatif-heavy: "Movatif Heavy";
-    --font-movatif-light: "Movatif Light";
-    --font-movatif-ultralight: "Movatif Ultra Light";
-    --font-movatif-book: "Movatif Book";
-    --font-gorga: "Gorga";
     --color-gray-footer: var(--gray-footer);
     --color-primaryds: var(--primaryds);
     --color-secondaryds: var(--secondaryds);
@@ -159,51 +152,11 @@
   }
 }
 
-@font-face {
-    font-family: "Movatif Regular";
-    src: url("/fonts/Movatif/MovatifRegular.woff2");
-}
-
-@font-face {
-    font-family: "Movatif Bold";
-    src: url("/fonts/Movatif/MovatifBold.woff2");
-}
-
-@font-face {
-    font-family: "Movatif Extra Light";
-    src: url("/fonts/Movatif/MovatifExtraLight.woff2");
-}
-
-@font-face {
-    font-family: "Movatif Heavy";
-    src: url("/fonts/Movatif/MovatifHeavy.woff2");
-}
-
-@font-face {
-    font-family: "Movatif Light";
-    src: url("/fonts/Movatif/MovatifLight.woff2");
-}
-
-@font-face {
-    font-family: "Movatif Ultra Light";
-    src: url("/fonts/Movatif/MovatifUltraLight.woff2");
-}
-
-@font-face {
-    font-family: "Movatif Book";
-    src: url("/fonts/Movatif/MovatifBook.woff2");
-}
-
-@font-face {
-    font-family: "Gorga";
-    src: url("/fonts/gorga.ttf");
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
 }

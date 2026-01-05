@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { movatif, gorga } from '@/lib/fonts'
 import SmoothScroll from '@/components/SmoothScroll'
 import StructuredData from '@/components/StructuredData'
 import './globals.css'
@@ -81,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className={`${interSans.variable} ${movatif.variable} ${gorga.variable}`}>
       <head>
         <StructuredData />
         <script

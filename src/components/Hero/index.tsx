@@ -39,24 +39,24 @@ export default function Hero() {
             <ArrowRightIcon className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" aria-hidden="true" />
           </AnimatedShinyText>
         </button>
-        <div className="mb-16 flex flex-col items-center justify-center px-4 text-center md:mb-24 lg:mb-32 uppercase">
-          <h1 className="font-movatif-regular text-5xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
-            <span className="font-medium text-black">{dict.hero.titulo1} </span>
-            <span className="bg-gradient-to-r from-zinc-400 via-zinc-600 to-zinc-800 bg-clip-text text-transparent">
+        <div className="mb-16 flex flex-col items-center justify-center px-4 text-center md:mb-24 lg:mb-32 uppercase font-movatif font-normal">
+          <h1 className="text-5xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
+            <span className="text-black">{dict.hero.titulo1} </span>
+            <span className="bg-linear-to-r from-zinc-400 via-zinc-600 to-zinc-800 bg-clip-text text-transparent">
             {dict.hero.titulo2}{' '}
             </span>
-            <span className="font-medium text-black">{dict.hero.titulo3} </span>
+            <span className="text-black">{dict.hero.titulo3} </span>
             <br />
-            <span className="font-medium text-black">{dict.hero.titulo4} </span>
-            <span className="font-medium text-black">{dict.hero.titulo5} </span>
-            <span className="font-medium text-black">{dict.hero.titulo6} </span>
-            <span className="font-medium text-black">{dict.hero.titulo7} </span>
-            <span className="font-medium text-black">{dict.hero.titulo8}</span>
+            <span className="text-black">{dict.hero.titulo4} </span>
+            <span className="text-black">{dict.hero.titulo5} </span>
+            <span className="text-black">{dict.hero.titulo6} </span>
+            <span className="text-black">{dict.hero.titulo7} </span>
+            <span className="text-black">{dict.hero.titulo8}</span>
           </h1>
 
           <LayoutGroup>
             <motion.div
-              className="mt-2 flex text-center font-movatif-regular text-5xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl"
+              className="mt-2 flex text-center font-movatif text-5xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl"
               layout
             >
               {/* <motion.span

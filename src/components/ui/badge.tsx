@@ -18,7 +18,7 @@ const badgeVariants = cva(
         outline:
           'text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground',
         value:
-          'bg-primaryds text-primary border-none text-md font-movatif-regular rounded-xs px-12 py-2',
+          'bg-primaryds text-primary border-none text-md font-movatif rounded-xs px-12 py-2',
       },
     },
     defaultVariants: {

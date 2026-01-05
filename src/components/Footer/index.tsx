@@ -39,7 +39,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-16 px-4 md:py-16 pb-6 lg:pt-20 bg-[#171718] font-movatif-regular">
+    <footer className="py-16 px-4 md:py-16 pb-6 lg:pt-20 bg-[#171718] font-movatif">
       <div className="px-4 lg:px-20 sm:px-6 py-12 md:py-10">
         <div className="lg:flex">
           <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
@@ -50,7 +50,7 @@ const Footer = () => {
                 className="text-[1.6rem] lg:text-[3rem] md:text-5xl text-white font-coolveticaRg flex items-center"
               />
             </Link>
-            <div className="text-white text-xl lg:text-2xl md:text-3xl font-movatif-regular">
+            <div className="text-white text-xl lg:text-2xl md:text-3xl font-movatif">
               <FooterSocials />
             </div>
           </div>
