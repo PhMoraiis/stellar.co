@@ -22,14 +22,14 @@ export default function PreFooter() {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main heading */}
         <motion.h1
-          className="font-movatif-regular text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12 bg-gradient-to-b from-zinc-400 via-zinc-300 to-zinc-300 bg-clip-text text-transparent"
+          className="font-movatif text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12 bg-linear-to-b from-zinc-400 via-zinc-300 to-zinc-300 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           {dict.preFooter.h1} {''}
-          <span className="bg-gradient-to-r from-zinc-600 via-zinc-500 to-zinc-400 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-zinc-600 via-zinc-500 to-zinc-400 bg-clip-text text-transparent">
           {dict.preFooter.span}<span className="text-primaryds">.</span>
           </span>
         </motion.h1>
@@ -50,7 +50,7 @@ export default function PreFooter() {
         >
           <div className="flex items-center justify-center space-x-4">
             <Avatar className="size-11">
-              <AvatarImage src="/images/avatar.png" alt="support" />
+              <AvatarImage src="/images/avatar.png" alt="support"/>
               <AvatarFallback>STELLAR</AvatarFallback>
             </Avatar>
             <div className="text-left">
