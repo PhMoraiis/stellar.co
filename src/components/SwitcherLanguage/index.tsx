@@ -15,59 +15,11 @@ export default function SwitcherOrigin() {
   const params = useParams()
   const scrollTo = useLenisScrollTo()
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [isPreloading, setIsPreloading] = useState(false)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const preloadTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const navigationCompletedRef = useRef(false)
 
   const currentLang = params?.lang as string || 'pt-BR'
   const checked = currentLang === 'en'
-
-  // Função para cancelar transição e resetar estado
-  const cancelTransition = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current)
-      timeoutRef.current = null
-    }
-    if (preloadTimeoutRef.current) {
-      clearTimeout(preloadTimeoutRef.current)
-      preloadTimeoutRef.current = null
-    }
-    setIsTransitioning(false)
-    setIsPreloading(false)
-  }
-
-  // Reset automático após 10 segundos para evitar travamento
-  useEffect(() => {
-    if (isTransitioning) {
-      const resetTimeout = setTimeout(() => {
-        console.warn('Language transition timeout - resetting state')
-        cancelTransition()
-      }, 10000) // 10 segundos de timeout
-
-      return () => clearTimeout(resetTimeout)
-    }
-  }, [isTransitioning])
-
-  // Cancelar transição se o usuário interagir com a página
-  useEffect(() => {
-    const handleUserInteraction = () => {
-      if (isTransitioning) {
-        console.log('User interaction detected - canceling transition')
-        cancelTransition()
-      }
-    }
-
-    // Escuta eventos de interação do usuário
-    document.addEventListener('click', handleUserInteraction)
-    document.addEventListener('scroll', handleUserInteraction)
-    document.addEventListener('keydown', handleUserInteraction)
-
-    return () => {
-      document.removeEventListener('click', handleUserInteraction)
-      document.removeEventListener('scroll', handleUserInteraction)
-      document.removeEventListener('keydown', handleUserInteraction)
-    }
-  }, [isTransitioning])
 
   // Cleanup dos timeouts quando o componente for desmontado
   useEffect(() => {
@@ -75,49 +27,66 @@ export default function SwitcherOrigin() {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current)
       }
-      if (preloadTimeoutRef.current) {
-        clearTimeout(preloadTimeoutRef.current)
-      }
     }
   }, [])
+
+  // Reset automático após 5 segundos para evitar travamento
+  useEffect(() => {
+    if (isTransitioning) {
+      const resetTimeout = setTimeout(() => {
+        console.warn('Language transition timeout - resetting state')
+        setIsTransitioning(false)
+      }, 5000)
+
+      return () => clearTimeout(resetTimeout)
+    }
+  }, [isTransitioning])
   
   const handleLanguageChange = async (isEnglish: boolean) => {
     if (isTransitioning) return
     
-    // Cancela qualquer transição anterior
-    cancelTransition()
-    
     setIsTransitioning(true)
-    
-    // Aguarda um pouco para o fade-out
-    await new Promise(resolve => setTimeout(resolve, 200))
+    navigationCompletedRef.current = false
     
     const newLang = isEnglish ? 'en' : 'pt-BR'
     const pathWithoutLang = pathname.replace(`/${currentLang}`, '') || '/'
     const newPath = `/${newLang}${pathWithoutLang}`
     
-    // Scroll muito mais suave para o topo
+    // Pré-carrega imediatamente
+    router.prefetch(newPath)
+    
+    // Aguarda o fade-out
+    await new Promise(resolve => setTimeout(resolve, 200))
+    
+    // Scroll para o topo enquanto navega
     scrollTo(0, {
-      duration: 2.5, // Muito mais lento
-      lerp: 0.05,     // Mais suave
+      duration: 1.5,
+      lerp: 0.05,
       onComplete: () => {
-        // Navega para o novo idioma imediatamente ao chegar no topo
-        router.push(newPath)
-        
-        // Reset do estado após um delay menor
-        timeoutRef.current = setTimeout(() => {
-          setIsTransitioning(false)
-          setIsPreloading(false)
-        }, 300)
+        // Navega assim que chega no topo
+        if (!navigationCompletedRef.current) {
+          navigationCompletedRef.current = true
+          router.push(newPath)
+          
+          // Reset do estado
+          timeoutRef.current = setTimeout(() => {
+            setIsTransitioning(false)
+          }, 300)
+        }
       }
     })
     
-    // Pré-carrega o idioma durante o scroll (aos 60% do scroll)
-    preloadTimeoutRef.current = setTimeout(() => {
-      setIsPreloading(true)
-      // Pré-carrega a página no novo idioma em background
-      router.prefetch(newPath)
-    }, 1000) // 1s após iniciar o scroll (40% do tempo total)
+    // Navega também após 1s se o scroll não terminar (fallback)
+    timeoutRef.current = setTimeout(() => {
+      if (!navigationCompletedRef.current) {
+        navigationCompletedRef.current = true
+        router.push(newPath)
+        
+        timeoutRef.current = setTimeout(() => {
+          setIsTransitioning(false)
+        }, 300)
+      }
+    }, 1000)
   }
 
   return (
