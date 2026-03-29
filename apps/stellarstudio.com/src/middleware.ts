@@ -17,6 +17,17 @@ function getLocale(request: NextRequest): string {
 export function proxy(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
+
+  const isPublicFile = /\.[^/]+$/.test(pathname)
+  const isStaticRoute =
+    pathname.startsWith('/images/') ||
+    pathname.startsWith('/fonts/') ||
+    pathname.startsWith('/favicon.ico')
+
+  if (isPublicFile || isStaticRoute) {
+    return NextResponse.next()
+  }
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
@@ -33,7 +44,7 @@ export function proxy(request: NextRequest) {
  
 export const config = {
   matcher: [
-    // Skip all internal paths (_next, api, static files)
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
+    // Skip internal paths and public files (e.g. .png, .svg, .js)
+    '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)',
   ],
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRightIcon, ArrowUpRight } from 'lucide-react'
+import { ArrowRightIcon } from 'lucide-react'
 import { LayoutGroup, motion } from 'motion/react'
 import TextRotate from '../ui/text-rotate'
 import { AnimatedShinyText } from '../ui/animated-shiny-text';
@@ -18,6 +18,8 @@ export default function Hero() {
   }, [])
 
   const dict = useDictionary()
+  const hasBottomPrefix = Boolean(dict.hero.headlineBottomPrefix)
+  const hasBottomSuffix = Boolean(dict.hero.headlineBottomSuffix)
 
   return (
     <section 
@@ -40,43 +42,38 @@ export default function Hero() {
           </AnimatedShinyText>
         </button>
         <div className="mb-16 flex flex-col items-center justify-center px-4 text-center md:mb-24 lg:mb-32 uppercase font-movatif font-normal">
-          <h1 className="text-5xl leading-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
-            <span className="text-black">{dict.hero.titulo1} </span>
-            <span className="bg-linear-to-r from-zinc-400 via-zinc-600 to-zinc-800 bg-clip-text text-transparent">
-            {dict.hero.titulo2}{' '}
-            </span>
-            <span className="text-black">{dict.hero.titulo3} </span>
-            <br />
-            <span className="text-black">{dict.hero.titulo4} </span>
-            <span className="text-black">{dict.hero.titulo5} </span>
-            <span className="text-black">{dict.hero.titulo6} </span>
-            <span className="text-black">{dict.hero.titulo7} </span>
-            <span className="text-black">{dict.hero.titulo8}</span>
+          <h1 className="max-w-[22ch] text-balance text-4xl leading-[1.04] sm:text-5xl md:max-w-[24ch] md:text-6xl lg:text-7xl xl:text-8xl">
+            <span className="text-black">{dict.hero.headlineTop}</span>
+            {hasBottomPrefix && (
+              <>
+                <br />
+                <span className="text-black">{dict.hero.headlineBottomPrefix}</span>
+              </>
+            )}
+            {hasBottomSuffix && (
+              <>
+                <br />
+                <span className="text-black">{dict.hero.headlineBottomSuffix}</span>
+              </>
+            )}
           </h1>
 
           <LayoutGroup>
             <motion.div
-              className="mt-2 flex text-center font-movatif text-5xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl"
+              className="mt-2 flex text-center font-movatif text-4xl leading-[1.04] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               layout
             >
-              {/* <motion.span
-                className="pt-0.5 sm:pt-1 md:pt-2"
-                layout
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              >
-                grande{" "}
-              </motion.span> */}
               <TextRotate
                 texts={[
-                  'design.',
-                  'software.',
-                  dict.hero.projeto,
-                  'studio.',
-                  dict.hero.time,
-                  dict.hero.produto,
-                  dict.hero.futuro,
+                  dict.hero.rotateSoftware,
+                  dict.hero.rotateDesign,
+                  dict.hero.rotateProject,
+                  dict.hero.rotateStudio,
+                  dict.hero.rotateTeam,
+                  dict.hero.rotateProduct,
+                  dict.hero.rotateFuture,
                 ]}
-                mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg h-14 sm:h-14 md:h-16 lg:h-24 xl:h-28 flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4 xl:mx-6"
+                mainClassName="text-white px-2 sm:px-3 md:px-4 bg-primaryds overflow-hidden py-1 sm:py-1 md:py-2 justify-center rounded-lg min-h-[3.5rem] sm:min-h-[3.5rem] md:min-h-[4rem] lg:min-h-[6rem] xl:min-h-[7rem] leading-none flex items-center mx-2 sm:mx-3 md:mx-4 lg:mx-4 xl:mx-6"
                 staggerFrom={"last"}
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}

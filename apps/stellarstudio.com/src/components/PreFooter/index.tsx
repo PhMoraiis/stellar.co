@@ -22,7 +22,7 @@ export default function PreFooter() {
       <div className="max-w-6xl mx-auto text-center">
         {/* Main heading */}
         <motion.h1
-          className="font-movatif text-5xl md:text-6xl lg:text-7xl font-light leading-tight mb-12 bg-linear-to-b from-zinc-400 via-zinc-300 to-zinc-300 bg-clip-text text-transparent"
+          className="font-movatif-regular text-5xl md:text-6xl lg:text-7xl font-movatif leading-tight mb-12 bg-linear-to-b from-zinc-400 via-zinc-300 to-zinc-300 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}

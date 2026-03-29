@@ -1,0 +1,29 @@
+
+> ofertas.stellarstudio.com@0.1.0 build /home/philipe/Documentos/Projetos/stellar.co/apps/ofertas.stellarstudio.com
+> next build
+
+   ▲ Next.js 15.5.9
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 770ms
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/4) ...
+   Generating static pages (1/4) 
+   Generating static pages (2/4) 
+   Generating static pages (3/4) 
+ ✓ Generating static pages (4/4)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                      123 B         102 kB
+└ ○ /_not-found                            989 B         103 kB
++ First Load JS shared by all             102 kB
+  ├ chunks/155-7058f42d02f45b8c.js         46 kB
+  ├ chunks/fec8defa-0c01829af2a6a679.js  54.2 kB
+  └ other shared chunks (total)           1.9 kB
+
+
+○  (Static)  prerendered as static content
+

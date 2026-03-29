@@ -8,18 +8,16 @@
     },
     "hero": {
         "badge": "Agenda de 2026 Aberta",
-        "titulo1": "Um ",
-        "titulo2": "grande ",
-        "titulo3": "negócio ",
-        "titulo4": "é ",
-        "titulo5": "o ",
-        "titulo6": "resultado ",
-        "titulo7": "de um ",
-        "titulo8": "grande ",
-        "projeto": "projeto.",
-        "time": "time.",
-        "produto": "produto.",
-        "futuro": "futuro."
+        "headlineTop": "Por trás de todo grande negócio, há",
+        "headlineBottomPrefix": "um grande",
+        "headlineBottomSuffix": "",
+        "rotateSoftware": "software.",
+        "rotateDesign": "design.",
+        "rotateProject": "projeto.",
+        "rotateStudio": "studio.",
+        "rotateTeam": "time.",
+        "rotateProduct": "produto.",
+        "rotateFuture": "futuro."
     },
     "about": {
         "titulo": "Por que nós existimos",

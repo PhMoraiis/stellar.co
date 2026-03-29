@@ -8,18 +8,16 @@
     },
     "hero": {
         "badge": "Now Booking 2026",
-        "titulo1": "A ",
-        "titulo2": "great ",
-        "titulo3": "business ",
-        "titulo4": "is ",
-        "titulo5": "the ",
-        "titulo6": "result ",
-        "titulo7": "of a ",
-        "titulo8": "great ",
-        "projeto": "project.",
-        "time": "team.",
-        "produto": "product.",
-        "futuro": "future."
+        "headlineTop": "Behind every great business,",
+        "headlineBottomPrefix": "there is a great",
+        "headlineBottomSuffix": "",
+        "rotateSoftware": "software.",
+        "rotateDesign": "design.",
+        "rotateProject": "project.",
+        "rotateStudio": "studio.",
+        "rotateTeam": "team.",
+        "rotateProduct": "product.",
+        "rotateFuture": "future."
     },
     "about": {
         "titulo": "Why we exist",

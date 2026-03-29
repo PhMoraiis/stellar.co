@@ -23,7 +23,7 @@ const Footer = () => {
         {navItems.map((item) => (
           <li
             key={item.title}
-            className="flex-col gap-y-[4px] block duration-300 ease-in"
+            className="flex-col gap-y-1 block duration-300 ease-in"
           >
             <SmoothScrollLink 
               href={item.route}

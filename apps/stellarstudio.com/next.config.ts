@@ -25,6 +25,21 @@ const nextConfig: NextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   // Configurações de cache
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/:lang(pt-BR|en)/images/:path*',
+          destination: '/images/:path*',
+        },
+        {
+          source: '/:lang(pt-BR|en)/fonts/:path*',
+          destination: '/fonts/:path*',
+        },
+      ],
+    }
+  },
+
   async headers() {
     return [
       {
