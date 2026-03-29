@@ -33,7 +33,7 @@ const sitePlans = [
 	{
 		tier: "Pacote 02",
 		name: "Site Institucional",
-		oldPrice: "R$ 4.300",
+		// oldPrice: "R$ 4.300",
 		price: "R$ 3.500",
 		recurrence: "Pagamento único · Entrega em 14-21 dias",
 		note: "Para empresas que querem uma presença digital completa e profissional.",
@@ -51,9 +51,9 @@ const sitePlans = [
 	{
 		tier: "Pacote 03",
 		name: "Sistema Web",
-		oldPrice: "R$ 7.500",
+		// oldPrice: "R$ 7.500",
 		price: "Sob consulta",
-		recurrence: "A partir de R$ 6.000 · Prazo Negociado",
+		recurrence: "A partir de R$ 5.000 · Prazo Negociado",
 		badge: "✦ Promoção Especial",
 		note: "Para negócios com processos que precisam ser digitalizados. Requer discovery call.",
 		features: [
