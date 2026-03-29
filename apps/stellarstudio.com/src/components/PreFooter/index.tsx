@@ -50,7 +50,7 @@ export default function PreFooter() {
         >
           <div className="flex items-center justify-center space-x-4">
             <Avatar className="size-11">
-              <AvatarImage src="/images/avatar.png" alt="support" />
+              <AvatarImage src="/images/avatar.png" alt="support"/>
               <AvatarFallback>STELLAR</AvatarFallback>
             </Avatar>
             <div className="text-left">
