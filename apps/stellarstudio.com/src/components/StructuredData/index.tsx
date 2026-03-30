@@ -4,8 +4,8 @@ export default function StructuredData() {
     "@type": "Organization",
     "name": "Stellar Studio",
     "alternateName": "Stellar",
-    "url": "https://stellarstudio.tech",
-    "logo": "https://stellarstudio.tech/images/logo.png",
+    "url": "https://stellarbr.studio",
+    "logo": "https://stellarbr.studio/images/logo.png",
     "description": "Stellar é uma agência de tecnologia estratégica e criativa especializada em design, desenvolvimento web e mobile, branding e soluções digitais inovadoras.",
     "foundingDate": "2024",
     "address": {
@@ -71,7 +71,7 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Stellar Studio",
-    "url": "https://stellarstudio.tech",
+    "url": "https://stellarbr.studio",
     "description": "Agência de tecnologia estratégica e criativa especializada em design, desenvolvimento web e mobile, branding e soluções digitais inovadoras.",
     "publisher": {
       "@type": "Organization",
@@ -79,7 +79,7 @@ export default function StructuredData() {
     },
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://stellarstudio.tech/search?q={search_term_string}",
+      "target": "https://stellarbr.studio/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }
@@ -92,7 +92,7 @@ export default function StructuredData() {
         "@type": "ListItem",
         "position": 1,
         "name": "Início",
-        "item": "https://stellarstudio.tech"
+        "item": "https://stellarbr.studio"
       }
     ]
   }

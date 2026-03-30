@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://stellarstudio.tech'),
+  metadataBase: new URL('https://stellarbr.studio'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://stellarstudio.tech',
+    url: 'https://stellarbr.studio',
     title: 'Stellar | Agência de Tecnologia Estratégica e Criativa',
     description: 'Stellar é uma agência de tecnologia estratégica e criativa especializada em design, desenvolvimento web e mobile, branding e soluções digitais inovadoras.',
     siteName: 'Stellar Studio',

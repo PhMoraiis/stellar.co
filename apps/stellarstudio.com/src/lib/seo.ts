@@ -1,6 +1,6 @@
 export const seoConfig = {
   siteName: 'Stellar Studio',
-  siteUrl: 'https://stellarstudio.tech',
+  siteUrl: 'https://stellarbr.studio',
   description: 'Stellar é uma agência de tecnologia estratégica e criativa especializada em design, desenvolvimento web e mobile, branding e soluções digitais inovadoras.',
   keywords: [
     'agência de tecnologia',

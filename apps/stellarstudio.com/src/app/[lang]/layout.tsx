@@ -67,7 +67,7 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://stellarstudio.tech'),
+    metadataBase: new URL('https://stellarbr.studio'),
     alternates: {
       canonical: `/${lang}`,
       languages: {
@@ -78,7 +78,7 @@ export async function generateMetadata({
     openGraph: {
       type: 'website',
       locale: config.locale,
-      url: `https://stellarstudio.tech/${lang}`,
+      url: `https://stellarbr.studio/${lang}`,
       title: config.title,
       description: config.description,
       siteName: 'Stellar Studio',

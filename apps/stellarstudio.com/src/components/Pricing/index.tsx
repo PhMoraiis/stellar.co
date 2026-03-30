@@ -440,7 +440,7 @@ const ContactSection = ({
   const handleContactClick = () => {
     const subject = encodeURIComponent('Novo Orçamento')
     const body = generateEmailBody()
-    const mailtoUrl = `mailto:hello@stellarstudio.tech?subject=${subject}&body=${body}`
+    const mailtoUrl = `mailto:hello@stellarbr.studio?subject=${subject}&body=${body}`
     window.open(mailtoUrl)
   }
 

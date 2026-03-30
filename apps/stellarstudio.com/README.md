@@ -248,8 +248,8 @@ Este projeto é propriedade da **Stellar Studio**. Todos os direitos reservados.
 
 **Stellar Studio**
 
-- 🌐 Website: [stellarstudio.tech](https://stellarstudio.tech)
-- 📧 Email: <hello@stellarstudio.tech>
+- 🌐 Website: [stellarbr.studio](https://stellarbr.studio)
+- 📧 Email: <hello@stellarbr.studio>
 - 📅 Agende um meet: [cal.com/stellar-studio](https://cal.com/stellar-studio)
 
 ---

@@ -43,10 +43,10 @@ const Footer = () => {
       <div className="px-4 lg:px-20 sm:px-6 py-12 md:py-10">
         <div className="lg:flex">
           <div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
-            <Link href="mailto:hello@stellarstudio.tech">
+            <Link href="mailto:hello@stellarbr.studio">
               <CenterUnderline
                 underlinePaddingRatio={0.07}
-                label="hello@stellarstudio.tech"
+                label="hello@stellarbr.studio"
                 className="text-[1.6rem] lg:text-[3rem] md:text-5xl text-white font-coolveticaRg flex items-center"
               />
             </Link>
