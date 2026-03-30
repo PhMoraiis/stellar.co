@@ -232,7 +232,7 @@ export default function Header() {
           data-cal-config='{"layout":"month_view"}'
 						>
 							<span className="inline-block h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary rounded-full mr-1.5 sm:mr-2" />
-							<span>Vamos conversar</span>
+							<span>Agendar Meet</span>
 						</motion.a>
 					</motion.div>
 				</motion.header>
