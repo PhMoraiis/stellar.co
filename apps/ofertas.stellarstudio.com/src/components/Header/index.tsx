@@ -1,5 +1,6 @@
 "use client";
 
+import { getCalApi } from "@calcom/embed-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,8 +10,6 @@ import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { StellarLogo, StellarLogoName } from "../logo";
 import SmoothScrollLink from "../ui/smooth-scroll-link";
 import CenterUnderline from "../ui/underline-center";
-import { getCalApi } from '@calcom/embed-react'
-
 
 export default function Header() {
 	const { scrollDirection, isAtTop } = useScrollDirection(100);
@@ -30,22 +29,22 @@ export default function Header() {
 	}, [scrollDirection, isAtTop]);
 
 	useEffect(() => {
-    ;(async () => {
-      const cal = await getCalApi({ namespace: '30min' })
-      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
-    })()
-  }, [])
+		(async () => {
+			const cal = await getCalApi({ namespace: "30min" });
+			cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+		})();
+	}, []);
 
 	const initialNavLinks = [
-		{ name: "Sobre", href: "https://stellarstudio.com#about" },
-		{ name: "Soluções", href: "https://stellarstudio.com#solutions" },
+		{ name: "Sobre", href: "https://stellarbr.studio" },
+		{ name: "Soluções", href: "https://stellarbr.studio" },
 		{ name: "Preços", href: "#pricing" },
 		{ name: "FAQ", href: "#faq" },
 	];
 
 	const scrolledNavLinks = [
-		{ name: "Sobre", href: "https://stellarstudio.com#about" },
-		{ name: "Soluções", href: "https://stellarstudio.com#solutions" },
+		{ name: "Sobre", href: "https://stellarbr.studio" },
+		{ name: "Soluções", href: "https://stellarbr.studio" },
 		{ name: "Preços", href: "#pricing" },
 		{ name: "FAQ", href: "#faq" },
 	];
@@ -67,7 +66,6 @@ export default function Header() {
 						<div className="flex items-center justify-between w-full max-w-sm sm:max-w-sm md:max-w-sm lg:max-w-lg">
 							<nav
 								className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-8 mr-1 xs:mr-2 sm:mr-3"
-								role="navigation"
 								aria-label="Menu principal"
 							>
 								{initialNavLinks.slice(0, 2).map((link) =>
@@ -112,7 +110,6 @@ export default function Header() {
 
 							<nav
 								className="flex items-center space-x-2 xs:space-x-3 sm:space-x-4 md:space-x-5 lg:space-x-6 ml-1 xs:ml-2 sm:ml-3"
-								role="navigation"
 								aria-label="Menu secundário"
 							>
 								{initialNavLinks.slice(2).map((link) =>
@@ -223,13 +220,14 @@ export default function Header() {
 								);
 							})}
 						</nav>
+						{/** biome-ignore lint/a11y/useValidAnchor: <ignore> */}
 						<motion.a
 							className="bg-primaryds hover:bg-secondaryds text-secondary ml-2 sm:ml-4 px-3 py-3 sm:px-2 sm:py-2 md:px-4 md:py-2.5 lg:px-6 lg:py-2 rounded-md flex items-center font-medium transition-colors ease-in duration-300 whitespace-nowrap text-xs sm:text-sm md:text-base lg:text-lg cursor-pointer"
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 							data-cal-namespace="30min"
-          data-cal-link="stellar-studio/30min"
-          data-cal-config='{"layout":"month_view"}'
+							data-cal-link="stellar-studio/30min"
+							data-cal-config='{"layout":"month_view"}'
 						>
 							<span className="inline-block h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary rounded-full mr-1.5 sm:mr-2" />
 							<span>Agendar Meet</span>

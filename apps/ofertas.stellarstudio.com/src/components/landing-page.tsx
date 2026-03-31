@@ -1,20 +1,18 @@
 "use client";
 
+import { getCalApi } from "@calcom/embed-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
-import { FaWhatsapp } from "react-icons/fa";
-import { getCalApi } from '@calcom/embed-react'
-import { StellarLogo } from "./logo";
 
 const sitePlans = [
 	{
-		tier: "Pacote 01",
 		name: "Landing Page",
 		oldPrice: "R$ 2.300",
 		price: "R$ 1.800",
@@ -31,7 +29,6 @@ const sitePlans = [
 		],
 	},
 	{
-		tier: "Pacote 02",
 		name: "Site Institucional",
 		// oldPrice: "R$ 4.300",
 		price: "R$ 3.500",
@@ -49,10 +46,9 @@ const sitePlans = [
 		],
 	},
 	{
-		tier: "Pacote 03",
 		name: "Sistema Web",
 		// oldPrice: "R$ 7.500",
-		price: "Sob consulta",
+		price: "Sob Consulta",
 		recurrence: "A partir de R$ 5.000 · Prazo Negociado",
 		badge: "✦ Promoção Especial",
 		note: "Para negócios com processos que precisam ser digitalizados. Requer discovery call.",
@@ -67,154 +63,88 @@ const sitePlans = [
 	},
 ];
 
-const socialPlans = [
+const socialMonthlyPlans = [
 	{
-		tier: "Plano 01",
 		name: "Starter",
-		oldPrice: "R$ 780,00",
-		price: "R$ 600,00",
-		period: "/mês",
+		title: "1 Reels/sem",
+		oldP1: "R$ 1.020",
+		p1: "R$ 918",
+		oldP2: "R$ 1.420",
+		p2: "R$ 1.278",
+		oldP3: "R$ 2.500",
+		p3: "R$ 2.250",
 		recurrence: "Contrato mínimo 3 meses",
 		badge: "✦ Promoção Especial",
 		note: "Ponto de entrada para quem ainda não tem presença ativa nas redes.",
 		features: [
-			"12 posts/mês no feed",
+			"04 Reel/mês - até 60s cada",
+			"04 Posts/mês para feed",
 			"Design personalizado por post",
 			"Legenda + hashtags estratégicos",
-			"16 stories/mês",
 			"Agendamento e publicação incluídos",
+			"Legenda animada + trilha",
+			"Arte de capa para feed",
 			"1 revisão por post",
+			"Entrega em até 48h úteis",
 		],
 	},
 	{
-		tier: "Plano 02",
 		name: "Essencial",
-		// oldPrice: "R$ 1.150,00",
-		price: "R$ 900,00",
-		period: "/mês",
+		title: "2 Reels/sem",
+		oldP1: "R$ 1.940",
+		p1: "R$ 1.746",
+		oldP2: "R$ 2.740",
+		p2: "R$ 2.466",
+		oldP3: "R$ 4.900",
+		p3: "R$ 4.410",
 		recurrence: "Contrato mínimo 3 meses",
 		note: "Para negócios que querem consistência e crescimento real nas redes.",
 		featured: true,
 		badge: "Mais escolhido",
 		features: [
-			"20 posts/mês no feed",
+			"08 Reels/mês - até 60s cada",
+			"06 Posts/mês para feed",
 			"Identidade visual apurada e coesa",
-			"Legenda + hashtags + CTA estratégico",
-			"24 stories/mês - interativos",
+			"Legenda + hashtags + CTA estratégicos",
 			"Agendamento e publicação incluídos",
-			"Relatório quinzenal de desempenho",
+			"Legenda animada + trilha",
+			"Arte de capa para feed",
+			"Relatório mensal de desempenho",
+			"Relatório mensal de alcance",
 			"2 revisões por post",
+			"Entrega em 48h úteis",
 		],
 	},
 	{
-		tier: "Plano 03",
 		name: "Crescimento",
-		oldPrice: "R$ 1.750,00",
-		price: "R$ 1.400,00",
-		period: "/mês",
+		title: "3 Reels/sem",
+		oldP1: "R$ 2.960",
+		p1: "R$ 2.664",
+		oldP2: "R$ 4.160",
+		p2: "R$ 3.744",
+		oldP3: "R$ 7.400",
+		p3: "R$ 6.660",
 		badge: "✦ Promoção Especial",
 		recurrence: "Contrato mínimo 3 meses",
 		note: "Para quem quer Social Media como canal de aquisição, não só de presença.",
 		features: [
-			"28 posts/mês no feed",
+			"12 Reels/mês - até 60s cada",
+			"10 Posts/mês para feed",
+			"Planejamento de conteúdo quinzenal",
 			"Design system completo e coeso",
 			"Copywriting avançado em cada post",
-			"30 stories/mês com enquetes e CTA",
 			"Agendamento e publicação incluídos",
-			"Relatório semanal de desempenho",
-			"Planejamento de conteúdo mensal",
+			"Legenda animada + trilha",
+			"Arte de capa para feed",
+			"Relatório quinzenal de desempenho",
+			"Relatório semanal de alcance",
 			"Revisões ilimitadas (ciclo 48h)",
-			"Datas comemorativas do setor",
+			"Entrega em 48h úteis",
 		],
 	},
 ];
 
-const reelsPacks = [
-	{
-		freq: "Mensal",
-		title: "2 Reels/sem",
-		oldP1: "R$ 980",
-		p1: "R$ 800",
-		oldP2: "R$ 1.350",
-		p2: "R$ 1.100",
-		oldP3: "R$ 2.200",
-		p3: "R$ 1.800",
-		badge: "✦ Promoção Especial",
-		features: [
-			"8 Reels/mês - até 60s cada",
-			"Legenda animada + trilha",
-			"Arte de capa para feed",
-			"Entrega em 48h úteis",
-		],
-	},
-	{
-		freq: "Mensal",
-		title: "3 Reels/sem",
-		// oldP1: "R$ 1.320",
-		p1: "R$ 1.100",
-		// oldP2: "R$ 1.850",
-		p2: "R$ 1.500",
-		// oldP3: "R$ 3.100",
-		p3: "R$ 2.400",
-		featured: true,
-		badge: "Mais escolhido",
-		features: [
-			"12 Reels/mês - até 60s cada",
-			"Legenda animada + trilha",
-			"Arte de capa para feed",
-			"Entrega em 48h úteis",
-			"Relatório mensal de alcance",
-		],
-	},
-	{
-		freq: "Mensal",
-		title: "4 Reels/sem",
-		oldP1: "R$ 1.700",
-		p1: "R$ 1.400",
-		oldP2: "R$ 2.250",
-		p2: "R$ 1.900",
-		oldP3: "R$ 4.200",
-		p3: "R$ 3.400",
-		badge: "✦ Promoção Especial",
-		features: [
-			"16 Reels/mês - até 60s cada",
-			"Legenda animada + trilha",
-			"Arte de capa para feed",
-			"Entrega em 48h úteis",
-			"Relatório mensal de alcance",
-			"Planejamento de pauta mensal",
-		],
-	},
-];
-
-const faqItems = [
-	{
-		q: "Quais serviços a Stellar Studio oferece nesta página?",
-		a: "Oferecemos pacotes para landing pages, sites institucionais, sistemas web, gestão de social media e produção de reels.",
-	},
-	{
-		q: "Os valores da página já são finais?",
-		a: "Os valores funcionam como referência de entrada. O valor final pode variar conforme escopo, integrações e nível de personalização.",
-	},
-	{
-		q: "Qual é o prazo médio de entrega?",
-		a: "Landing pages costumam ser entregues em 7 a 10 dias, sites institucionais em 14 a 21 dias e sistemas web são definidos após diagnóstico.",
-	},
-	{
-		q: "Vocês também fazem manutenção mensal?",
-		a: "Sim. Temos planos de manutenção para atualizações, segurança, suporte técnico e evolução contínua do projeto.",
-	},
-	{
-		q: "Como faço para contratar?",
-		a: "Clique em qualquer CTA da página para falar com a Stellar Studio e receber a proposta ideal para o seu momento.",
-	},
-];
-
-function PlanCard({
-	plan,
-}: {
-	plan: (typeof sitePlans)[number] | (typeof socialPlans)[number];
-}) {
+function PlanCard({ plan }: { plan: (typeof sitePlans)[number] }) {
 	return (
 		<motion.article
 			initial={{ opacity: 0, y: 16 }}
@@ -235,17 +165,16 @@ function PlanCard({
 					{plan.badge}
 				</div>
 			) : null}
-			<p className="plan-tier">{plan.tier}</p>
-			<h3 className="plan-name">{plan.name}</h3>
+			<h3 className="plan-name flex gap-2">
+				<em className="text-primaryds">✦</em>
+				{plan.name}
+			</h3>
 			<div className="plan-price">
 				{"oldPrice" in plan && plan.oldPrice ? (
 					<span className="plan-price-old">{plan.oldPrice}</span>
 				) : null}
 				<div className="plan-price-current-row">
 					<span className="plan-price-value">{plan.price}</span>
-					{"period" in plan ? (
-						<span className="plan-price-period">{plan.period}</span>
-					) : null}
 				</div>
 			</div>
 			<p className="plan-recurrence">{plan.recurrence}</p>
@@ -264,16 +193,14 @@ function PlanCard({
 }
 
 export default function LandingPage() {
-	const [reelsTab, setReelsTab] = useState<
-		"gestao" | "reels-avulso" | "reels-pack"
-	>("gestao");
+	const [reelsTab, setReelsTab] = useState<"gestao" | "reels-avulso">("gestao");
 
-	 useEffect(() => {
-    ;(async () => {
-      const cal = await getCalApi({ namespace: '30min' })
-      cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
-    })()
-  }, [])
+	useEffect(() => {
+		(async () => {
+			const cal = await getCalApi({ namespace: "30min" });
+			cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+		})();
+	}, []);
 
 	return (
 		<>
@@ -300,8 +227,12 @@ export default function LandingPage() {
 							<Button asChild size="lg">
 								<a href="#pricing">Conhecer serviços</a>
 							</Button>
-							<Button variant='outline' asChild size="lg">
-								<a href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20com%20a%20Stellar%20Studio." target="_blank" rel="noopener noreferrer">
+							<Button variant="outline" asChild size="lg">
+								<a
+									href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20com%20a%20Stellar%20Studio."
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 									Conversar no WhatApp <FaWhatsapp className="text-lg" />
 								</a>
 							</Button>
@@ -316,7 +247,9 @@ export default function LandingPage() {
 						transition={{ duration: 0.55, delay: 0.35 }}
 					>
 						<span className="hero-scroll-cue-badge">Promoção Especial</span>
-						<span className="hero-scroll-cue-text">Role para ver os pacotes</span>
+						<span className="hero-scroll-cue-text">
+							Role para ver os pacotes
+						</span>
 						<span className="hero-scroll-cue-arrow" aria-hidden="true">
 							↓
 						</span>
@@ -337,7 +270,7 @@ export default function LandingPage() {
 
 					<Tabs defaultValue="sites">
 						<TabsList>
-							<TabsTrigger value="sites">Sites &amp; Sistemas</TabsTrigger>
+							<TabsTrigger value="sites">Sites &amp; Softwares</TabsTrigger>
 							<TabsTrigger value="social">Social Media</TabsTrigger>
 						</TabsList>
 
@@ -354,7 +287,6 @@ export default function LandingPage() {
 								{[
 									["gestao", "Gestão Mensal"],
 									["reels-avulso", "Reels Avulsos"],
-									["reels-pack", "Pacotes de Reels"],
 								].map(([key, label]) => (
 									<button
 										key={key}
@@ -364,9 +296,7 @@ export default function LandingPage() {
 											reelsTab === key && "active",
 										)}
 										onClick={() =>
-											setReelsTab(
-												key as "gestao" | "reels-avulso" | "reels-pack",
-											)
+											setReelsTab(key as "gestao" | "reels-avulso")
 										}
 									>
 										{label}
@@ -375,10 +305,84 @@ export default function LandingPage() {
 							</div>
 
 							{reelsTab === "gestao" ? (
-								<div className="plans-grid">
-									{socialPlans.map((plan) => (
-										<PlanCard key={plan.name} plan={plan} />
-									))}
+								<div className="reels-pack-section">
+									<div className="reels-packs-grid">
+										{socialMonthlyPlans.map((pack) => (
+											<article
+												key={pack.name}
+												className={cn("reel-pack", pack.featured && "featured")}
+											>
+												{pack.badge ? (
+													<div
+														className={cn(
+															"plan-badge",
+															pack.badge.includes("Promoção Especial")
+																? "plan-badge-promo"
+																: "plan-badge-featured",
+														)}
+													>
+														{pack.badge}
+													</div>
+												) : null}
+												<h3 className="plan-name flex gap-2">
+													<em className="text-primaryds">✦</em>
+													{pack.name}
+												</h3>
+												<h4 className="reel-pack-title">{pack.title}</h4>
+												<div className="reel-price-row">
+													<div className="reel-price-item">
+														<span>Só edição</span>
+														<div className="reel-price-values">
+															{pack.oldP1 ? (
+																<span className="reel-old-price">
+																	{pack.oldP1}/mês
+																</span>
+															) : null}
+															<span className="reel-current-price">
+																{pack.p1}/mês
+															</span>
+														</div>
+													</div>
+													<div className="reel-price-item">
+														<span>Com roteiro</span>
+														<div className="reel-price-values">
+															{pack.oldP2 ? (
+																<span className="reel-old-price">
+																	{pack.oldP2}/mês
+																</span>
+															) : null}
+															<span className="reel-current-price">
+																{pack.p2}/mês
+															</span>
+														</div>
+													</div>
+													<div className="reel-price-item">
+														<span>Com gravação</span>
+														<div className="reel-price-values">
+															{pack.oldP3 ? (
+																<span className="reel-old-price">
+																	{pack.oldP3}/mês
+																</span>
+															) : null}
+															<span className="reel-current-price">
+																{pack.p3}/mês
+															</span>
+														</div>
+													</div>
+												</div>
+												<p className="plan-recurrence">{pack.recurrence}</p>
+												<ul className="reel-pack-features">
+													{pack.features.map((item) => (
+														<li key={item}>
+															<span className="text-primaryds">✦</span>
+															{item}
+														</li>
+													))}
+												</ul>
+												<p className="plan-note">{pack.note}</p>
+											</article>
+										))}
+									</div>
 								</div>
 							) : null}
 
@@ -428,7 +432,10 @@ export default function LandingPage() {
 									</table>
 									<div className="avulso-notes">
 										<div className="avulso-notes-header">
-											<h4>✦ O que está incluído em cada modalidade</h4>
+											<h4>
+												<em className="text-primaryds">✦</em> O que está
+												incluído em cada modalidade
+											</h4>
 											<p>Entenda melhor o que faz cada serviço diferente</p>
 										</div>
 										<div className="avulso-notes-grid">
@@ -464,7 +471,10 @@ export default function LandingPage() {
 											</div>
 										</div>
 										<div className="avulso-notes-additional">
-											<h5>✦ Detalhes Importantes - Pacote Completo</h5>
+											<h5>
+												<em className="text-primaryds">✦</em> Detalhes
+												Importantes - Pacote Completo
+											</h5>
 											<div className="avulso-notes-additional-grid">
 												<div className="avulso-notes-additional-col">
 													<h6>Incluso</h6>
@@ -472,7 +482,9 @@ export default function LandingPage() {
 														<li>Deslocamento dentro de Brasília-DF</li>
 														<li>Locação de espaço (por conta do cliente)</li>
 														<li>Até 2h de captação por dia</li>
-														<li>Equipamento básico incluído (celular + ring light)</li>
+														<li>
+															Equipamento básico incluído (celular + ring light)
+														</li>
 													</ul>
 												</div>
 												<div className="avulso-notes-additional-col">
@@ -480,76 +492,25 @@ export default function LandingPage() {
 													<ul>
 														<li>Acima de 2h de captação: +R$ 150/hora</li>
 														<li>Câmera + iluminação avançada: sob consulta</li>
-														<li>Locações premium em Brasília: valor adicional</li>
+														<li>
+															Locações premium em Brasília: valor adicional
+														</li>
 														<li>Equipamento de drone: sob consulta</li>
 													</ul>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							) : null}
-
-							{reelsTab === "reels-pack" ? (
-								<div className="reels-pack-section">
-									<div className="reels-packs-grid">
-										{reelsPacks.map((pack) => (
-											<article
-												key={pack.title}
-												className={cn("reel-pack", pack.featured && "featured")}
-											>
-												{pack.badge ? (
-													<div
-														className={cn(
-															"plan-badge",
-															pack.badge.includes("Promoção Especial")
-																? "plan-badge-promo"
-																: "plan-badge-featured",
-														)}
-													>
-														{pack.badge}
-													</div>
-												) : null}
-												<p className="reel-pack-freq">{pack.freq}</p>
-												<h3 className="reel-pack-title">{pack.title}</h3>
-												<div className="reel-price-row">
-													<div className="reel-price-item">
-														<span>Só edição</span>
-														<div className="reel-price-values">
-															{pack.oldP1 ? <span className="reel-old-price">{pack.oldP1}/mês</span> : null}
-																<span className="reel-current-price">{pack.p1}/mês</span>
-														</div>
-													</div>
-													<div className="reel-price-item">
-														<span>Com roteiro</span>
-														<div className="reel-price-values">
-															{pack.oldP2 ? <span className="reel-old-price">{pack.oldP2}/mês</span> : null}
-																<span className="reel-current-price">{pack.p2}/mês</span>
-														</div>
-													</div>
-													<div className="reel-price-item">
-														<span>Com gravação</span>
-														<div className="reel-price-values">
-															{pack.oldP3 ? <span className="reel-old-price">{pack.oldP3}/mês</span> : null}
-																<span className="reel-current-price">{pack.p3}/mês</span>
-														</div>
-													</div>
-												</div>
-												<ul className="reel-pack-features">
-													{pack.features.map((item) => (
-														<li key={item}>
-															<span className="text-primaryds">✦</span>
-															{item}
-														</li>
-													))}
-												</ul>
-											</article>
-										))}
-									</div>
 									<div className="reels-pack-notes">
 										<div className="reels-pack-notes-header">
-											<h4>✦ Gravação inclusa - Como funciona</h4>
-											<p>Quando a Stellar cuida de tudo, esses são os detalhes importantes</p>
+											<h4>
+												<em className="text-primaryds">✦</em> Gravação inclusa -
+												Como funciona
+											</h4>
+											<p>
+												Quando a Stellar cuida de tudo, esses são os detalhes
+												importantes
+											</p>
 										</div>
 										<div className="reels-pack-notes-grid">
 											<div className="reels-pack-notes-col">
@@ -591,12 +552,21 @@ export default function LandingPage() {
 						de entrada, sem compromisso.
 					</p>
 					<div className="cta-contacts">
-						<Button size="lg" className="hover:bg-white hover:text-primary" data-cal-namespace="30min"
-          data-cal-link="stellar-studio/30min"
-          data-cal-config='{"layout":"month_view"}'>
-								Agendar Meet
+						<Button
+							size="lg"
+							className="hover:bg-white hover:text-primary"
+							data-cal-namespace="30min"
+							data-cal-link="stellar-studio/30min"
+							data-cal-config='{"layout":"month_view"}'
+						>
+							Agendar Meet
 						</Button>
-						<Button asChild variant="outline" size="lg" className="hover:border-primaryds hover:text-primaryds border-white text-white" >
+						<Button
+							asChild
+							variant="outline"
+							size="lg"
+							className="hover:border-primaryds hover:text-primaryds border-white text-white"
+						>
 							<a
 								href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20com%20a%20Stellar%20Studio."
 								target="_blank"
