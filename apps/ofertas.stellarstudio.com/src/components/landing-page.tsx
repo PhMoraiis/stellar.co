@@ -3,7 +3,7 @@
 import { getCalApi } from "@calcom/embed-react";
 import { motion } from "motion/react";
 import { useEffect, useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -14,8 +14,8 @@ import { cn } from "@/lib/utils";
 const sitePlans = [
 	{
 		name: "Landing Page",
-		oldPrice: "R$ 2.300",
-		price: "R$ 1.800",
+		oldPrice: "R$ 1.999,90",
+		price: "R$ 1.799,90",
 		recurrence: "Pagamento único · Entrega em 7-10 dias",
 		badge: "✦ Promoção Especial",
 		note: "Ideal para profissionais autônomos e negócios locais que ainda não têm presença online.",
@@ -30,8 +30,8 @@ const sitePlans = [
 	},
 	{
 		name: "Site Institucional",
-		// oldPrice: "R$ 4.300",
-		price: "R$ 3.500",
+		oldPrice: "R$ 3.899,90",
+		price: "R$ 3.499,90",
 		recurrence: "Pagamento único · Entrega em 14-21 dias",
 		note: "Para empresas que querem uma presença digital completa e profissional.",
 		featured: true,
@@ -49,7 +49,7 @@ const sitePlans = [
 		name: "Sistema Web",
 		// oldPrice: "R$ 7.500",
 		price: "Sob Consulta",
-		recurrence: "A partir de R$ 5.000 · Prazo Negociado",
+		recurrence: "A partir de R$ 4.999 · Prazo Negociado",
 		badge: "✦ Promoção Especial",
 		note: "Para negócios com processos que precisam ser digitalizados. Requer discovery call.",
 		features: [
@@ -67,50 +67,40 @@ const socialMonthlyPlans = [
 	{
 		name: "Starter",
 		title: "1 Reels/sem",
-		oldP1: "R$ 1.020",
-		p1: "R$ 918",
-		oldP2: "R$ 1.420",
-		p2: "R$ 1.278",
-		oldP3: "R$ 2.500",
-		p3: "R$ 2.250",
+		oldP1: "R$ 1.049,90",
+		p1: "R$ 949,90",
+		p3: "A Consultar",	
 		recurrence: "Contrato mínimo 3 meses",
 		badge: "✦ Promoção Especial",
 		note: "Ponto de entrada para quem ainda não tem presença ativa nas redes.",
 		features: [
-			"04 Reel/mês - até 60s cada",
-			"04 Posts/mês para feed",
+			"04 Reels/mês - até 60s cada",
+			"04 Artes/mês para feed",
+			"Planejamento de conteúdo mensal",
 			"Design personalizado por post",
-			"Legenda + hashtags estratégicos",
-			"Agendamento e publicação incluídos",
-			"Legenda animada + trilha",
-			"Arte de capa para feed",
+			"Arte de capa para reels",
 			"1 revisão por post",
-			"Entrega em até 48h úteis",
 		],
 	},
 	{
 		name: "Essencial",
 		title: "2 Reels/sem",
-		oldP1: "R$ 1.940",
-		p1: "R$ 1.746",
-		oldP2: "R$ 2.740",
-		p2: "R$ 2.466",
-		oldP3: "R$ 4.900",
-		p3: "R$ 4.410",
+		oldP1: "R$ 1.929,90",
+		p1: "R$ 1.749,90",
+		p3: "A Consultar",
 		recurrence: "Contrato mínimo 3 meses",
 		note: "Para negócios que querem consistência e crescimento real nas redes.",
 		featured: true,
 		badge: "Mais escolhido",
 		features: [
 			"08 Reels/mês - até 60s cada",
-			"06 Posts/mês para feed",
+			"06 Artes/mês para feed",
+			"Planejamento de conteúdo quinzenal",
 			"Identidade visual apurada e coesa",
-			"Legenda + hashtags + CTA estratégicos",
+			"Legenda + Hashtags",
 			"Agendamento e publicação incluídos",
-			"Legenda animada + trilha",
-			"Arte de capa para feed",
+			"Arte de capa para reels",
 			"Relatório mensal de desempenho",
-			"Relatório mensal de alcance",
 			"2 revisões por post",
 			"Entrega em 48h úteis",
 		],
@@ -118,31 +108,30 @@ const socialMonthlyPlans = [
 	{
 		name: "Crescimento",
 		title: "3 Reels/sem",
-		oldP1: "R$ 2.960",
-		p1: "R$ 2.664",
-		oldP2: "R$ 4.160",
-		p2: "R$ 3.744",
-		oldP3: "R$ 7.400",
-		p3: "R$ 6.660",
+		oldP1: "R$ 2.939,90",
+		p1: "R$ 2.669,90",
+		p3: "A Consultar",
 		badge: "✦ Promoção Especial",
 		recurrence: "Contrato mínimo 3 meses",
 		note: "Para quem quer Social Media como canal de aquisição, não só de presença.",
 		features: [
 			"12 Reels/mês - até 60s cada",
-			"10 Posts/mês para feed",
+			"10 Artes/mês para feed",
 			"Planejamento de conteúdo quinzenal",
 			"Design system completo e coeso",
 			"Copywriting avançado em cada post",
 			"Agendamento e publicação incluídos",
-			"Legenda animada + trilha",
-			"Arte de capa para feed",
+			"Arte de capa para reels",
 			"Relatório quinzenal de desempenho",
-			"Relatório semanal de alcance",
+			"Relatório quinzenal de alcance",
 			"Revisões ilimitadas (ciclo 48h)",
 			"Entrega em 48h úteis",
 		],
 	},
 ];
+
+const buildInstagramLink = (message: string) =>
+	`https://ig.me/m/stellarstudio.br?text=${encodeURIComponent(message)}`;
 
 function PlanCard({ plan }: { plan: (typeof sitePlans)[number] }) {
 	return (
@@ -165,35 +154,50 @@ function PlanCard({ plan }: { plan: (typeof sitePlans)[number] }) {
 					{plan.badge}
 				</div>
 			) : null}
-			<h3 className="plan-name flex gap-2">
-				<em className="text-primaryds">✦</em>
-				{plan.name}
-			</h3>
-			<div className="plan-price">
-				{"oldPrice" in plan && plan.oldPrice ? (
-					<span className="plan-price-old">{plan.oldPrice}</span>
-				) : null}
-				<div className="plan-price-current-row">
-					<span className="plan-price-value">{plan.price}</span>
+			<div className="plan-card-body">
+				<h3 className="plan-name flex gap-2">
+					<em className="text-primaryds">✦</em>
+					{plan.name}
+				</h3>
+				<div className="plan-price">
+					{"oldPrice" in plan && plan.oldPrice ? (
+						<span className="plan-price-old">{plan.oldPrice}</span>
+					) : null}
+					<div className="plan-price-current-row">
+						<span className="plan-price-value">{plan.price}</span>
+					</div>
 				</div>
+				<p className="plan-recurrence">{plan.recurrence}</p>
+				<div className="plan-divider" />
+				<ul className="plan-features">
+					{plan.features.map((feature) => (
+						<li key={feature}>
+							<span className="feat-check">✦</span>
+							{feature}
+						</li>
+					))}
+				</ul>
+				<p className="plan-note">{plan.note}</p>
 			</div>
-			<p className="plan-recurrence">{plan.recurrence}</p>
-			<div className="plan-divider" />
-			<ul className="plan-features">
-				{plan.features.map((feature) => (
-					<li key={feature}>
-						<span className="feat-check">✦</span>
-						{feature}
-					</li>
-				))}
-			</ul>
-			<p className="plan-note">{plan.note}</p>
+			<Button asChild className="plan-cta w-full">
+				<a
+					href={buildInstagramLink(
+						`Ol\u00e1! Tenho interesse no plano ${plan.name} da Stellar Studio.`,
+					)}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Quero este plano
+				</a>
+			</Button>
 		</motion.article>
 	);
 }
 
 export default function LandingPage() {
-	const [reelsTab, setReelsTab] = useState<"gestao" | "reels-avulso">("gestao");
+	const [reelsTab, setReelsTab] = useState<
+		"gestao" | "reels-avulso" | "artes-avulso"
+	>("gestao");
 
 	useEffect(() => {
 		(async () => {
@@ -229,11 +233,11 @@ export default function LandingPage() {
 							</Button>
 							<Button variant="outline" asChild size="lg">
 								<a
-									href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20com%20a%20Stellar%20Studio."
+									href="https://ig.me/m/stellarstudio.br"
 									target="_blank"
 									rel="noopener noreferrer"
 								>
-									Conversar no WhatApp <FaWhatsapp className="text-lg" />
+									Conversar no Direct <FaInstagram className="text-lg" />
 								</a>
 							</Button>
 						</div>
@@ -287,6 +291,7 @@ export default function LandingPage() {
 								{[
 									["gestao", "Gestão Mensal"],
 									["reels-avulso", "Reels Avulsos"],
+									["artes-avulso", "Artes Avulsas"],
 								].map(([key, label]) => (
 									<button
 										key={key}
@@ -296,7 +301,9 @@ export default function LandingPage() {
 											reelsTab === key && "active",
 										)}
 										onClick={() =>
-											setReelsTab(key as "gestao" | "reels-avulso")
+											setReelsTab(
+												key as "gestao" | "reels-avulso" | "artes-avulso",
+											)
 										}
 									>
 										{label}
@@ -324,62 +331,54 @@ export default function LandingPage() {
 														{pack.badge}
 													</div>
 												) : null}
-												<h3 className="plan-name flex gap-2">
-													<em className="text-primaryds">✦</em>
-													{pack.name}
-												</h3>
-												<h4 className="reel-pack-title">{pack.title}</h4>
-												<div className="reel-price-row">
-													<div className="reel-price-item">
-														<span>Só edição</span>
-														<div className="reel-price-values">
-															{pack.oldP1 ? (
-																<span className="reel-old-price">
-																	{pack.oldP1}/mês
+												<div className="reel-pack-body">
+													<h3 className="plan-name flex gap-2">
+														<em className="text-primaryds">✦</em>
+														{pack.name}
+													</h3>
+													<div className="reel-price-row">
+														<div className="reel-price-item">
+															<span>Só edição</span>
+															<div className="reel-price-values">
+																{pack.oldP1 ? (
+																	<span className="reel-old-price">
+																		{pack.oldP1}/mês
+																	</span>
+																) : null}
+																<span className="reel-current-price">
+																	{pack.p1}/mês
 																</span>
-															) : null}
-															<span className="reel-current-price">
-																{pack.p1}/mês
-															</span>
+															</div>
+														</div>
+														<div className="reel-price-item">
+															<span>Gravação + Roteiro</span>
+															<div className="reel-price-values">
+																<span className="reel-current-price">{pack.p3}</span>
+															</div>
 														</div>
 													</div>
-													<div className="reel-price-item">
-														<span>Com roteiro</span>
-														<div className="reel-price-values">
-															{pack.oldP2 ? (
-																<span className="reel-old-price">
-																	{pack.oldP2}/mês
-																</span>
-															) : null}
-															<span className="reel-current-price">
-																{pack.p2}/mês
-															</span>
-														</div>
-													</div>
-													<div className="reel-price-item">
-														<span>Com gravação</span>
-														<div className="reel-price-values">
-															{pack.oldP3 ? (
-																<span className="reel-old-price">
-																	{pack.oldP3}/mês
-																</span>
-															) : null}
-															<span className="reel-current-price">
-																{pack.p3}/mês
-															</span>
-														</div>
-													</div>
+													<p className="plan-recurrence">{pack.recurrence}</p>
+														<ul className="reel-pack-features">
+														{pack.features.map((item) => (
+															<li key={item}>
+																<span className="text-primaryds">✦</span>
+																{item}
+															</li>
+														))}
+													</ul>
+													<p className="plan-note">{pack.note}</p>
 												</div>
-												<p className="plan-recurrence">{pack.recurrence}</p>
-												<ul className="reel-pack-features">
-													{pack.features.map((item) => (
-														<li key={item}>
-															<span className="text-primaryds">✦</span>
-															{item}
-														</li>
-													))}
-												</ul>
-												<p className="plan-note">{pack.note}</p>
+														<Button asChild className="plan-cta w-full">
+															<a
+																href={buildInstagramLink(
+																	`Ol\u00e1! Tenho interesse no plano ${pack.name} de Social Media da Stellar Studio.`,
+																)}
+																target="_blank"
+																rel="noopener noreferrer"
+															>
+																Quero este plano
+															</a>
+														</Button>
 											</article>
 										))}
 									</div>
@@ -396,40 +395,35 @@ export default function LandingPage() {
 											arte de capa.
 										</p>
 									</div>
-									<table className="avulso-table">
-										<thead>
-											<tr>
-												<th>Modalidade</th>
-												<th>Até 30s</th>
-												<th>30s - 60s</th>
-												<th>60s - 90s</th>
-												<th>+90s</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Apenas Edição</td>
-												<td>R$ 120</td>
-												<td>R$ 180</td>
-												<td>R$ 250</td>
-												<td>A consultar</td>
-											</tr>
-											<tr>
-												<td>Roteiro + Edição</td>
-												<td>R$ 200</td>
-												<td>R$ 280</td>
-												<td>R$ 380</td>
-												<td>A consultar</td>
-											</tr>
-											<tr className="avulso-row-featured">
-												<td>Pacote Completo</td>
-												<td>R$ 400</td>
-												<td>R$ 550</td>
-												<td>R$ 700</td>
-												<td>A consultar</td>
-											</tr>
-										</tbody>
-									</table>
+									<div className="avulso-table-scroll" role="region" aria-label="Tabela de preços de reels unitários">
+										<table className="avulso-table">
+											<thead>
+												<tr>
+													<th>Modalidade</th>
+													<th>Até 30s</th>
+													<th>30s - 60s</th>
+													<th>60s - 90s</th>
+													<th>+90s</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Apenas Edição</td>
+													<td>R$ 120</td>
+													<td>R$ 180</td>
+													<td>R$ 250</td>
+													<td>A consultar</td>
+												</tr>
+												<tr className="avulso-row-featured">
+													<td>Pacote Completo</td>
+													<td>R$ 400</td>
+													<td>R$ 550</td>
+													<td>R$ 700</td>
+													<td>A consultar</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 									<div className="avulso-notes">
 										<div className="avulso-notes-header">
 											<h4>
@@ -446,39 +440,13 @@ export default function LandingPage() {
 													<li>Corte e transições profissionais</li>
 													<li>Legenda animada com timing</li>
 													<li>Trilha licenciada (banco de áudio)</li>
-													<li>Arte de capa para feed</li>
-												</ul>
-											</div>
-											<div className="avulso-notes-col">
-												<h5>Roteiro + Edição</h5>
-												<ul>
-													<li>Tudo de "Apenas Edição"</li>
-													<li>Roteiro criativo e narrativa</li>
-													<li>Storyboard visual</li>
-													<li>Consultoria de conceito</li>
-													<li>Orientação de melhor formato</li>
+													<li>Arte de capa para reels</li>
 												</ul>
 											</div>
 											<div className="avulso-notes-col">
 												<h5>Pacote Completo</h5>
-												<ul>
-													<li>Tudo de "Roteiro + Edição"</li>
-													<li>Gravação em estúdio/locação</li>
-													<li>Deslocamento em Brasília-DF</li>
-													<li>Até 2h de captação incluídas</li>
-													<li>Equipamento básico (celular + ring light)</li>
-												</ul>
-											</div>
-										</div>
-										<div className="avulso-notes-additional">
-											<h5>
-												<em className="text-primaryds">✦</em> Detalhes
-												Importantes - Pacote Completo
-											</h5>
-											<div className="avulso-notes-additional-grid">
-												<div className="avulso-notes-additional-col">
-													<h6>Incluso</h6>
 													<ul>
+														<li>Tudo do "Apenas Edição"</li>
 														<li>Deslocamento dentro de Brasília-DF</li>
 														<li>Locação de espaço (por conta do cliente)</li>
 														<li>Até 2h de captação por dia</li>
@@ -486,54 +454,94 @@ export default function LandingPage() {
 															Equipamento básico incluído (celular + ring light)
 														</li>
 													</ul>
-												</div>
-												<div className="avulso-notes-additional-col">
-													<h6>Adicionais e Especiais</h6>
+											</div>
+											<div className="avulso-notes-col">
+												<h5>Adicionais e Especiais</h5>
 													<ul>
 														<li>Acima de 2h de captação: +R$ 150/hora</li>
 														<li>Câmera + iluminação avançada: sob consulta</li>
-														<li>
-															Locações premium em Brasília: valor adicional
-														</li>
 														<li>Equipamento de drone: sob consulta</li>
+													</ul>
+											</div>
+										</div>
+									</div>
+									</div>
+							) : null}
+
+							{reelsTab === "artes-avulso" ? (
+									<div className="avulso-table-wrap">
+										<div className="avulso-table-header">
+											<h3>Artes Estáticas / Carrossel</h3>
+											<p>
+												Preço por peça conforme modalidade e quantidade de
+												slides. Toda entrega inclui design personalizado,
+												hierarquia visual e arte pronta para publicação.
+											</p>
+										</div>
+										<div
+											className="avulso-table-scroll"
+											role="region"
+											aria-label="Tabela de preços de artes estáticas e carrossel"
+										>
+											<table className="avulso-table">
+												<thead>
+													<tr>
+														<th>Modalidade</th>
+														<th>Arte Estática</th>
+														<th>Carrossel 3-5 slides</th>
+														<th>Carrossel 6-8 slides</th>
+														<th>9+ slides</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>Apenas Design</td>
+														<td>R$ 60</td>
+														<td>R$ 140</td>
+														<td>R$ 210</td>
+														<td>A consultar</td>
+													</tr>
+													<tr className="avulso-row-featured">
+														<td>Pacote Completo</td>
+														<td>R$ 140</td>
+														<td>R$ 260</td>
+														<td>R$ 360</td>
+														<td>A consultar</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div className="avulso-notes">
+											<div className="avulso-notes-header">
+												<h4>
+													<em className="text-primaryds">✦</em> O que está
+													incluído em cada modalidade
+												</h4>
+												<p>Entenda melhor a composição de cada entrega</p>
+											</div>
+											<div className="avulso-notes-grid2">
+												<div className="avulso-notes-col">
+													<h5>Apenas Design</h5>
+													<ul>
+														<li>Layout visual profissional</li>
+														<li>Composição para feed</li>
+														<li>Entrega em alta qualidade</li>
+														<li>1 revisão por peça</li>
+													</ul>
+												</div>
+												<div className="avulso-notes-col">
+													<h5>Pacote Completo</h5>
+													<ul>
+														<li>Copywriting avançado</li>
+														<li>Direcionamento criativo por tema</li>
+														<li>Sequência narrativa para carrossel</li>
+														<li>Guia de publicação e horário</li>
+														<li>Até 2 revisões por peça</li>
 													</ul>
 												</div>
 											</div>
 										</div>
 									</div>
-									<div className="reels-pack-notes">
-										<div className="reels-pack-notes-header">
-											<h4>
-												<em className="text-primaryds">✦</em> Gravação inclusa -
-												Como funciona
-											</h4>
-											<p>
-												Quando a Stellar cuida de tudo, esses são os detalhes
-												importantes
-											</p>
-										</div>
-										<div className="reels-pack-notes-grid">
-											<div className="reels-pack-notes-col">
-												<h5>Incluso nos pacotes</h5>
-												<ul>
-													<li>Deslocamento incluso dentro de Brasília-DF</li>
-													<li>Locação de espaço por conta do cliente</li>
-													<li>Diária inclui até 2h de captação</li>
-													<li>Equipamento básico (celular + ring light)</li>
-												</ul>
-											</div>
-											<div className="reels-pack-notes-col">
-												<h5>Adicionais e especiais</h5>
-												<ul>
-													<li>Câmera + iluminação avançada: sob consulta</li>
-													<li>Acima de 2h de captação: +R$ 150/hora</li>
-													<li>Locações premium: valor adicional</li>
-													<li>Equipamento de drone: sob consulta</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
 							) : null}
 						</TabsContent>
 					</Tabs>
@@ -568,16 +576,27 @@ export default function LandingPage() {
 							className="hover:border-primaryds hover:text-primaryds border-white text-white"
 						>
 							<a
-								href="https://wa.me/?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20um%20projeto%20com%20a%20Stellar%20Studio."
+								href="https://ig.me/m/stellarstudio.br"
 								target="_blank"
 								rel="noreferrer"
 							>
-								Conversar no WhatsApp <FaWhatsapp className="text-lg" />
+								Conversar no Direct <FaInstagram className="text-lg" />
 							</a>
 						</Button>
 					</div>
 				</section>
 			</main>
+
+			<a
+				href="https://www.instagram.com/stellarstudio.br/"
+				target="_blank"
+				rel="noopener noreferrer"
+				className="instagram-float"
+				aria-label="Abrir Instagram da Stellar Studio"
+				title="Falar com a Stellar no Instagram"
+			>
+				<FaInstagram className="text-3xl" />
+			</a>
 
 			<Footer />
 		</>

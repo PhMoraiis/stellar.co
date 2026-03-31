@@ -273,7 +273,7 @@
 	}
 
 	.plan-card {
-		@apply relative rounded-2xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)];
+		@apply relative flex h-full flex-col rounded-2xl border border-black/10 bg-white p-6 shadow-[0_10px_30px_-18px_rgba(0,0,0,0.35)];
 	}
 
 	.plan-card.featured {
@@ -348,6 +348,15 @@
 		@apply mt-5 border-t border-dashed border-black/15 pt-4 text-sm text-black/65;
 	}
 
+	.plan-card-body,
+	.reel-pack-body {
+		@apply flex flex-1 flex-col;
+	}
+
+	.plan-cta {
+		@apply mt-5;
+	}
+
 	.reels-subnav {
 		@apply mt-7 flex flex-wrap gap-2;
 	}
@@ -361,7 +370,11 @@
 	}
 
 	.avulso-table-wrap {
-		@apply mt-7 overflow-x-auto rounded-2xl border border-black/10 bg-white;
+		@apply mt-7 rounded-2xl border border-black/10 bg-white;
+	}
+
+	.avulso-table-scroll {
+		@apply overflow-x-auto;
 	}
 
 	.avulso-table-header {
@@ -415,6 +428,10 @@
 
 	.avulso-notes-grid {
 		@apply grid gap-6 md:grid-cols-3 mb-6;
+	}
+
+		.avulso-notes-grid2 {
+		@apply grid gap-6 md:grid-cols-2 mb-6;
 	}
 
 	.avulso-notes-col {
@@ -518,7 +535,7 @@
 	}
 
 	.reel-pack {
-		@apply relative rounded-2xl border border-black/10 bg-white p-7;
+		@apply relative flex h-full flex-col rounded-2xl border border-black/10 bg-white p-7;
 	}
 
 	.reel-pack.featured {
@@ -593,6 +610,38 @@
 		@apply border-transparent bg-white text-black hover:bg-white/90 hover:text-black;
 	}
 
+	.instagram-float {
+		@apply fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-primaryds text-white shadow-[0_12px_24px_-12px_rgba(255,136,51,0.6)] transition-transform duration-300;
+		animation: instagram-float-pulse 2.6s ease-in-out infinite;
+	}
+
+	.instagram-float:hover {
+		@apply -translate-y-0.5 bg-primaryds/90;
+	}
+
+	.instagram-float:focus-visible {
+		@apply outline-none ring-2 ring-primaryds ring-offset-2 ring-offset-white;
+	}
+
+	@keyframes instagram-float-pulse {
+		0%,
+		100% {
+			transform: scale(1);
+			box-shadow: 0 12px 24px -12px rgba(255, 136, 51, 0.6);
+		}
+
+		50% {
+			transform: scale(1.06);
+			box-shadow: 0 16px 28px -12px rgba(255, 136, 51, 0.8);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.instagram-float {
+			animation: none;
+		}
+	}
+
 	@media (max-width: 767px) {
 		.hero {
 			@apply min-h-[82svh] pb-10 pt-28;
@@ -614,12 +663,17 @@
 			@apply text-[10px];
 		}
 
-		.avulso-table-wrap {
-			overflow-x: auto;
-		}
-
 		.avulso-table {
 			min-width: 640px;
+		}
+
+		.avulso-table-scroll {
+			overflow-x: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.instagram-float {
+			@apply bottom-4 right-4 h-12 w-12;
 		}
 	}
 }
