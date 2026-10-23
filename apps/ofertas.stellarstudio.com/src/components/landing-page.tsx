@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { trackCalBookingAsLead } from "@/lib/meta-pixel";
 import { cn } from "@/lib/utils";
 
 const sitePlans = [
@@ -203,6 +204,7 @@ export default function LandingPage() {
 		(async () => {
 			const cal = await getCalApi({ namespace: "30min" });
 			cal("ui", { hideEventTypeDetails: false, layout: "month_view" });
+			trackCalBookingAsLead(cal);
 		})();
 	}, []);
 

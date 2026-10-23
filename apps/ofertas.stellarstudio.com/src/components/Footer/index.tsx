@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { trackMetaEvent } from "@/lib/meta-pixel";
 import { Separator } from "../ui/separator";
 import SmoothScrollLink from "../ui/smooth-scroll-link";
 import CenterUnderline from "../ui/underline-center";
@@ -42,7 +43,10 @@ const Footer = () => {
 			<div className="px-4 lg:px-20 sm:px-6 py-12 md:py-10">
 				<div className="lg:flex">
 					<div className="flex-1 mb-16 lg:flex lg:items-start lg:justify-start lg:flex-col">
-						<Link href="mailto:hello@stellarbr.studio">
+						<Link
+							href="mailto:hello@stellarbr.studio"
+							onClick={() => trackMetaEvent("Contact")}
+						>
 							<CenterUnderline
 								underlinePaddingRatio={0.07}
 								label="hello@stellarbr.studio"
