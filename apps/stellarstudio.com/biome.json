@@ -1,7 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
-  "organizeImports": {
-    "enabled": true
+  "$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "formatter": {
     "indentStyle": "space",
@@ -24,6 +28,6 @@
     }
   },
   "files": {
-    "ignore": ["node_modules"]
+    "includes": ["**", "!**/node_modules", "!**/.next", "!**/.turbo"]
   }
 }
