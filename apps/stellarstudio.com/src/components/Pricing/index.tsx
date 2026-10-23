@@ -7,6 +7,7 @@ import { useCallback, useMemo, useState } from 'react'
 import { Button } from '../ui/button'
 import { Card, CardContent } from '../ui/card'
 import { useDictionary } from '@/hooks/useDictionary'
+import { trackMetaEvent } from '@/lib/meta-pixel'
 
 // Types
 type ServiceType = 'web-design' | 'product-design'
@@ -441,6 +442,7 @@ const ContactSection = ({
     const subject = encodeURIComponent('Novo Orçamento')
     const body = generateEmailBody()
     const mailtoUrl = `mailto:hello@stellarbr.studio?subject=${subject}&body=${body}`
+    trackMetaEvent('Contact')
     window.open(mailtoUrl)
   }
 

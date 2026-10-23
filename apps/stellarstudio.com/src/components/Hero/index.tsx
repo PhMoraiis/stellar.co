@@ -8,12 +8,14 @@ import { cn } from '@/lib/utils';
 import { useEffect } from 'react';
 import { getCalApi } from '@calcom/embed-react';
 import { useDictionary } from '@/hooks/useDictionary';
+import { trackCalBookingAsLead } from '@/lib/meta-pixel';
 
 export default function Hero() {
   useEffect(() => {
     ;(async () => {
       const cal = await getCalApi({ namespace: '30min' })
       cal('ui', { hideEventTypeDetails: false, layout: 'month_view' })
+      trackCalBookingAsLead(cal)
     })()
   }, [])
 
