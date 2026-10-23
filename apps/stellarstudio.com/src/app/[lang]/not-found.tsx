@@ -5,12 +5,7 @@ import { AnimatePresence, motion, useAnimate } from 'motion/react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-export default async function NotFound({
-  params,
-}: {
-  params: Promise<{ lang: string }>
-}) {
-  const { lang } = await params
+export default function NotFound() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [scope, animate] = useAnimate()
 
@@ -144,7 +139,7 @@ export default async function NotFound({
             ease: 'easeInOut',
           }}
         >
-          {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+          {/* biome-ignore lint/a11y/noSvgWithoutTitle: ilustração decorativa */}
           <svg
             width="794"
             height="800"
