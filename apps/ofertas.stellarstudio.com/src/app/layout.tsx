@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import MetaPixel from "@/components/meta-pixel";
 import SmoothScroll from "@/components/smooth-scroll";
 import { gorga, movatif } from "@/lib/fonts";
 import "./globals.css";
@@ -78,6 +79,7 @@ export default function RootLayout({
 		>
 			<body className={`${interSans.variable} antialiased`}>
 				<SmoothScroll>{children}</SmoothScroll>
+				<MetaPixel />
 			</body>
 		</html>
 	);
