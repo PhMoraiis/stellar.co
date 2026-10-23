@@ -30,6 +30,7 @@ export default function Hero() {
     >
       <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-center px-4 sm:px-6 lg:px-8 gap-6">
         <button
+          type="button"
           data-cal-namespace="30min"
           data-cal-link="stellar-studio/30min"
           data-cal-config='{"layout":"month_view"}'

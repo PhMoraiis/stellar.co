@@ -2,7 +2,7 @@
 
 import { useLenis } from 'lenis/react'
 import Link from 'next/link'
-import { type MouseEvent, type ReactNode } from 'react'
+import type { MouseEvent, ReactNode } from 'react'
 
 interface SmoothScrollLinkProps {
   href: string
@@ -44,7 +44,7 @@ export default function SmoothScrollLink({
         lenis.scrollTo(targetElement, {
           offset: offset,
           duration: duration,
-          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          easing: (t: number) => Math.min(1, 1.001 - 2 ** (-10 * t)),
         })
       }
     }

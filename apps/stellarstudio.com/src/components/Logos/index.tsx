@@ -5,7 +5,7 @@ interface ILogoProps {
 
 export function StellarLogo({ width, height }: ILogoProps) {
   return (
-    // biome-ignore lint/a11y/noSvgWithoutTitle: <explanation>
+    // biome-ignore lint/a11y/noSvgWithoutTitle: logotipo decorativo
     <svg
       width={width}
       height={height}
@@ -31,6 +31,7 @@ export function StellarLogo({ width, height }: ILogoProps) {
 
 export function StellarLogoName() {
   return(
+  // biome-ignore lint/a11y/noSvgWithoutTitle: logotipo decorativo
   <svg
       width={130}
       height={722}

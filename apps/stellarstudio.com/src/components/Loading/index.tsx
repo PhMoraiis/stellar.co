@@ -17,9 +17,8 @@ export default function Loading() {
   if (!isLoading) return null
 
   return (
-    <div 
+    <output
       className="fixed inset-0 z-50 flex items-center justify-center bg-white dark:bg-gray-900"
-      role="status"
       aria-label="Carregando página"
     >
       <div className="flex flex-col items-center space-y-4">
@@ -28,6 +27,6 @@ export default function Loading() {
           Carregando...
         </p>
       </div>
-    </div>
+    </output>
   )
 }

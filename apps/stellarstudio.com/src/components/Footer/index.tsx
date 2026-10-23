@@ -65,7 +65,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="block items-center justify-center md:block lg:mx-auto py-2 mx-auto mt-4 lg:block lg:justify-center lg:items-center">
-          {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+          {/* biome-ignore lint/a11y/noSvgWithoutTitle: logotipo decorativo */}
           <svg
             width="100%"
             height="100%"

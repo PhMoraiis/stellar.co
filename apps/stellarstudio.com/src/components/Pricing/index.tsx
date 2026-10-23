@@ -1,6 +1,5 @@
 'use client'
 
-import { CurrencyCircleDollarIcon } from '@phosphor-icons/react/dist/ssr'
 import { ArrowUpRight } from 'lucide-react'
 import { motion } from 'motion/react'
 import { useCallback, useMemo, useState } from 'react'
@@ -152,9 +151,7 @@ const usePricingState = () => {
 
     // Add extras from all services
     const allExtras = [webDesignExtras, productDesignExtras]
-    // biome-ignore lint/complexity/noForEach: <explanation>
     allExtras.forEach(extras => {
-      // biome-ignore lint/complexity/noForEach: <explanation>
       extras.forEach(extra => {
         total += PRICING_DATA.extras[extra]
       })
@@ -512,7 +509,7 @@ const Pricing = () => {
   const URGENCY_OPTIONS = [
     { key: 'very-urgent' as const, label: dict.pricing['very-urgent'] },
     { key: 'still-important' as const, label: dict.pricing['still-important'] },
-    { key: 'flexible' as const, label: dict.pricing['flexible'] },
+    { key: 'flexible' as const, label: dict.pricing.flexible },
   ]
 
   const EXTRAS_BY_SERVICE = {

@@ -93,7 +93,9 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
   useEffect(() => {
     if (hovered) {
       document.body.style.cursor = dragged ? 'grabbing' : 'grab';
-      return () => void (document.body.style.cursor = 'auto');
+      return () => {
+        document.body.style.cursor = 'auto';
+      };
     }
   }, [hovered, dragged]);
 
@@ -112,7 +114,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
       vec.add(dir.multiplyScalar(state.camera.position.length()));
-      [card, j1, j2, j3, fixed].forEach(ref => ref.current?.wakeUp());
+      for (const ref of [card, j1, j2, j3, fixed]) ref.current?.wakeUp();
       card.current?.setNextKinematicTranslation({ x: vec.x - dragged.x, y: vec.y - dragged.y, z: vec.z - dragged.z });
     }
     if (fixed.current) {
@@ -158,11 +160,14 @@ function Band({ maxSpeed = 50, minSpeed = 0 }) {
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={e => (e.target.releasePointerCapture(e.pointerId), drag(false))}
-            onPointerDown={e => (
-              e.target.setPointerCapture(e.pointerId),
-              drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())))
-            )}
+            onPointerUp={e => {
+              e.target.releasePointerCapture(e.pointerId);
+              drag(false);
+            }}
+            onPointerDown={e => {
+              e.target.setPointerCapture(e.pointerId);
+              drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())));
+            }}
           >
             <mesh geometry={nodes.card.geometry}>
               <meshPhysicalMaterial

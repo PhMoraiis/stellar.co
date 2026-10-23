@@ -1,5 +1,6 @@
 'use client'
 
+import type { ScrollCallback } from 'lenis'
 import { useLenis } from 'lenis/react'
 import { useEffect } from 'react'
 
@@ -9,8 +10,8 @@ import { useEffect } from 'react'
  * @param deps - Dependências para re-executar o callback
  */
 export function useLenisScroll(
-  callback: (lenis: any) => void,
-  deps: any[] = []
+  callback: ScrollCallback,
+  deps: unknown[] = []
 ) {
   useLenis(callback, deps)
 }

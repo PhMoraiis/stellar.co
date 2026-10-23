@@ -86,7 +86,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
       return Array.from(text)
     }
 
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    // biome-ignore lint/correctness/useExhaustiveDependencies: splitIntoCharacters é recriada a cada render
     const elements = useMemo(() => {
       const currentText = texts[currentTextIndex]
       if (splitBy === 'characters') {
@@ -225,7 +225,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
 
               return (
                 <span
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                  // biome-ignore lint/suspicious/noArrayIndexKey: a lista é derivada do texto e não é reordenada
                   key={wordIndex}
                   className={cn('inline-flex', splitLevelClassName)}
                 >
@@ -234,7 +234,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
                       initial={initial}
                       animate={animate}
                       exit={exit}
-                      // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                      // biome-ignore lint/suspicious/noArrayIndexKey: a lista é derivada do texto e não é reordenada
                       key={charIndex}
                       transition={{
                         ...transition,

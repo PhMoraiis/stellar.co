@@ -99,24 +99,21 @@ export default function StructuredData() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema)
-        }}
-      />
+      <JsonLd data={organizationSchema} />
+      <JsonLd data={websiteSchema} />
+      <JsonLd data={breadcrumbSchema} />
     </>
+  )
+}
+
+function JsonLd({ data }: { data: object }) {
+  return (
+    <script
+      type="application/ld+json"
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD estático, com "<" escapado
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, '\\u003c')
+      }}
+    />
   )
 }

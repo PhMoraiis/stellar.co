@@ -21,6 +21,7 @@ export default function MetaPixel() {
         `}
       </Script>
       <noscript>
+        {/* biome-ignore lint/performance/noImgElement: next/image não funciona sem JavaScript */}
         <img
           height="1"
           width="1"

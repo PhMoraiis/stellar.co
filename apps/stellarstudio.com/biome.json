@@ -21,6 +21,11 @@
       "trailingCommas": "es5"
     }
   },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -29,5 +34,17 @@
   },
   "files": {
     "includes": ["**", "!**/node_modules", "!**/.next", "!**/.turbo"]
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["global.d.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
+          }
+        }
+      }
+    }
+  ]
 }

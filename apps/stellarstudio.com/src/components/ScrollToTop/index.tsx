@@ -38,7 +38,7 @@ export default function ScrollToTop() {
   const scrollToTop = () => {
     lenis?.scrollTo(0, {
       duration: 2,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      easing: (t: number) => Math.min(1, 1.001 - 2 ** (-10 * t)),
     })
   }
 
@@ -58,6 +58,7 @@ export default function ScrollToTop() {
         >
           {/* Círculo de progresso */}
           <svg
+            aria-hidden="true"
             className="absolute inset-0 -rotate-90"
             width="56"
             height="56"

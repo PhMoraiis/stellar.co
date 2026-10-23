@@ -1,7 +1,7 @@
 'use client'
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion'
-import { ChevronDownIcon, PlusIcon, XIcon } from 'lucide-react'
+import { PlusIcon, XIcon } from 'lucide-react'
 import type * as React from 'react'
 
 import { cn } from '@/lib/utils'
