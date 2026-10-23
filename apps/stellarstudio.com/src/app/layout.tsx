@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { movatif, gorga } from '@/lib/fonts'
 import SmoothScroll from '@/components/SmoothScroll'
 import StructuredData from '@/components/StructuredData'
+import MetaPixel from '@/components/MetaPixel'
 import './globals.css'
 import { Analytics } from "@vercel/analytics/next"
 
@@ -111,6 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <body className={`${interSans.variable} antialiased`}>
         <SmoothScroll>{children}</SmoothScroll>
         <Analytics />
+        <MetaPixel />
       </body>
     </html> 
   )
