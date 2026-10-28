@@ -15,8 +15,8 @@ import { cn } from "@/lib/utils";
 const sitePlans = [
 	{
 		name: "Landing Page",
-		oldPrice: "R$ 1.999,90",
-		price: "R$ 1.799,90",
+		oldPrice: "R$ 999,90",
+		price: "R$ 499,90",
 		recurrence: "Pagamento único · Entrega em 7-10 dias",
 		badge: "✦ Promoção Especial",
 		note: "Ideal para profissionais autônomos e negócios locais que ainda não têm presença online.",
@@ -50,7 +50,7 @@ const sitePlans = [
 		name: "Sistema Web",
 		// oldPrice: "R$ 7.500",
 		price: "Sob Consulta",
-		recurrence: "A partir de R$ 4.999 · Prazo Negociado",
+		recurrence: "A partir de R$ 2.999 · Prazo Negociado",
 		badge: "✦ Promoção Especial",
 		note: "Para negócios com processos que precisam ser digitalizados. Requer discovery call.",
 		features: [
