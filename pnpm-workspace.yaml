@@ -12,3 +12,4 @@ overrides:
   sharp: ^0.35.5
   fflate@^0.6: ^0.6.11
   fflate@^0.8: ^0.8.3
+  source-map-js: ^1.2.2
