@@ -33,14 +33,14 @@ export const metadata: Metadata = {
 		address: false,
 		telephone: false,
 	},
-	metadataBase: new URL("https://stellarstudio.com"),
+	metadataBase: new URL("https://oferta.stellarbr.studio"),
 	alternates: {
 		canonical: "/",
 	},
 	openGraph: {
 		type: "website",
 		locale: "pt_BR",
-		url: "https://ofertas.stellarstudio.com",
+		url: "https://oferta.stellarbr.studio",
 		title: "Ofertas | Stellar Studio",
 		description:
 			"Soluções em design, desenvolvimento e social media para escalar sua presença digital.",

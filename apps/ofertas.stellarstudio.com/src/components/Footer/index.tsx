@@ -10,8 +10,8 @@ import FooterSocials from "./Socials";
 const Footer = () => {
 	const renderFooterNavs = () => {
 		const navItems = [
-			{ title: "Sobre", route: "https://stellarstudio.com#about" },
-			{ title: "Soluções", route: "https://stellarstudio.com#solutions" },
+			{ title: "Sobre", route: "https://stellarbr.studio#about" },
+			{ title: "Soluções", route: "https://stellarbr.studio#solutions" },
 			{ title: "Preços", route: "#pricing" },
 			{ title: "FAQ", route: "#faq" },
 		];

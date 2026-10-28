@@ -15,7 +15,7 @@ const FooterSocials = () => {
 		},
 		{
 			icon: <RiLinkedinFill />,
-			route: "https://linkedin.com/in/stellarstudio",
+			route: "https://www.linkedin.com/company/stellarstudiobr",
 			id: 2,
 		},
 		// {
