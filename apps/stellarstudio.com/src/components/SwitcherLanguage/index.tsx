@@ -1,92 +1,30 @@
 "use client"
 
-import { useId, useState, useEffect, useRef } from "react"
-import { useRouter, usePathname, useParams } from "next/navigation"
+import { useId } from "react"
+import { usePathname, useParams } from "next/navigation"
 import { motion } from "motion/react"
 
+import { useLanguageTransition } from "@/components/LanguageTransition"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import { useLenisScrollTo } from "@/hooks/useLenis"
 
 export default function SwitcherOrigin() {
   const id = useId()
-  const router = useRouter()
   const pathname = usePathname()
   const params = useParams()
-  const scrollTo = useLenisScrollTo()
-  const [isTransitioning, setIsTransitioning] = useState(false)
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
-  const navigationCompletedRef = useRef(false)
+  const { changeLanguage, isChanging: isTransitioning } = useLanguageTransition()
 
   const currentLang = params?.lang as string || 'pt-BR'
   const checked = currentLang === 'en'
 
-  // Cleanup dos timeouts quando o componente for desmontado
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current)
-      }
-    }
-  }, [])
-
-  // Reset automático após 5 segundos para evitar travamento
-  useEffect(() => {
-    if (isTransitioning) {
-      const resetTimeout = setTimeout(() => {
-        console.warn('Language transition timeout - resetting state')
-        setIsTransitioning(false)
-      }, 5000)
-
-      return () => clearTimeout(resetTimeout)
-    }
-  }, [isTransitioning])
-  
-  const handleLanguageChange = async (isEnglish: boolean) => {
+  const handleLanguageChange = (isEnglish: boolean) => {
     if (isTransitioning) return
-    
-    setIsTransitioning(true)
-    navigationCompletedRef.current = false
-    
+
     const newLang = isEnglish ? 'en' : 'pt-BR'
     const pathWithoutLang = pathname.replace(`/${currentLang}`, '') || '/'
-    const newPath = `/${newLang}${pathWithoutLang}`
-    
-    // Pré-carrega imediatamente
-    router.prefetch(newPath)
-    
-    // Aguarda o fade-out
-    await new Promise(resolve => setTimeout(resolve, 200))
-    
-    // Scroll para o topo enquanto navega
-    scrollTo(0, {
-      duration: 1.5,
-      lerp: 0.05,
-      onComplete: () => {
-        // Navega assim que chega no topo
-        if (!navigationCompletedRef.current) {
-          navigationCompletedRef.current = true
-          router.push(newPath)
-          
-          // Reset do estado
-          timeoutRef.current = setTimeout(() => {
-            setIsTransitioning(false)
-          }, 300)
-        }
-      }
-    })
-    
-    // Navega também após 1s se o scroll não terminar (fallback)
-    timeoutRef.current = setTimeout(() => {
-      if (!navigationCompletedRef.current) {
-        navigationCompletedRef.current = true
-        router.push(newPath)
-        
-        timeoutRef.current = setTimeout(() => {
-          setIsTransitioning(false)
-        }, 300)
-      }
-    }, 1000)
+
+    // A transição (véu, volta ao topo e navegação) fica no LanguageTransition
+    changeLanguage(`/${newLang}${pathWithoutLang}`)
   }
 
   return (

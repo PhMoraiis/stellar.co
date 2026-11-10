@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { movatif, gorga } from '@/lib/fonts'
+import LanguageTransition from '@/components/LanguageTransition'
 import SmoothScroll from '@/components/SmoothScroll'
 import StructuredData from '@/components/StructuredData'
 import MetaPixel from '@/components/MetaPixel'
@@ -110,7 +111,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </script>
       </head>
       <body className={`${interSans.variable} antialiased`}>
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <LanguageTransition>{children}</LanguageTransition>
+        </SmoothScroll>
         <Analytics />
         <MetaPixel />
       </body>
